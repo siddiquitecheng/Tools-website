@@ -12,6 +12,7 @@ import {
   resolveToolFaqs,
 } from "@/lib/jsonld";
 import { pdfToolContent } from "@/lib/pdf-tool-content";
+import { toolContent } from "@/lib/tool-content";
 import {
   getPublicToolById,
   getRelatedPublicTools,
@@ -46,7 +47,7 @@ export default async function ToolPage({ params }: ToolPageProps) {
 
   const related = await getRelatedPublicTools(tool);
   const jsonLd = generateToolJsonLd(tool);
-  const content = pdfToolContent[tool.id];
+  const content = pdfToolContent[tool.id] ?? toolContent[tool.id];
   // Matches the Breadcrumbs ToolShell renders exactly (note: the visible
   // category crumb is the raw category slug, e.g. "pdf").
   const breadcrumbLd = generateBreadcrumbJsonLd([
