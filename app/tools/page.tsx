@@ -1,9 +1,54 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 
 import { ToolCard } from "@/components/tool-cards/ToolCard";
 import { getPublicTools } from "@/lib/public-tools";
+import { languageAlternates, ogImageUrl } from "@/lib/seo";
 
 export const dynamic = "force-dynamic";
+
+export function generateMetadata(): Metadata {
+  const path = "/tools";
+  const description =
+    "Browse all 137 free online tools in one place — PDF, image, AI, calculators, converters, developer, text, SEO, utilities and security tools. No signup, no limits, no watermark.";
+  const ogImage = ogImageUrl(
+    "All Free Online Tools — 137 Tools in One Place",
+    "PDF, image, AI, calculators, converters, developer, text, SEO, utilities and security tools.",
+  );
+  return {
+    robots: { index: true, follow: true },
+    title: {
+      absolute: "All Free Online Tools — 137 Tools in One Place | ALETOOL",
+    },
+    description,
+    alternates: {
+      canonical: path,
+      languages: languageAlternates(path),
+    },
+    openGraph: {
+      title: "All Free Online Tools — 137 Tools in One Place",
+      description,
+      type: "website",
+      url: path,
+      locale: "en_US",
+      siteName: "ALETOOL",
+      images: [
+        {
+          url: ogImage,
+          width: 1200,
+          height: 630,
+          alt: "ALETOOL — All Free Online Tools",
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: "All Free Online Tools — 137 Tools in One Place",
+      description,
+      images: [ogImage],
+    },
+  };
+}
 
 interface ToolsPageProps {
   searchParams: Promise<{ q?: string }>;

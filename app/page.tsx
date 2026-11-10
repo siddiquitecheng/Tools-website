@@ -19,7 +19,12 @@ import { CategoryCard } from "@/components/tool-cards/CategoryCard";
 import { ToolCard } from "@/components/tool-cards/ToolCard";
 import { categories } from "@/lib/tools";
 import { languageAlternates, ogImageUrl } from "@/lib/seo";
-import { generateWebSiteJsonLd } from "@/lib/jsonld";
+import {
+  generateFaqJsonLd,
+  generateOrganizationJsonLd,
+  generateWebSiteJsonLd,
+  type FaqQA,
+} from "@/lib/jsonld";
 import {
   getPublicCategoryCounts,
   getPublicFeaturedTools,
@@ -28,6 +33,34 @@ import {
 } from "@/lib/public-tools";
 
 export const dynamic = "force-dynamic";
+
+const homeFaqs: FaqQA[] = [
+  {
+    question: "Are AleTool's tools really free?",
+    answer:
+      "Yes — all 137 tools are free to use. There is no signup, no limit and no watermark.",
+  },
+  {
+    question: "Do I need to create an account?",
+    answer:
+      "No. You can use every tool without signing up or giving an email address.",
+  },
+  {
+    question: "Are my files uploaded to a server?",
+    answer:
+      "Most tools run in your browser on your own device, so your files stay with you. AI tools are the exception — they need server processing, and the tool page says so.",
+  },
+  {
+    question: "Which tools does AleTool offer?",
+    answer:
+      "137 tools in 10 categories: PDF, image, AI, developer, calculators, converters, text, SEO, utilities and security — including Merge PDF, Image Compressor, AI Detector and QR Code Generator.",
+  },
+  {
+    question: "Can I use AleTool on my mobile phone?",
+    answer:
+      "Yes — the tools work in your phone's browser as well as on a computer, with nothing to install.",
+  },
+];
 
 export function generateMetadata(): Metadata {
   const path = "/";
@@ -82,6 +115,8 @@ export default async function HomePage() {
     getPublicCategoryCounts(),
   ]);
   const webSiteLd = generateWebSiteJsonLd();
+  const organizationLd = generateOrganizationJsonLd();
+  const faqLd = generateFaqJsonLd(homeFaqs);
   return (
     <div className="homepage">
       <script
@@ -90,6 +125,20 @@ export default async function HomePage() {
           __html: JSON.stringify(webSiteLd).replace(/</g, "\\u003c"),
         }}
       />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(organizationLd).replace(/</g, "\\u003c"),
+        }}
+      />
+      {faqLd && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(faqLd).replace(/</g, "\\u003c"),
+          }}
+        />
+      )}
       <section className="home-hero page-container">
         <div className="hero-copy">
           <div className="hero-eyebrow">
@@ -100,6 +149,10 @@ export default async function HomePage() {
             <br />
             <span>More possibilities.</span>
           </h1>
+          <p className="hero-subheading">
+            Free online tools — 137 PDF, image, AI, calculator and converter
+            tools. No signup, no limits, no watermark.
+          </p>
           <p className="hero-description">
             Make light work of PDFs, images, text, and more. Simple tools that
             get you from to-do to done.
@@ -277,6 +330,29 @@ export default async function HomePage() {
           </div>
         </section>
       )}
+
+      <section className="home-section page-container">
+        <div className="section-heading">
+          <div>
+            <p className="section-eyebrow">GOOD TO KNOW</p>
+            <h2>Frequently asked questions</h2>
+            <p>Quick answers about using ALETOOL.</p>
+          </div>
+        </div>
+        <div className="mt-8 grid gap-4 md:grid-cols-2">
+          {homeFaqs.map((faq) => (
+            <div
+              key={faq.question}
+              className="rounded-xl border border-[var(--line)] bg-[var(--surface)] p-5"
+            >
+              <h3 className="font-semibold text-[var(--ink)]">{faq.question}</h3>
+              <p className="mt-2 text-sm leading-7 text-[var(--ink-soft)]">
+                {faq.answer}
+              </p>
+            </div>
+          ))}
+        </div>
+      </section>
 
       <section className="page-container home-cta-wrap">
         <div className="home-cta">

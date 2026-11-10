@@ -167,3 +167,15 @@ export function generateWebSiteJsonLd(origin: string = siteOrigin()) {
     },
   };
 }
+
+export function generateOrganizationJsonLd(origin: string = siteOrigin()) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: "ALETOOL",
+    description:
+      "Free online tools — PDF, image, AI, calculators, converters, developer, text, SEO, utilities and security tools. No signup, no limits, no watermark.",
+    url: origin,
+    logo: `${origin}/favicon.ico`,
+  };
+}

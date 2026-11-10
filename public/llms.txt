@@ -1,0 +1,53 @@
+# ALETOOL
+
+> ALETOOL is a free online tools website with 137 tools in 10 categories.
+> No signup, no limits, no watermark. Most tools run in your browser —
+> your files stay on your device and are not uploaded.
+
+## Categories
+
+- [PDF Tools](/category/pdf): Merge, split, compress, convert, edit, sign and OCR PDF files.
+- [Image Tools](/category/image): Compress, resize, crop, convert and remove backgrounds from images.
+- [AI Tools](/category/ai): AI detector, paraphrasing tool, grammar checker, summarizer and AI writer.
+- [Developer Tools](/category/developer): JSON formatter, code tools and developer utilities.
+- [Calculators](/category/calculators): Mortgage, EMI, loan and everyday calculators.
+- [Converters](/category/converters): Currency, length, weight, temperature and unit converters.
+- [Text Tools](/category/text): Word counter, case converter and text utilities.
+- [SEO Tools](/category/seo): SEO analysis and checker tools.
+- [Utilities](/category/utilities): QR code generator, password generator and everyday utilities.
+- [Security Tools](/category/security): Password and security helpers.
+
+## Popular tools (high priority)
+
+- [Merge PDF](/tools/merge-pdf): Merge PDF online free — combine PDF files.
+- [Compress PDF](/tools/compress-pdf): Compress PDF online free.
+- [Split PDF](/tools/split-pdf): Split PDF online free.
+- [PDF to Word](/tools/pdf-to-word): PDF to Word converter online free.
+- [Word to PDF](/tools/word-to-pdf): Word to PDF converter online free.
+- [JPG to PDF](/tools/jpg-to-pdf): JPG to PDF converter online free.
+- [Image Compressor](/tools/image-compressor): Compress JPG, PNG and WebP images online free.
+- [Image Resizer](/tools/image-resizer): Resize image online free.
+- [HEIC to JPG](/tools/heic-to-jpg): HEIC to JPG converter online free.
+- [Background Remover](/tools/background-remover): Remove background from image online free.
+- [AI Detector](/tools/ai-detector): AI detector online free — AI content checker.
+- [Paraphrasing Tool](/tools/paraphrasing-tool): Paraphrasing tool online free.
+- [Grammar Checker](/tools/grammar-checker): Grammar checker online free.
+- [AI Summarizer](/tools/ai-summarizer): Text summarizer online free.
+- [Word Counter](/tools/word-counter): Word counter online free.
+- [QR Code Generator](/tools/qr-code-generator): QR code generator online free.
+- [Password Generator](/tools/password-generator): Password generator online free.
+- [Currency Converter](/tools/currency-converter): Currency converter online with live exchange rates.
+
+## All tools
+
+- [All 137 tools](/tools)
+
+## Guides
+
+- [Blog — tool guides](/blog): Step-by-step guides for every tool.
+
+## Privacy
+
+- Most tools process files in your browser on your own device.
+- AI tools are the exception: they need server processing (MongoDB + AI provider key) — see the tool page's own note.
+- No account or signup is required to use the tools.
