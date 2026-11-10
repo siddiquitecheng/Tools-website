@@ -133,6 +133,40 @@ export function resolveToolFaqs(
   ];
 }
 
+export interface ItemListEntry {
+  name: string;
+  /** Site-relative path (e.g. "/tools/merge-pdf") or absolute URL. Omit for name-only entries. */
+  path?: string;
+}
+
+/**
+ * ItemList matching a rendered list of tools — the category page's
+ * shelf and the /tools index. Returns null when the list is empty,
+ * mirroring generateFaqJsonLd.
+ */
+export function generateItemListJsonLd(
+  items: ItemListEntry[] | undefined | null,
+  origin: string = siteOrigin(),
+) {
+  if (!items || items.length === 0) return null;
+  return {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    itemListElement: items.map((item, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      name: item.name,
+      ...(item.path
+        ? {
+            item: item.path.startsWith("http")
+              ? item.path
+              : `${origin}${item.path}`,
+          }
+        : {}),
+    })),
+  };
+}
+
 /** HowTo from a blog post's numbered steps, matching the rendered list. */
 export function generateHowToJsonLd(post: BlogPost, origin: string = siteOrigin()) {
   if (!post.steps || post.steps.length === 0) return null;

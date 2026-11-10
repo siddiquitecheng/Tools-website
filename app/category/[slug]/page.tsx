@@ -4,7 +4,11 @@ import type { Metadata } from "next";
 import { ToolCard } from "@/components/tool-cards/ToolCard";
 import { getCategoryIcon } from "@/components/tool-cards/categoryIcon";
 import { buildCategoryMetadata } from "@/lib/seo";
-import { generateBreadcrumbJsonLd } from "@/lib/jsonld";
+import {
+  generateBreadcrumbJsonLd,
+  generateFaqJsonLd,
+  generateItemListJsonLd,
+} from "@/lib/jsonld";
 import { categoryContent } from "@/lib/category-content";
 import { categories, categoryMeta, type Category } from "@/lib/tools";
 import { getPublicToolsByCategory } from "@/lib/public-tools";
@@ -48,15 +52,37 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
     { name: "Home", path: "/" },
     { name: `${meta.name} tools` },
   ]);
+  // FAQPage for the FAQs rendered below and ItemList for the tool
+  // shelf — same blocks pattern as the tool page.
+  const faqLd = generateFaqJsonLd(
+    categoryContent[category].faqs.map((faq) => ({
+      question: faq.q,
+      answer: faq.a,
+    })),
+  );
+  const itemListLd = generateItemListJsonLd(
+    categoryTools.map((tool) => ({
+      name: tool.name,
+      path: `/tools/${tool.id}`,
+    })),
+  );
+  const jsonLdBlocks = [
+    breadcrumbLd,
+    ...(faqLd ? [faqLd] : []),
+    ...(itemListLd ? [itemListLd] : []),
+  ];
 
   return (
     <div className="mx-auto w-full max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(breadcrumbLd).replace(/</g, "\\u003c"),
-        }}
-      />
+      {jsonLdBlocks.map((block, idx) => (
+        <script
+          key={idx}
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(block).replace(/</g, "\\u003c"),
+          }}
+        />
+      ))}
       <div className="max-w-3xl">
         <span
           className="mb-5 flex h-12 w-12 items-center justify-center rounded-lg"

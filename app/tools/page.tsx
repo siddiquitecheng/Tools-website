@@ -4,6 +4,7 @@ import Link from "next/link";
 import { ToolCard } from "@/components/tool-cards/ToolCard";
 import { getPublicTools } from "@/lib/public-tools";
 import { languageAlternates, ogImageUrl } from "@/lib/seo";
+import { generateItemListJsonLd } from "@/lib/jsonld";
 
 export const dynamic = "force-dynamic";
 
@@ -67,8 +68,24 @@ export default async function ToolsPage({ searchParams }: ToolsPageProps) {
       )
     : allTools;
 
+  // ItemList schema for the tool cards rendered below.
+  const itemListLd = generateItemListJsonLd(
+    publicTools.map((tool) => ({
+      name: tool.name,
+      path: `/tools/${tool.id}`,
+    })),
+  );
+
   return (
     <div className="mx-auto w-full max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
+      {itemListLd && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(itemListLd).replace(/</g, "\\u003c"),
+          }}
+        />
+      )}
       <div className="max-w-3xl">
         <p className="text-sm font-semibold uppercase tracking-[0.15em] text-[var(--accent)]">
           All tools

@@ -122,6 +122,10 @@ export const ToolShell: React.FC<ToolShellProps> = ({
           {tool.blurb}
         </p>
 
+        <p className="mt-2 text-sm text-[var(--ink-faint)]">
+          Use {tool.name} online for free — no signup, no software to install.
+        </p>
+
         <div className="mt-4 flex justify-center">
           <div className="flex items-center gap-2.5 rounded-[10px] border border-[var(--line)] bg-[var(--surface-sunk)] px-4 py-2.5 text-xs text-[var(--ink-soft)]">
             <ShieldCheck className="w-4 h-4 shrink-0 text-[var(--success)]" />
