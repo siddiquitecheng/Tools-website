@@ -10,29 +10,35 @@ export const dynamic = "force-dynamic";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const base = siteOrigin();
-  const now = new Date();
   const publicTools = (await getPublicTools()).filter(isToolIndexable);
 
+  // No blanket lastModified: the site has no real per-page change-date
+  // source, and stamping every URL with "now" on each request is a false
+  // freshness signal. An omitted date is better than a wrong one. A blog
+  // post's lastModified appears only when that post carries a verified
+  // dateModified/datePublished of its own.
   return [
-    { url: `${base}/`, lastModified: now, priority: 1 },
-    { url: `${base}/tools`, lastModified: now, priority: 0.9 },
+    { url: `${base}/`, priority: 1 },
+    { url: `${base}/tools`, priority: 0.9 },
     ...categories
       .filter((category) => publicTools.some((tool) => tool.category === category))
       .map((category) => ({
         url: `${base}/category/${category}`,
-        lastModified: now,
         priority: 0.8,
       })),
     ...publicTools.map((tool) => ({
       url: `${base}/tools/${tool.id}`,
-      lastModified: now,
       priority: 0.7,
     })),
-    { url: `${base}/blog`, lastModified: now, priority: 0.5 },
-    ...blogPosts.map((post) => ({
-      url: `${base}/blog/${post.slug}`,
-      lastModified: now,
-      priority: 0.6,
-    })),
+    { url: `${base}/blog`, priority: 0.5 },
+    { url: `${base}/about`, priority: 0.4 },
+    ...blogPosts.map((post) => {
+      const postDate = post.dateModified ?? post.datePublished;
+      return {
+        url: `${base}/blog/${post.slug}`,
+        ...(postDate ? { lastModified: new Date(postDate) } : {}),
+        priority: 0.6,
+      };
+    }),
   ];
 }

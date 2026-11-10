@@ -32,6 +32,15 @@ export interface BlogPost {
   kind?: "tool" | "editorial";
   /** Editorial posts only: tool ids featured and linked from the post. */
   featuredToolIds?: string[];
+  /**
+   * Real publish date (ISO "YYYY-MM-DD"). Set ONLY when the date is
+   * actually known — never invent one. BlogPosting schema omits the
+   * date fields entirely while this is unset, because a false date is
+   * worse than no date.
+   */
+  datePublished?: string;
+  /** Real last-modified date (ISO "YYYY-MM-DD"), same honesty rule. */
+  dateModified?: string;
   /** SEO title, ~50-60 chars, targets "[tool] online free" or "how to [task]". */
   seoTitle: string;
   /** SEO meta description, 150-160 chars. */

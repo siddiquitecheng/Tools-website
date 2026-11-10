@@ -27,8 +27,11 @@ export function generateBlogPostingJsonLd(post: BlogPost, origin: string = siteO
     headline: post.seoTitle,
     description: post.seoDescription,
     url: `${origin}/blog/${post.slug}`,
-    datePublished: "2026-10-28",
-    dateModified: "2026-10-28",
+    // Only real dates from the post itself. Posts carry no verified
+    // publish date yet, so the fields are omitted rather than stamped
+    // with one shared hardcoded date for every post.
+    ...(post.datePublished ? { datePublished: post.datePublished } : {}),
+    ...(post.dateModified ? { dateModified: post.dateModified } : {}),
     inLanguage: "en",
     author: {
       "@type": "Organization",

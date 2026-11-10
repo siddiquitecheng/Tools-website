@@ -719,9 +719,9 @@ const seoOverrides: Record<string, { title: string; description: string }> = {
       "Color converter online free: convert HEX, RGB, HSL, HSV, and CMYK colors instantly in your browser for design work. No signup, free, accurate.",
   },
   "uuid-generator-util": {
-    title: "UUID Generator Online Free — Simple UUID Creator",
+    title: "UUID Generator Online Free — Quick & Simple Version",
     description:
-      "UUID generator online free: generate UUIDs with a simpler utility interface in your browser, one at a time or in bulk. No signup, free, instant results.",
+      "UUID generator online free — the quick, simple version: generate UUIDs one at a time or in bulk with plain utility controls. Developers who need the full tool can use the UUID Generator in Developer tools. Free.",
   },
   "random-number-generator": {
     title: "Random Number Generator Online Free — Pick Numbers",
@@ -731,17 +731,17 @@ const seoOverrides: Record<string, { title: string; description: string }> = {
   "random-password-generator": {
     title: "Random Password Generator Online Free — Quick Passwords",
     description:
-      "Random password generator online free: generate passwords from simple utility controls locally. Passwords never leave your device. Free.",
+      "Random password generator online free — the quick utility version: simple controls, passwords generated locally and never sent anywhere. For the full-strength generator, use the Strong Password Generator in Security tools. Free.",
   },
   "timestamp-converter": {
     title: "Timestamp Converter Online Free — Dates & Unix Time",
     description:
-      "Timestamp converter online free: convert dates and Unix timestamps instantly in your browser, in both directions. No signup, free, accurate results.",
+      "Timestamp converter online free: convert human dates and times to Unix timestamps and back again, in both directions, instantly in your browser. No signup, free, accurate results.",
   },
   "unix-time-converter": {
-    title: "Unix Time Converter Online Free — Unix to Readable Date",
+    title: "Unix Time Converter Online Free — Epoch to Readable Date",
     description:
-      "Unix time converter online free: convert Unix time into readable dates instantly in your browser, and back again. No signup, free, accurate results.",
+      "Unix time converter online free: turn a Unix epoch timestamp into a readable date and time instantly in your browser. Need dates converted both ways instead? Use the Timestamp Converter. Free, no signup.",
   },
   "coin-flipper": {
     title: "Coin Flipper Online Free — Flip a Virtual Coin",
