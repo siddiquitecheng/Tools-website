@@ -387,19 +387,73 @@ export const OfficeConverterTool: React.FC<{
             {nativeEligible && conversionEngine === "server" ? "Server conversion uses LibreOffice to render the document, including supported tables, charts and slide objects." : helpText}
           </Card>
 
-          <Button variant="primary" onClick={handleConvert} loading={loading}>
+          {/* Conversion stage — a purely visual source → target motif.
+              Everything below is derived from existing state (file,
+              sourceExt, activeTarget, loading, convertedUrl); no logic. */}
+          <div className="convert-stage" aria-hidden="true">
+            <div className="convert-doc convert-doc--source">
+              <span className="convert-doc-ext">
+                {sourceExt ? sourceExt.toUpperCase() : "FILE"}
+              </span>
+              <span className="convert-doc-label">Source</span>
+            </div>
+            <div
+              className={`convert-arrow${loading ? " is-working" : ""}${convertedUrl ? " is-done" : ""}`}
+            >
+              <span className="convert-arrow-dot" />
+              <span className="convert-arrow-dot" />
+              <span className="convert-arrow-dot" />
+              <svg
+                className="convert-arrow-head"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2.2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <path d="M5 12h14" />
+                <path d="m13 6 6 6-6 6" />
+              </svg>
+            </div>
+            <div
+              className={`convert-doc convert-doc--target${convertedUrl ? " is-done" : ""}`}
+            >
+              <span className="convert-doc-ext">
+                {activeTarget.toUpperCase()}
+              </span>
+              <span className="convert-doc-label">
+                {convertedUrl ? "Ready" : "Target"}
+              </span>
+            </div>
+          </div>
+
+          <Button
+            variant="primary"
+            size="lg"
+            className="convert-button"
+            onClick={handleConvert}
+            loading={loading}
+          >
             Convert Document ({file.name})
           </Button>
 
-          {progress && (
-            <p role="status" className="font-mono text-xs text-[var(--ink-faint)]">{progress}</p>
+          {(loading || progress) && (
+            <div className="convert-progress" role="status">
+              <div className="convert-progress-bar">
+                <span />
+              </div>
+              {progress && (
+                <p className="convert-progress-text">{progress}</p>
+              )}
+            </div>
           )}
 
           {error && (
             <Card
               role="alert"
               variant="bordered"
-              className="border-[var(--danger)] p-4 text-xs text-[var(--danger)]"
+              className="convert-error border-[var(--danger)] p-4 text-xs text-[var(--danger)]"
             >
               {error}
             </Card>
@@ -409,6 +463,7 @@ export const OfficeConverterTool: React.FC<{
             <ResultPanel
               title="Converted Document Ready"
               status="done"
+              className="convert-result"
               downloadFileName={convertedName}
               downloadBlobUrl={convertedUrl}
               onClear={() => {

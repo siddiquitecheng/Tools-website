@@ -86,7 +86,7 @@ export const ToolShell: React.FC<ToolShellProps> = ({
   ];
 
   return (
-    <div className="mx-auto w-full max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
+    <div className="tool-page mx-auto w-full max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
       {/* Breadcrumbs */}
       <Breadcrumbs
         items={[
@@ -114,7 +114,7 @@ export const ToolShell: React.FC<ToolShellProps> = ({
           />
         </div>
 
-        <h1 className="text-3xl font-bold tracking-tight text-[var(--ink)] sm:text-[42px]">
+        <h1 className="tool-title text-3xl font-bold tracking-tight text-[var(--ink)] sm:text-[42px]">
           {tool.name}
         </h1>
 
@@ -127,7 +127,7 @@ export const ToolShell: React.FC<ToolShellProps> = ({
         </p>
 
         <div className="mt-4 flex justify-center">
-          <div className="flex items-center gap-2.5 rounded-[10px] border border-[var(--line)] bg-[var(--surface-sunk)] px-4 py-2.5 text-xs text-[var(--ink-soft)]">
+          <div className="tool-trust flex items-center gap-2.5 rounded-[10px] border border-[var(--line)] bg-[var(--surface-sunk)] px-4 py-2.5 text-xs text-[var(--ink-soft)]">
             <ShieldCheck className="w-4 h-4 shrink-0 text-[var(--success)]" />
             <span>{trustNotice}</span>
           </div>
@@ -146,7 +146,7 @@ export const ToolShell: React.FC<ToolShellProps> = ({
       {/* Main Workspace Surface */}
       <section
         aria-label={`${tool.name} workspace`}
-        className="tool-workspace mx-auto mt-7 max-w-5xl rounded-2xl border border-[var(--line)] bg-white p-4 shadow-[0_8px_40px_-20px_rgba(15,32,64,0.18)] sm:p-6 lg:p-8"
+        className="tool-workspace tool-stage mx-auto mt-7 max-w-5xl rounded-2xl border border-[var(--line)] bg-white p-4 shadow-[0_8px_40px_-20px_rgba(15,32,64,0.18)] sm:p-6 lg:p-8"
       >
         {children}
       </section>
@@ -154,7 +154,10 @@ export const ToolShell: React.FC<ToolShellProps> = ({
       {/* Info & FAQ Grid */}
       <section className="mt-14 grid gap-8 lg:grid-cols-2">
         {/* About & Trust Bullets */}
-        <Card variant="surface" className="p-6">
+        <Card variant="surface" className="tool-info-card p-6">
+          <p className="section-eyebrow">
+            <span className="section-index">01</span> Overview
+          </p>
           <h2 className="font-[family-name:var(--font-display)] text-2xl font-bold text-[var(--ink)]">
             About {tool.name}
           </h2>
@@ -187,14 +190,17 @@ export const ToolShell: React.FC<ToolShellProps> = ({
         </Card>
 
         {/* How to use */}
-        <Card variant="surface" className="p-6">
+        <Card variant="surface" className="tool-info-card p-6">
+          <p className="section-eyebrow">
+            <span className="section-index">02</span> Workflow
+          </p>
           <h2 className="font-[family-name:var(--font-display)] text-2xl font-bold text-[var(--ink)]">
             How to use {tool.name}
           </h2>
-          <ol className="mt-4 space-y-4">
+          <ol className="tool-steps mt-4 space-y-4">
             {defaultSteps.map((step, idx) => (
-              <li key={idx} className="flex gap-3">
-                <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[var(--accent-soft)] font-mono text-xs font-bold text-[var(--accent)]">
+              <li key={idx} className="tool-step flex gap-3">
+                <span className="tool-step-num flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[var(--accent-soft)] font-mono text-xs font-bold text-[var(--accent)]">
                   {idx + 1}
                 </span>
                 <div className="flex flex-col">
@@ -213,12 +219,15 @@ export const ToolShell: React.FC<ToolShellProps> = ({
 
       {/* FAQ Section */}
       <section className="mt-12">
+        <p className="section-eyebrow">
+          <span className="section-index">03</span> Good to know
+        </p>
         <h2 className="font-[family-name:var(--font-display)] text-2xl font-bold text-[var(--ink)]">
           Frequently Asked Questions
         </h2>
         <div className="mt-4 grid gap-4 md:grid-cols-3">
           {defaultFaqs.map((faq, idx) => (
-            <Card key={idx} variant="sunk" className="p-5">
+            <Card key={idx} variant="sunk" className="tool-faq-card p-5">
               <h3 className="text-sm font-bold text-[var(--ink)]">
                 {faq.question}
               </h3>
@@ -233,6 +242,9 @@ export const ToolShell: React.FC<ToolShellProps> = ({
       {/* Related Tools */}
       {related.length > 0 && (
         <section className="mt-14">
+          <p className="section-eyebrow">
+            <span className="section-index">04</span> Keep going
+          </p>
           <div className="flex items-center justify-between">
             <h2 className="font-[family-name:var(--font-display)] text-2xl font-bold text-[var(--ink)]">
               Related {tool.category} tools

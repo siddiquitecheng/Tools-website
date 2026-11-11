@@ -135,12 +135,11 @@ export const Dropzone: React.FC<DropzoneProps> = ({
         onDragOver={handleDragOver}
         onDragLeave={handleDragLeave}
         onClick={() => inputRef.current?.click()}
-        className={`upload-surface relative flex min-h-64 flex-col items-center justify-center px-5 py-9 text-center rounded-lg border-2 border-dashed transition-all duration-200 cursor-pointer focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--accent)] ${
-          isDragOver
-            ? "border-[var(--accent)] bg-[var(--accent-soft)]/50 scale-[1.005]"
-            : "border-[var(--accent)]/25 bg-[var(--accent-soft)]/40 hover:border-[var(--accent)] hover:bg-[var(--accent-soft)]/70"
+        className={`upload-surface dz-surface relative flex min-h-64 flex-col items-center justify-center px-5 py-9 text-center cursor-pointer focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--accent)] ${
+          isDragOver ? "dz-surface--active" : ""
         }`}
       >
+        <span className="dz-sheen" aria-hidden="true" />
         <input
           ref={inputRef}
           type="file"
@@ -153,8 +152,8 @@ export const Dropzone: React.FC<DropzoneProps> = ({
           className="hidden"
         />
 
-        <div className="mb-5 text-[var(--accent)]/65" aria-hidden="true">
-          <UploadCloud className="w-10 h-10" strokeWidth={1.4} />
+        <div className="dz-icon mb-5" aria-hidden="true">
+          <UploadCloud className="dz-icon-glyph" strokeWidth={1.4} />
         </div>
 
         <h3 className="choose-file-label">
@@ -183,7 +182,7 @@ export const Dropzone: React.FC<DropzoneProps> = ({
       {/* Selected File Chips List */}
       {files.length > 0 && (
         <div className="space-y-2">
-          <div className="flex items-center justify-between text-xs font-semibold uppercase tracking-wider text-[var(--ink-soft)] px-1">
+          <div className="file-list-head flex items-center justify-between text-xs font-semibold uppercase tracking-wider text-[var(--ink-soft)] px-1">
             <span>Selected Files ({files.length})</span>
             {multiple && files.length > 1 && (
               <Button
@@ -203,10 +202,17 @@ export const Dropzone: React.FC<DropzoneProps> = ({
             {files.map((file, index) => (
               <div
                 key={`${file.name}-${index}`}
-                className="flex items-center justify-between p-3 rounded-[10px] bg-[var(--surface)] border border-[var(--line)] shadow-2xs"
+                className={`file-card flex items-center justify-between p-3 ${
+                  files.length === 1 ? "file-card--solo" : ""
+                }`}
               >
                 <div className="flex items-center gap-3 min-w-0 pr-2">
-                  <FileIcon className="w-5 h-5 text-[var(--accent)] shrink-0" />
+                  <span className="file-card-ext" aria-hidden="true">
+                    {file.name.includes(".")
+                      ? file.name.split(".").pop()?.toUpperCase()
+                      : "FILE"}
+                  </span>
+                  <FileIcon className="file-card-icon w-5 h-5 text-[var(--accent)] shrink-0" />
                   <div className="flex flex-col min-w-0">
                     <span className="text-sm font-medium text-[var(--ink)] truncate">
                       {file.name}

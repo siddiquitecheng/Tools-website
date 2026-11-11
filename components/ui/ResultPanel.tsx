@@ -57,12 +57,16 @@ export const ResultPanel: React.FC<ResultPanelProps> = ({
   return (
     <div
       aria-label={title}
-      className={`result-panel min-w-0 rounded-[14px] border border-[var(--line)] bg-[var(--surface)] shadow-xs overflow-hidden flex flex-col ${className}`}
+      className={`result-panel min-w-0 rounded-[14px] border border-[var(--line)] bg-[var(--surface)] shadow-xs overflow-hidden flex flex-col ${status === "done" ? "result-panel--done" : ""} ${status === "processing" ? "result-panel--processing" : ""} ${className}`}
     >
       {/* Header */}
-      <div className="flex flex-wrap items-center justify-between gap-3 px-4 py-3 border-b border-[var(--line)] bg-[var(--surface-sunk)]/60">
+      <div className="result-panel-head flex flex-wrap items-center justify-between gap-3 px-4 py-3 border-b border-[var(--line)] bg-[var(--surface-sunk)]/60">
         <div className="flex min-w-0 flex-wrap items-center gap-2.5">
-          {status === "done" && <CheckCircle2 aria-hidden="true" className="h-4 w-4 shrink-0 text-[var(--success)]" />}
+          {status === "done" && (
+            <span className="result-done-badge" aria-hidden="true">
+              <CheckCircle2 className="h-3.5 w-3.5 shrink-0" />
+            </span>
+          )}
           <span className="font-semibold text-sm text-[var(--ink)]">
             {title}
           </span>
@@ -115,6 +119,7 @@ export const ResultPanel: React.FC<ResultPanelProps> = ({
             <Button
               variant="primary"
               size="md"
+              className="result-download"
               onClick={handleDownloadClick}
               aria-label="Download"
               disabled={status === "processing" || status === "error"}
