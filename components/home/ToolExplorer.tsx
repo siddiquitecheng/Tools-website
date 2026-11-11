@@ -1,11 +1,12 @@
 "use client";
 
-import { useId, useState } from "react";
+import { useId, useState, type CSSProperties } from "react";
 import Link from "next/link";
 import { ArrowRight, Search, X } from "lucide-react";
 import { ToolCard } from "@/components/tool-cards/ToolCard";
 import { getToolIcon } from "@/components/tool-cards/toolIcon";
-import { categoryMeta, type Tool } from "@/lib/tools";
+import { getCategoryColor } from "@/lib/category-colors";
+import { type Tool } from "@/lib/tools";
 
 export function ToolSearch({ tools }: { tools: Tool[] }) {
   const [query, setQuery] = useState("");
@@ -84,7 +85,7 @@ export function ToolSearch({ tools }: { tools: Tool[] }) {
               >
                 <Icon
                   size={19}
-                  style={{ color: categoryMeta[tool.category].accent }}
+                  style={{ color: getCategoryColor(tool.category) }}
                 />
                 <span>{tool.name}</span>
                 <ArrowRight size={15} />
@@ -138,6 +139,15 @@ export function ToolExplorer({
             aria-pressed={category === tab.id}
             aria-controls={regionId}
             onClick={() => setCategory(tab.id)}
+            style={
+              tab.id === "all"
+                ? undefined
+                : ({
+                    "--tab-accent": getCategoryColor(
+                      tab.id as Tool["category"],
+                    ),
+                  } as CSSProperties)
+            }
           >
             {tab.name}
           </button>

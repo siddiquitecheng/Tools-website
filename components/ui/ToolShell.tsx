@@ -87,7 +87,10 @@ export const ToolShell: React.FC<ToolShellProps> = ({
   ];
 
   return (
-    <div className="tool-page mx-auto w-full max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
+    <div
+      className="tool-page mx-auto w-full max-w-7xl px-4 py-6 sm:px-6 lg:px-8"
+      style={{ "--tool-accent": accent } as React.CSSProperties}
+    >
       {/* Breadcrumbs */}
       <Breadcrumbs
         items={[

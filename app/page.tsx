@@ -195,38 +195,6 @@ export default async function HomePage() {
         <WorkspaceIllustration />
       </section>
 
-      <div className="stats-strip">
-        <div className="page-container stats-inner reveal">
-          <div className="stat">
-            <span className="stat-value">{publicTools.length}</span>
-            <span className="stat-label">Free tools</span>
-          </div>
-          <div className="stat">
-            <span className="stat-value">{categories.length}</span>
-            <span className="stat-label">Categories</span>
-          </div>
-          <div className="stat">
-            <span className="stat-value">0</span>
-            <span className="stat-label">Signups needed</span>
-          </div>
-          <div className="stat">
-            <span className="stat-value">100%</span>
-            <span className="stat-label">Free · No watermark</span>
-          </div>
-        </div>
-      </div>
-
-      <div className="tool-ticker" aria-hidden="true">
-        <div className="ticker-track">
-          {[...featured, ...featured].map((tool, index) => (
-            <span className="ticker-item" key={`${tool.id}-${index}`}>
-              {tool.name}
-              <i />
-            </span>
-          ))}
-        </div>
-      </div>
-
       <section className="home-section page-container" id="popular-tools">
         <div className="section-heading reveal">
           <div>
@@ -245,6 +213,44 @@ export default async function HomePage() {
           featuredIds={featured.map((tool) => tool.id)}
         />
       </section>
+
+      <div className="stats-strip ink-band">
+        <div className="page-container stats-inner reveal">
+          <div className="stat">
+            <span className="stat-value">{publicTools.length}</span>
+            <span className="stat-label">Free tools</span>
+          </div>
+          <div className="stat">
+            <span className="stat-value">{categories.length}</span>
+            <span className="stat-label">Categories</span>
+          </div>
+          <div className="stat">
+            <span className="stat-value">0</span>
+            <span className="stat-label">Signups needed</span>
+          </div>
+          <div className="stat">
+            <span className="stat-value">100%</span>
+            <span className="stat-label">Free · No watermark</span>
+          </div>
+        </div>
+        <div className="page-container">
+          <p className="ink-band-note reveal">
+            Most tools run right in your browser on your own device — free
+            to use, no account needed, no watermark.
+          </p>
+        </div>
+      </div>
+
+      <div className="tool-ticker" aria-hidden="true">
+        <div className="ticker-track">
+          {[...featured, ...featured].map((tool, index) => (
+            <span className="ticker-item" key={`${tool.id}-${index}`}>
+              {tool.name}
+              <i />
+            </span>
+          ))}
+        </div>
+      </div>
 
       <section className="category-section">
         <div className="page-container home-section">

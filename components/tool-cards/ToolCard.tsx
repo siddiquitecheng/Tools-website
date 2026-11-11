@@ -1,6 +1,7 @@
+import type { CSSProperties } from "react";
 import Link from "next/link";
 
-import { type Tool } from "@/lib/tools";
+import { categoryMeta, type Tool } from "@/lib/tools";
 import { isImplementedTool } from "@/lib/tool-capabilities";
 import { getToolAccent, getToolIcon } from "@/components/tool-cards/toolIcon";
 import { getToolImage } from "@/components/tool-cards/toolImage";
@@ -17,7 +18,11 @@ export function ToolCard({ tool, usageCount }: ToolCardProps) {
   const image = getToolImage(tool);
 
   return (
-    <Link href={`/tools/${tool.id}`} className="tool-card group">
+    <Link
+      href={`/tools/${tool.id}`}
+      className="tool-card group"
+      style={{ "--cat-accent": accent } as CSSProperties}
+    >
       {image && (
         <span className="tool-card-media">
           {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -45,6 +50,7 @@ export function ToolCard({ tool, usageCount }: ToolCardProps) {
       </div>
       <h3>{tool.name}</h3>
       <p className="tool-card-description">{tool.blurb}</p>
+      <span className="tool-card-cat">{categoryMeta[tool.category].name} tools</span>
       {typeof usageCount === "number" && usageCount > 0 && (
         <p className="mt-4 text-xs text-[var(--ink-faint)]">
           {usageCount.toLocaleString()} uses

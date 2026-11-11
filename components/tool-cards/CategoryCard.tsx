@@ -1,6 +1,8 @@
+import type { CSSProperties } from "react";
 import Link from "next/link";
 
 import { categoryMeta, getCategoryCount, type Category } from "@/lib/tools";
+import { getCategoryColor } from "@/lib/category-colors";
 import { getCategoryIcon } from "@/components/tool-cards/categoryIcon";
 
 interface CategoryCardProps {
@@ -12,13 +14,18 @@ export function CategoryCard({ category, count }: CategoryCardProps) {
   const meta = categoryMeta[category];
   const toolCount = count ?? getCategoryCount(category);
   const Icon = getCategoryIcon(category);
+  const color = getCategoryColor(category);
 
   return (
-    <Link href={`/category/${category}`} className="category-card group">
+    <Link
+      href={`/category/${category}`}
+      className="category-card group"
+      style={{ "--cat-accent": color } as CSSProperties}
+    >
       <div className="flex items-start justify-between gap-3">
         <span
           className="category-card-icon"
-          style={{ backgroundColor: `${meta.accent}1a`, color: meta.accent }}
+          style={{ backgroundColor: `${color}1a`, color: color }}
         >
           <Icon className="h-6 w-6" />
         </span>

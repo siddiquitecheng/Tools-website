@@ -3621,3 +3621,168 @@
     transform: none;
   }
 }
+
+/* ==========================================================================
+ * VIBRANT ROLLOUT (2026-11-11) — per-category colour system.
+ * Muhammad approved the "AleTool Vibrant Design Concept": the site felt
+ * washed-out in a single light colour, so each category now carries its
+ * own hue (lib/category-colors.ts is the source of truth; components set
+ * --cat-accent on cards and --tool-accent on the tool-page root) through
+ * card top borders, chips, icon tiles and hover glows, plus a deep-ink
+ * band on the homepage for contrast. Brand core is unchanged: paper
+ * background, ink text, vermilion as the PDF/brand accent.
+ *
+ * Everything below is additive: base rules above stay untouched and
+ * these later rules win by source order at equal-or-higher specificity.
+ * No new animation is introduced (colour/shadow changes ride the
+ * existing transitions), so there is nothing extra to disable under
+ * prefers-reduced-motion.
+ * ========================================================================== */
+
+/* ---- Tool cards: category top border, tinted cursor spotlight and a
+ * coloured hover glow (the HomeMotion spotlight wash was vermilion for
+ * every card; it now follows the card's category). ---- */
+.tool-card {
+  box-shadow: inset 0 3px 0 var(--cat-accent, var(--accent));
+}
+.tool-card::before {
+  background: radial-gradient(
+    240px circle at var(--mx, 50%) var(--my, 50%),
+    color-mix(in srgb, var(--cat-accent, var(--accent)) 10%, transparent),
+    transparent 70%
+  );
+}
+.tool-card:hover {
+  border-color: color-mix(
+    in srgb,
+    var(--cat-accent, var(--accent)) 55%,
+    var(--line-strong)
+  );
+  box-shadow:
+    inset 0 3px 0 var(--cat-accent, var(--accent)),
+    0 16px 34px -16px
+      color-mix(in srgb, var(--cat-accent, var(--accent)) 45%, transparent);
+}
+
+/* ---- Tool cards: the category chip under the description. Pinned to
+ * the card's foot in the flex layout; in the homepage popular grid it
+ * takes the text column. ---- */
+.tool-card-cat {
+  align-self: flex-start;
+  margin-top: auto;
+  font-family: var(--font-mono), monospace;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: var(--cat-accent, var(--accent));
+  background: color-mix(
+    in srgb,
+    var(--cat-accent, var(--accent)) 10%,
+    transparent
+  );
+  border: 1px solid
+    color-mix(in srgb, var(--cat-accent, var(--accent)) 30%, transparent);
+  border-radius: 999px;
+  padding: 3px 9px;
+}
+.tool-card-description:has(+ .tool-card-cat) {
+  padding-bottom: 14px;
+}
+.popular-grid .tool-card-cat {
+  grid-column: 2;
+  justify-self: start;
+}
+
+/* ---- Category cards: same system — top border in the category
+ * colour, tinted spotlight, coloured hover glow. ---- */
+.category-card {
+  box-shadow: inset 0 3px 0 var(--cat-accent, var(--accent));
+}
+.category-card::before {
+  background: radial-gradient(
+    220px circle at var(--mx, 50%) var(--my, 50%),
+    color-mix(in srgb, var(--cat-accent, var(--accent)) 10%, transparent),
+    transparent 70%
+  );
+}
+.category-card:hover {
+  border-color: color-mix(
+    in srgb,
+    var(--cat-accent, var(--accent)) 55%,
+    var(--line-strong)
+  );
+  box-shadow:
+    inset 0 3px 0 var(--cat-accent, var(--accent)),
+    0 12px 28px -14px
+      color-mix(in srgb, var(--cat-accent, var(--accent)) 45%, transparent);
+}
+
+/* ---- Explorer filter tabs: the active tab takes its category colour
+ * ("Popular" keeps the brand vermilion via the fallback). ---- */
+.tool-filters button[aria-pressed="true"] {
+  color: var(--tab-accent, var(--accent));
+  border-color: var(--tab-accent, var(--accent));
+}
+
+/* ---- Homepage deep-ink band: the ruled stats strip becomes a dark
+ * charcoal-green band (same four stats, paper text) with the why-free
+ * line under the grid. ---- */
+.ink-band {
+  background: #14201c;
+  border-block-color: #14201c;
+}
+.ink-band .stat {
+  border-color: #faf6ef24;
+}
+.ink-band .stat-value {
+  color: var(--bg);
+}
+.ink-band .stat-label {
+  color: #aebbb2;
+}
+.ink-band-note {
+  margin: 0 auto;
+  padding: 0 30px 30px;
+  max-width: 720px;
+  text-align: center;
+  font-size: 14.5px;
+  line-height: 1.65;
+  color: #d9dfd2;
+}
+
+/* ---- Tool pages: the category tint. ToolShell sets --tool-accent on
+ * the .tool-page root (value = getToolAccent = the category colour):
+ * the header eyebrow, the flourish under the header band, the framed
+ * illustration card and the workspace stage's top edge follow it. The
+ * header icon tile already takes the accent as its background in
+ * ToolShell. Vermilion remains the fallback (and is the PDF colour). ---- */
+.tool-head-category {
+  color: var(--tool-accent, var(--ink-soft));
+}
+.tool-head-v3::after {
+  background: linear-gradient(
+    90deg,
+    var(--tool-accent, var(--accent)),
+    var(--line-strong) 26%,
+    transparent 72%
+  );
+}
+.tool-stage::before {
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--tool-accent, var(--accent)) 30%,
+    var(--tool-accent, var(--accent)) 70%,
+    transparent
+  );
+}
+@media (min-width: 1024px) {
+  .tool-head-media {
+    border-color: color-mix(
+      in srgb,
+      var(--tool-accent, var(--accent)) 45%,
+      var(--line)
+    );
+  }
+}

@@ -38,7 +38,8 @@ import {
   WandSparkles,
   type LucideIcon,
 } from "lucide-react";
-import { categoryMeta, type Tool } from "@/lib/tools";
+import { type Tool } from "@/lib/tools";
+import { getCategoryColor } from "@/lib/category-colors";
 import { getCategoryIcon } from "./categoryIcon";
 
 // Actions take precedence over category so adjacent tools are easy to recognize.
@@ -89,14 +90,14 @@ export function getToolIcon(tool: Pick<Tool, "id" | "category">): LucideIcon {
   );
 }
 
+/**
+ * A tool's accent is its CATEGORY colour from the vibrant palette
+ * (lib/category-colors.ts) — the approved concept carries one hue per
+ * category through icon tiles, card top borders and the tool-page
+ * tint, so the older per-tool accent overrides (merge purple, split
+ * pink, …) are retired in favour of the strict per-category system.
+ * Per-tool variety still comes from getToolIcon above.
+ */
 export function getToolAccent(tool: Pick<Tool, "id" | "category">): string {
-  if (/merge|rearrange/.test(tool.id)) return "#8364d9";
-  if (/split|delete|trim/.test(tool.id)) return "#e85b8d";
-  if (/sign|edit|watermark/.test(tool.id)) return "#13a99c";
-  if (/pdf-to-(jpg|png)|image-to-pdf|jpg-to-pdf|png-to-pdf/.test(tool.id))
-    return "#e7a919";
-  if (/pdf-to-word|word-to-pdf/.test(tool.id)) return "#377bd8";
-  if (/excel|spreadsheet/.test(tool.id)) return "#25a579";
-  if (/compress/.test(tool.id)) return "#ef615c";
-  return categoryMeta[tool.category].accent;
+  return getCategoryColor(tool.category);
 }
