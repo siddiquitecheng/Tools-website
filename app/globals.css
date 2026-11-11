@@ -3320,3 +3320,304 @@
     display: none;
   }
 }
+
+/* ==========================================================================
+ * TOOL HEADER V3 (2026-11-11) — premium tool-page header band + uploader.
+ * Muhammad on merge-pdf / pdf-to-jpg: the stacked header text block
+ * (category chip + "0 uses" / title / blurb / free-use line / trust box /
+ * guide link, all centred) did not look premium, and the uploader must
+ * sit at the top with a full premium modern look — on EVERY tool page.
+ *
+ * ToolShell.tsx now renders the header as a two-column band: identity
+ * and trust on the left (44px icon tile + category eyebrow with a Free
+ * pill, H1, blurb, ONE row of trust pills condensed from the existing
+ * header copy, guide link at the end of the row) and the tool
+ * illustration as a framed card on the right (desktop only). The
+ * "N uses" chip is removed entirely (see the staging MANIFEST — the
+ * badge's hook also recorded a use on mount; flagged there). The
+ * Overview card is text-only again.
+ *
+ * Everything below is additive: base rules above stay untouched and
+ * these later rules win by source order at equal-or-higher specificity.
+ * ========================================================================== */
+
+/* ---- Header band: left-aligned; the old centred hairline flourish is
+ * repurposed as a left-anchored rule under the band. In split (grid)
+ * mode the flourish spans both columns on its own row. ---- */
+.tool-head-v3 {
+  text-align: left;
+}
+.tool-head-v3::after {
+  grid-column: 1 / -1;
+  width: 100%;
+  margin: 20px 0 0;
+  background: linear-gradient(
+    90deg,
+    var(--accent),
+    var(--line-strong) 26%,
+    transparent 72%
+  );
+}
+
+/* ---- Identity row: 44px tile + eyebrow. The tile keeps the existing
+ * float animation and layered shadow from the redesign section; only
+ * its corner radius tightens for the smaller size. ---- */
+.tool-head-toprow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.tool-head-v3 .tool-page-icon {
+  border-radius: 12px;
+}
+.tool-head-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+}
+.tool-head-category {
+  font-family: var(--font-mono), monospace;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  white-space: nowrap;
+}
+.tool-head-free {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: var(--accent);
+  background: var(--accent-soft);
+  border: 1px solid #cf36182e;
+  border-radius: 999px;
+  padding: 3px 9px;
+}
+
+/* ---- Trust row: the two trust elements the header always carried —
+ * the free-use line condensed to "Free — no signup" and the on-device
+ * notice verbatim — as small pills, with the guide link at the end.
+ * No new claims were invented ("No watermark" appears nowhere in the
+ * existing header copy, so it is NOT used). ---- */
+.tool-head-pills {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+.tool-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 12px;
+  font-weight: 550;
+  line-height: 1.35;
+  color: var(--ink-soft);
+  background: var(--surface-sunk);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 6px 12px;
+}
+.tool-pill-icon {
+  width: 13px;
+  height: 13px;
+  flex-shrink: 0;
+  color: var(--accent);
+}
+.tool-pill-icon--ok {
+  color: var(--success);
+}
+.tool-head-guide {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--accent);
+  margin-left: 2px;
+  white-space: nowrap;
+}
+.tool-head-guide:hover {
+  text-decoration: underline;
+}
+
+/* ---- Header illustration: hidden below desktop (the tool must stay
+ * high on mobile); at ≥1024px the band becomes a two-column grid and
+ * the figure is a framed, slightly tilted card ~300px wide. The base
+ * .tool-page-media rule (centred, min(320px, 82%)) is overridden for
+ * this context; its img radius/shadow are replaced by the frame. ---- */
+.tool-head-media {
+  display: none;
+  margin: 0;
+}
+@media (min-width: 1024px) {
+  .tool-head-v3--split {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 300px;
+    column-gap: 40px;
+    align-items: center;
+  }
+  .tool-head-media {
+    display: block;
+    width: 100%;
+    margin: 0;
+    padding: 10px;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 18px;
+    box-shadow:
+      0 24px 44px -24px #1d1a1638,
+      0 2px 6px #1d1a160d;
+    transform: rotate(1.6deg);
+  }
+  .tool-head-media img {
+    border-radius: 12px;
+    box-shadow: none;
+  }
+}
+
+/* ---- LAYOUT-FIX OVERRIDE NEUTRALIZED: the layout fix sized the
+ * illustration inside the "01 Overview" card (min(340px, 100%),
+ * margin 16px 0 8px). The figure no longer renders there — it lives
+ * in the header band above — so that sizing is restated inert here:
+ * if the old Overview markup ever returned piecemeal, the retired
+ * block sizing could not re-apply. ---- */
+.tool-info-card .tool-page-media {
+  width: auto;
+  margin: 0;
+}
+
+/* ---- Dropzone: premium uploader. Taller surface, a larger medallion
+ * with a soft vermilion ring, the Choose label in the convert-flow
+ * gradient language, format chips derived from the accept prop, a
+ * key-cap paste hint, and a subtle marching-ants dashed border on
+ * hover (four edge strips animating background-position — cheap, no
+ * extra DOM). The static dashed border stays at rest; during
+ * drag-over the existing solid border + ring pulse take over and the
+ * ants stand down. ---- */
+.upload-surface.dz-surface {
+  min-height: 300px;
+  padding: 52px 28px;
+}
+.dz-icon {
+  width: 76px;
+  height: 76px;
+  box-shadow:
+    0 0 0 10px #cf36180a,
+    0 14px 26px -12px #cf361859,
+    inset 0 0 0 6px #cf36181f,
+    inset 0 0 0 7px #cf36182e;
+}
+.dz-icon-glyph {
+  width: 34px;
+  height: 34px;
+}
+.upload-surface.dz-surface .choose-file-label {
+  background-color: var(--accent);
+  background-image: linear-gradient(
+    135deg,
+    #e85d3d 0%,
+    var(--accent) 52%,
+    var(--accent-hover) 100%
+  );
+  padding: 14px 30px;
+  box-shadow:
+    0 14px 28px -12px #cf361873,
+    inset 0 1px 0 #ffffff38;
+}
+.upload-surface.dz-surface:hover .choose-file-label {
+  box-shadow:
+    0 18px 34px -12px #cf361885,
+    inset 0 1px 0 #ffffff38;
+}
+.upload-surface.dz-surface::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background-image:
+    repeating-linear-gradient(
+      90deg,
+      var(--accent) 0 8px,
+      transparent 8px 15px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      var(--accent) 0 8px,
+      transparent 8px 15px
+    ),
+    repeating-linear-gradient(
+      0deg,
+      var(--accent) 0 8px,
+      transparent 8px 15px
+    ),
+    repeating-linear-gradient(
+      0deg,
+      var(--accent) 0 8px,
+      transparent 8px 15px
+    );
+  background-size:
+    100% 2px,
+    100% 2px,
+    2px 100%,
+    2px 100%;
+  background-position:
+    0 0,
+    0 100%,
+    0 0,
+    100% 0;
+  background-repeat: no-repeat;
+  opacity: 0;
+  transition: opacity 220ms ease;
+  pointer-events: none;
+}
+.upload-surface.dz-surface:hover:not(.dz-surface--active)::after {
+  opacity: 0.5;
+  animation: dz-ants 0.8s linear infinite;
+}
+@keyframes dz-ants {
+  to {
+    background-position:
+      15px 0,
+      -15px 100%,
+      0 15px,
+      100% -15px;
+  }
+}
+.dz-formats {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 6px;
+  margin-top: 14px;
+}
+.dz-format-chip {
+  font-family: var(--font-mono), monospace;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: var(--ink-soft);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 3px 7px;
+}
+.dz-paste kbd {
+  font-family: var(--font-mono), monospace;
+  font-size: 10px;
+  color: var(--ink-soft);
+  background: var(--surface);
+  border: 1px solid var(--line-strong);
+  border-bottom-width: 2px;
+  border-radius: 5px;
+  padding: 1px 5px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .upload-surface.dz-surface:hover:not(.dz-surface--active)::after {
+    animation: none;
+  }
+  .tool-head-media {
+    transform: none;
+  }
+}

@@ -21,6 +21,74 @@ export interface DropzoneProps {
   className?: string;
 }
 
+/* Display-only mapping of the existing `accept` prop to short format
+ * chips (PDF, JPG, DOCX…). Pure render derivation — no state, no
+ * handlers, no effect on which files are accepted. Unknown extension
+ * tokens fall back to their uppercased extension; unknown MIME tokens
+ * to their subtype; anything longer than 6 chars is skipped. */
+const ACCEPT_LABELS: Record<string, string> = {
+  "application/pdf": "PDF",
+  ".pdf": "PDF",
+  "image/*": "Images",
+  "image/png": "PNG",
+  ".png": "PNG",
+  "image/jpeg": "JPG",
+  ".jpg": "JPG",
+  ".jpeg": "JPG",
+  "image/webp": "WEBP",
+  ".webp": "WEBP",
+  "image/gif": "GIF",
+  ".gif": "GIF",
+  "image/svg+xml": "SVG",
+  ".svg": "SVG",
+  ".heic": "HEIC",
+  ".heif": "HEIC",
+  ".doc": "DOC",
+  "application/msword": "DOC",
+  ".docx": "DOCX",
+  "application/vnd.openxmlformats-officedocument.wordprocessingml.document":
+    "DOCX",
+  ".xls": "XLS",
+  ".xlsx": "XLSX",
+  ".ppt": "PPT",
+  ".pptx": "PPTX",
+  ".txt": "TXT",
+  "text/plain": "TXT",
+  ".csv": "CSV",
+  "text/csv": "CSV",
+  ".json": "JSON",
+  "application/json": "JSON",
+  ".zip": "ZIP",
+  "application/zip": "ZIP",
+  "audio/*": "Audio",
+  "video/*": "Video",
+};
+
+function acceptChips(accept?: string): string[] {
+  if (!accept) return [];
+  const seen = new Set<string>();
+  const chips: string[] = [];
+  for (const raw of accept.split(",")) {
+    const token = raw.trim().toLowerCase();
+    if (!token) continue;
+    let label = ACCEPT_LABELS[token];
+    if (!label && token.startsWith(".")) {
+      label = token.slice(1).toUpperCase();
+    }
+    if (!label && token.includes("/")) {
+      const subtype = token.split("/").pop() ?? "";
+      if (subtype && subtype !== "*") {
+        label = subtype.replace(/[^a-z0-9]/gi, "").toUpperCase();
+      }
+    }
+    if (label && label.length <= 6 && !seen.has(label)) {
+      seen.add(label);
+      chips.push(label);
+    }
+  }
+  return chips.slice(0, 6);
+}
+
 export const Dropzone: React.FC<DropzoneProps> = ({
   files,
   onFilesChange,
@@ -42,6 +110,8 @@ export const Dropzone: React.FC<DropzoneProps> = ({
     (hasSizeLimit
       ? `PDF, Images, or Text files up to ${maxSizeMB}MB`
       : "PDF, Images, or Text files — no file size limit");
+
+  const formatChips = acceptChips(accept);
 
   const validateAndAddFiles = useCallback(
     (incomingFiles: FileList | File[]) => {
@@ -156,7 +226,7 @@ export const Dropzone: React.FC<DropzoneProps> = ({
           <UploadCloud className="dz-icon-glyph" strokeWidth={1.4} />
         </div>
 
-        <h3 className="choose-file-label">
+        <h3 className="choose-file-label dz-choose">
           <FileIcon className="h-4 w-4" aria-hidden="true" />
           {multiple ? "Choose files" : "Choose a file"}
         </h3>
@@ -168,8 +238,18 @@ export const Dropzone: React.FC<DropzoneProps> = ({
           {resolvedHint}
         </p>
 
-        <p className="mt-2 text-[11px] text-[var(--ink-faint)]">
-          You can also paste a file with Ctrl+V / Cmd+V
+        {formatChips.length > 0 && (
+          <div className="dz-formats">
+            {formatChips.map((chip) => (
+              <span key={chip} className="dz-format-chip">
+                {chip}
+              </span>
+            ))}
+          </div>
+        )}
+
+        <p className="dz-paste mt-3 text-[11px] text-[var(--ink-faint)]">
+          You can also paste a file with <kbd>Ctrl+V</kbd> / <kbd>Cmd+V</kbd>
         </p>
       </div>
 

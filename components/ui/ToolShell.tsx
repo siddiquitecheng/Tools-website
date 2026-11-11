@@ -4,10 +4,9 @@ import { Tool, getRelatedTools } from "@/lib/tools";
 import { getToolAccent, getToolIcon } from "@/components/tool-cards/toolIcon";
 import { getToolImage } from "@/components/tool-cards/toolImage";
 import { Breadcrumbs } from "./Breadcrumbs";
-import { Badge } from "./Badge";
+import { ToolUsageBadge } from "@/components/tools/ToolUsageBadge";
 import { Card } from "./Card";
 import { ToolCard } from "@/components/tool-cards/ToolCard";
-import { ToolUsageBadge } from "@/components/tools/ToolUsageBadge";
 import { ShieldCheck, Cpu, Zap, Lock } from "lucide-react";
 
 export interface ToolStep {
@@ -99,52 +98,76 @@ export const ToolShell: React.FC<ToolShellProps> = ({
         ]}
       />
 
-      {/* Tool Header — compact, centered; the workspace follows directly.
-          The tool illustration lives in the Overview section below so the
-          converter is the first substantial block on the page. */}
-      <header className="tool-page-heading mx-auto mt-4 max-w-3xl text-center">
-        <span
-          className="tool-page-icon mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-lg shadow-sm"
-          style={{ backgroundColor: accent, color: "white" }}
-        >
-          <Icon className="h-8 w-8" aria-hidden="true" strokeWidth={1.7} />
-        </span>
-        <div className="mb-3 flex flex-wrap items-center justify-center gap-2">
-          <Badge variant="accent">{tool.category}</Badge>
-          <ToolUsageBadge
-            key={tool.id}
-            toolId={tool.id}
-            initialCount={usageCount}
-          />
-        </div>
-
-        <h1 className="tool-title text-3xl font-bold tracking-tight text-[var(--ink)] sm:text-[42px]">
-          {tool.name}
-        </h1>
-
-        <p className="mx-auto mt-3 max-w-2xl text-lg leading-relaxed text-[var(--ink-soft)]">
-          {tool.blurb}
-        </p>
-
-        <p className="mt-2 text-sm text-[var(--ink-faint)]">
-          Use {tool.name} online for free — no signup, no software to install.
-        </p>
-
-        <div className="mt-4 flex justify-center">
-          <div className="tool-trust flex items-center gap-2.5 rounded-[10px] border border-[var(--line)] bg-[var(--surface-sunk)] px-4 py-2.5 text-xs text-[var(--ink-soft)]">
-            <ShieldCheck className="w-4 h-4 shrink-0 text-[var(--success)]" />
-            <span>{trustNotice}</span>
+      {/* Tool Header V3 — compact two-column band: identity + trust on
+          the left (44px icon tile, category eyebrow + Free pill, H1,
+          blurb, one row of trust pills and the guide link), the tool
+          illustration as a framed card on the right (desktop ≥1024px,
+          hidden on mobile). The "N uses" chip is gone — see MANIFEST.
+          The workspace follows directly beneath, so the uploader stays
+          in the first screen. */}
+      <header
+        className={`tool-page-heading tool-head-v3 mx-auto mt-4 max-w-5xl${
+          toolImage ? " tool-head-v3--split" : ""
+        }`}
+      >
+        <div className="tool-head-main">
+          <div className="tool-head-toprow">
+            <span
+              className="tool-page-icon flex h-11 w-11 shrink-0 items-center justify-center rounded-lg shadow-sm"
+              style={{ backgroundColor: accent, color: "white" }}
+            >
+              <Icon className="h-6 w-6" aria-hidden="true" strokeWidth={1.7} />
+            </span>
+            <div className="tool-head-eyebrow">
+              <span className="tool-head-category">{tool.category}</span>
+              <span className="tool-head-free">Free</span>
+            </div>
           </div>
+
+          <h1 className="tool-title mt-4 text-3xl font-bold tracking-tight text-[var(--ink)] sm:text-[42px]">
+            {tool.name}
+          </h1>
+
+          <p className="mt-3 max-w-2xl text-lg leading-relaxed text-[var(--ink-soft)]">
+            {tool.blurb}
+          </p>
+
+          <div className="tool-head-pills mt-5">
+            <span className="tool-pill">
+              <Zap className="tool-pill-icon" aria-hidden="true" />
+              Free — no signup
+            </span>
+            <span className="tool-pill">
+              <ShieldCheck
+                className="tool-pill-icon tool-pill-icon--ok"
+                aria-hidden="true"
+              />
+              {trustNotice}
+            </span>
+            <Link href={`/blog/${tool.id}`} className="tool-head-guide">
+              Learn how to use {tool.name} →
+            </Link>
+          </div>
+
+          {/* Usage recording kept alive headlessly: the visible "N uses"
+              chip was removed in V3, but ToolUsageBadge's hook is what
+              records the use (POST /api/tools/<id>/use) — mounting it
+              hidden keeps the site's usage data flowing. */}
+          <span className="hidden" aria-hidden="true">
+            <ToolUsageBadge
+              key={tool.id}
+              toolId={tool.id}
+              initialCount={usageCount}
+            />
+          </span>
         </div>
 
-        <div className="mt-4">
-          <Link
-            href={`/blog/${tool.id}`}
-            className="text-sm font-medium text-[var(--accent)] hover:underline"
-          >
-            Learn how to use {tool.name} →
-          </Link>
-        </div>
+        {toolImage && (
+          <figure className="tool-page-media tool-head-media">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src={toolImage} alt={`${tool.name} illustration`} />
+          </figure>
+        )}
       </header>
 
       {/* Main Workspace Surface */}
@@ -165,12 +188,6 @@ export const ToolShell: React.FC<ToolShellProps> = ({
           <h2 className="font-[family-name:var(--font-display)] text-2xl font-bold text-[var(--ink)]">
             About {tool.name}
           </h2>
-          {toolImage && (
-            <figure className="tool-page-media">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={toolImage} alt={`${tool.name} illustration`} />
-            </figure>
-          )}
           <p className="mt-3 text-sm leading-relaxed text-[var(--ink-soft)]">
             {aboutText ||
               `${tool.name} is a fast, privacy-focused utility designed to handle your workflow cleanly with zero account creation or registration.`}
