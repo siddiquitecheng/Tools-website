@@ -29,7 +29,8 @@ export const toolContent: Record<string, PdfToolContent> = {
       { question: "How do I compress an image to 100 KB for an online form?", answer: "Compress the picture here and compare the new file size — there is no exact-size dial, so checking the result matters. If the JPEG is still over 100 KB, shrink the picture's dimensions with Image Resizer first and then compress it again; smaller dimensions plus compression bring most form photos under the cap." },
       { question: "Can I reduce a photo to 50 KB or 20 KB for an exam or job application?", answer: "Yes, with the same two-step route: reduce the photo's dimensions with Image Resizer, then compress it here and check the size. Very small targets like 20 KB need noticeably smaller dimensions, so start from your original photo each time rather than re-compressing an already compressed copy." },
       { question: "Will a photo compressed for a form still look clear enough?", answer: "For the portrait and document photos forms usually ask for, yes — at sizes around 100 KB they stay clear. Preview the compressed picture at full size before you submit it, and keep your original file untouched in case the form asks for a different size later." },
-    ],
+      { question: "How do I compress a signature image to 10 KB or 20 KB for an application form?", answer: "Signatures are small, detailed images, so start by cropping the scan tightly with Crop Image, then resize it to the dimensions the form asks for and compress here. Check the result before submitting — at 10–20 KB the strokes should stay dark and readable, and if they look faint, begin again from a clearer scan." },
+      { question: "My compressed photo is still too big — or the form says it is now too small. What do I do?", answer: "Still too big: shrink the dimensions with Image Resizer and compress again — smaller dimensions are the strongest lever at tiny targets. Too small is the opposite problem: forms sometimes set a minimum size as well as a maximum, and compression only ever makes files smaller, so go back to your original photo and compress it less, or not at all." },    ],
   },
   "image-resizer": {
     aboutText:
@@ -46,7 +47,8 @@ export const toolContent: Record<string, PdfToolContent> = {
       { question: "Will resizing change my image quality?", answer: "Making a picture smaller usually still looks crisp. Enlarging a small picture can make it look softer, because no new detail is created — start from the largest version you have." },
       { question: "Can I resize a photo for Instagram or another social platform?", answer: "Yes. Enter the exact width and height in pixels that the platform asks for — a square post size, for example — or scale the picture by percentage, then check the preview. The tool has no built-in platform presets, so take the numbers from the platform's own guidance." },
       { question: "Can I resize an image for an online form?", answer: "Yes. Forms usually state an exact size in pixels or a maximum dimension. Enter those numbers here, keep the width and height in the same proportion as the original to avoid distortion, and download the resized copy for your upload." },
-    ],
+      { question: "What pixel size do I need for a passport photo?", answer: "It depends on the country and form. The common 3.5 × 4.5 cm passport size (India, Pakistan, the UK and most of Europe) is 413 × 531 pixels at 300 dpi; UK online uploads often ask for 600 × 750, and a US passport or visa photo is square at 600 × 600. There is no built-in passport preset, so type the exact width and height your form states, and crop to the passport shape first with Crop Image if your photo is the wrong shape." },
+      { question: "Can I resize an image to a specific file size, like 100 KB?", answer: "Not directly — this tool changes pixel dimensions, not kilobytes. Smaller dimensions do make the file smaller, so resize first, then run the picture through Image Compressor and check the resulting KB against your limit." },    ],
   },
   "heic-to-jpg": {
     aboutText:
@@ -61,7 +63,10 @@ export const toolContent: Record<string, PdfToolContent> = {
       { question: "What is HEIC, and why does my iPhone use it?", answer: "HEIC is a modern photo format Apple uses because it stores high-quality pictures in smaller files than JPG. The downside is compatibility: many non-Apple devices, websites and apps still do not support it." },
       { question: "Will converting HEIC to JPG reduce photo quality?", answer: "For everyday sharing, viewing and printing, a converted JPG looks just as good as the original. JPG files are larger than HEIC files, but the visible difference at normal sizes is negligible." },
       { question: "Can I convert HEIC photos on a Windows computer?", answer: "Yes. The tool works in a browser on Windows, Mac or a phone, so you can convert iPhone photos on any computer without installing Apple software." },
-    ],
+      { question: "Why won't my iPhone photos open on my Windows PC?", answer: "Windows and many older programs do not support Apple's HEIC format, so the photos show as unopenable files. Converting them to JPG here gives you copies that open in every Windows program." },
+      { question: "An application or job form rejected my HEIC photo — what should I do?", answer: "Convert the photo to JPG and upload the JPG instead. Application portals, employers and government forms overwhelmingly ask for JPG, and the converted copy keeps the photo looking the same." },
+      { question: "Can I convert HEIC photos on an Android phone?", answer: "Yes. The converter runs in any modern browser, including on Android, so iPhone photos sent to you can be converted and viewed or shared from an Android phone." },
+      { question: "How do I stop my iPhone saving photos as HEIC?", answer: "On the iPhone, open Settings, then Camera, then Formats, and choose Most Compatible — new photos are then saved as JPG instead of HEIC. Photos already saved as HEIC still need converting, which is what this page is for." },    ],
   },
   "background-remover": {
     aboutText:
@@ -79,7 +84,7 @@ export const toolContent: Record<string, PdfToolContent> = {
       { question: "Can I make a transparent background for a product photo?", answer: "Yes, when the product was photographed against a single solid backdrop, such as a white studio background. The tool clears that one color, and the downloaded cutout has transparent areas where the background was, ready to place over a new background, slide or shop design." },
       { question: "Can it remove the white background from a logo?", answer: "A logo on a plain white background is one of the best cases for this tool, because the background is a single even color. One caution: if the logo itself contains white areas, those may be cleared along with the background, so check the preview closely before downloading." },
       { question: "Can I use it for a passport-size photo background?", answer: "If the portrait was taken against one plain, even-colored wall or backdrop, the tool can clear that color so the photo can be placed over the plain background your application requires. It cannot clean up a busy room or outdoor background, and dimensions and file size are separate form requirements — adjust those with Image Resizer and Image Compressor if your form sets them." },
-    ],
+      { question: "Can I put the cutout over a new background afterwards?", answer: "Yes. The download has transparent areas where the backdrop was, so you can place the subject over a new colour, slide or design in any editor or presentation tool. The replacing happens wherever you assemble the final picture — this tool's job is the clean cutout." },    ],
   },
   "ai-detector": {
     aboutText:
@@ -1455,7 +1460,10 @@ export const toolContent: Record<string, PdfToolContent> = {
       { question: "What is the difference between freeform and preset cropping?", answer: "Freeform cropping lets you draw any rectangle you like. A preset ratio locks the box to a fixed shape, such as a square or a wide rectangle, which is useful when a platform requires that shape." },
       { question: "Does cropping reduce image quality?", answer: "Cropping removes pixels outside your chosen area but does not soften or recolor the pixels you keep. A very tight crop from a small original can look less sharp when enlarged, so start from the largest version you have." },
       { question: "Can I undo a crop?", answer: "Your original file is never changed, so you can reopen it and crop it differently at any time. Download the version you like and keep the original as your backup." },
-    ],
+      { question: "Can I crop a photo to passport size?", answer: "Yes. Crop freeform to the passport shape — taller than wide, roughly 3.5 × 4.5 — keeping the head and shoulders centred in the frame, then use Image Resizer to set the exact pixels the form asks for (413 × 531 at 300 dpi is the common one). Always check your form's own numbers first, since countries differ." },
+      { question: "How do I crop a screenshot to just the part I need?", answer: "Upload the screenshot, drag the crop box around the exact area — an error message, a chart, one paragraph — and download. Cropping out toolbars, names and unrelated windows also keeps private details out of anything you share." },
+      { question: "Can I crop a photo into a square for a profile picture?", answer: "Yes. Lock the crop to the square preset ratio, position your face or subject in the middle, and download. Platforms that show avatars in a circle still take a square upload — the circle is applied by the platform, so keep important detail away from the corners." },
+      { question: "Can I crop a picture on my phone?", answer: "Yes. The tool runs in your phone's browser: upload the photo, drag the crop box with touch, and download the cropped copy — no app to install." },    ],
   },
   "rotate-image": {
     aboutText:
@@ -1470,7 +1478,10 @@ export const toolContent: Record<string, PdfToolContent> = {
       { question: "What is the difference between rotating and flipping?", answer: "Rotating turns the whole picture, like turning a printed photo on a table. Flipping mirrors it, so left and right swap places. Use rotation to fix orientation and flipping to correct a mirrored image." },
       { question: "Will flipping reverse text in my photo?", answer: "Yes. A horizontal flip mirrors everything, including writing, so signs and labels will read backwards. If your picture contains text, rotate it instead and check the preview." },
       { question: "Does rotating reduce image quality?", answer: "Rotating by quarter turns keeps the picture sharp. Repeated editing and re-saving in a lossy format can gradually soften a photo, so rotate from your original file when you can." },
-    ],
+      { question: "How do I fix a photo that shows sideways on my computer?", answer: "Phone photos sometimes carry an orientation note that not every program honours, so they open sideways elsewhere. Rotate the photo here until it is upright and download it — the saved copy is written upright, so it displays correctly everywhere." },
+      { question: "Can I fix a mirrored selfie?", answer: "Yes. Front cameras often save the mirror image; a horizontal flip puts it back to how others see you. Check any text in the shot afterwards, because flipped writing reads backwards." },
+      { question: "Can I straighten a photo that is tilted by a few degrees?", answer: "No — this tool turns pictures in quarter turns (90°) and flips them; it has no fine-angle straightening. For a slightly tilted shot, a full photo editor is the right tool; come back here for sideways and upside-down fixes." },
+      { question: "Can I rotate a picture on my phone without an app?", answer: "Yes. Open the tool in your phone's browser, upload the picture, rotate or flip it, and download the corrected copy — nothing to install and the picture never leaves your device." },    ],
   },
   "convert-image": {
     aboutText:
@@ -1485,7 +1496,10 @@ export const toolContent: Record<string, PdfToolContent> = {
       { question: "Which image format should I choose?", answer: "Use JPG for photographs and general sharing, PNG for graphics, logos and transparent backgrounds, and WebP for modern websites where small file size matters. When in doubt, match the format the site or app you are uploading to requests." },
       { question: "Will converting improve my image quality?", answer: "No. Conversion changes the container, not the detail inside the picture. A blurry photo stays blurry in a new format, so always start from the best-quality original you have." },
       { question: "What happens to transparency when I convert to JPG?", answer: "JPG does not support transparency, so see-through areas become solid in the converted file. If transparency matters, convert to PNG or WebP instead." },
-    ],
+      { question: "How do I convert a PNG screenshot to JPG for an upload form?", answer: "Upload the screenshot, choose JPG as the target format, and convert. Many forms accept only JPG, and the JPG copy is usually far smaller than the PNG — just remember that any transparent areas become solid." },
+      { question: "Can I convert an old BMP image to JPG or PNG?", answer: "Yes. BMP is one of the supported formats, so an old screenshot or scan saved as BMP can be converted to JPG for sharing or PNG for quality, in the same way as any other picture." },
+      { question: "Can I convert several images at once?", answer: "No — convert one picture at a time. Each conversion is quick, and converting individually keeps your originals organised; download each result before starting the next." },
+      { question: "Can I convert an image on my phone?", answer: "Yes. The converter runs in your phone's browser on Android or iPhone, so a picture saved in the wrong format can be fixed and re-uploaded without a computer." },    ],
   },
   "jpg-to-png": {
     aboutText:
@@ -1500,7 +1514,10 @@ export const toolContent: Record<string, PdfToolContent> = {
       { question: "Will converting JPG to PNG improve quality?", answer: "No. The PNG will contain the same picture detail as the JPG you started with. Conversion changes the file format; it does not restore detail that JPG compression removed." },
       { question: "Why is the PNG file larger than my JPG?", answer: "PNG uses lossless storage, which keeps every pixel exactly, while JPG uses lossy compression to save space. The same picture therefore takes up more room as a PNG." },
       { question: "Does a converted PNG have a transparent background?", answer: "No. JPG images have no transparency, so a converted PNG will have a solid background just like the original photo. Transparency has to exist in the source image to survive a conversion." },
-    ],
+      { question: "Can I convert a JPG logo to PNG to get a transparent background?", answer: "No. The JPG has no transparency stored in it, so the PNG keeps the same solid background. If the logo sits on a plain white backdrop, Background Remover can clear that colour afterwards — check its limits first, since it works on solid backgrounds only." },
+      { question: "A print service or design tool asks for PNG — will this conversion do?", answer: "Yes. Converting gives you a genuine PNG file with the same picture inside, which satisfies systems that require the PNG format for uploads, print orders or design work." },
+      { question: "Does converting JPG to PNG remove the blocky compression artefacts?", answer: "No. Artefacts from the original JPG compression are part of the picture now, and the PNG simply stores them losslessly. Always convert from the best-quality JPG you have." },
+      { question: "Can I convert JPG to PNG on my phone?", answer: "Yes. The converter runs in your phone's browser, so you can produce a PNG copy of a photo or screenshot wherever you are and upload it straight from the phone." },    ],
   },
   "png-to-jpg": {
     aboutText:
@@ -1515,7 +1532,10 @@ export const toolContent: Record<string, PdfToolContent> = {
       { question: "How much smaller will my JPG be than the PNG?", answer: "It depends on the picture. Photographs and detailed screenshots often shrink by a large amount, while simple graphics with flat colors shrink less. Either way, the JPG is almost always smaller than the equivalent PNG." },
       { question: "Will I lose transparency when converting PNG to JPG?", answer: "Yes. JPG cannot store transparency, so see-through areas become solid. If you need the transparent version, keep your original PNG alongside the JPG." },
       { question: "Is JPG good enough for photos?", answer: "For sharing, web pages and everyday viewing, yes. JPG was designed for photographs and keeps them looking good at much smaller sizes than PNG." },
-    ],
+      { question: "A form rejected my PNG — how do I give it a JPG instead?", answer: "Upload the PNG here, convert, and upload the JPG copy. Many application, job and marketplace systems accept only JPG, and the converted file is smaller as well as compatible." },
+      { question: "Will the text in my screenshot stay readable after converting to JPG?", answer: "For most screenshots, yes — text stays clear at normal viewing sizes. Very small text can soften slightly because JPG is a lossy format; if every pixel matters, keep the PNG as your master and use the JPG only where it is required." },
+      { question: "Can I convert PNG to JPG on iPhone or Android?", answer: "Yes. The tool runs in the phone's browser, so screenshots and saved pictures can be converted and shared or uploaded without moving them to a computer." },
+      { question: "My PNG is too big to email — will a JPG help?", answer: "Almost always. Photographs and detailed screenshots usually shrink dramatically as JPG, which makes them far easier to attach to an email or send in a chat. Simple flat-colour graphics shrink less, but the JPG is still normally the smaller file." },    ],
   },
   "webp-converter": {
     aboutText:
@@ -1530,7 +1550,10 @@ export const toolContent: Record<string, PdfToolContent> = {
       { question: "What is WebP, and why do websites use it?", answer: "WebP is an image format designed to produce smaller files than JPG or PNG at similar visual quality. Smaller files mean faster page loads, which is why many websites now serve images in WebP." },
       { question: "Should I convert WebP to JPG or PNG?", answer: "Choose JPG when you want the smallest compatible file for photos and sharing. Choose PNG when the picture has transparency you need to keep, or when you are working with graphics and logos." },
       { question: "Will converting to WebP make my picture sharper?", answer: "No. Conversion changes how the picture is stored, not how much detail it contains. A converted file will look the same as the original at normal viewing sizes." },
-    ],
+      { question: "Why do images I save from websites arrive as WebP files?", answer: "Websites serve WebP because it loads faster, and browsers save the picture in the format it was delivered — there is usually no warning. Converting the saved file to JPG or PNG here gives you a copy that opens everywhere." },
+      { question: "Can I just rename a .webp file to .jpg?", answer: "No. Renaming changes only the name; the picture inside is still WebP data, and stricter apps and upload forms will still reject it or fail to open it. A real conversion re-encodes the picture into the new format, which is what this tool does." },
+      { question: "How do I convert JPG or PNG images to WebP for my website?", answer: "Upload the JPG or PNG, choose WebP as the target, and convert. WebP versions of the same picture are usually smaller, which helps pages load faster — keep the originals as masters in case you need them elsewhere." },
+      { question: "Can I convert WebP images on my phone?", answer: "Yes. The converter runs in your phone's browser, so a WebP saved from a website can be turned into a JPG or PNG and shared or uploaded straight from the phone." },    ],
   },
   "webp-to-jpg": {
     aboutText:
@@ -1545,7 +1568,10 @@ export const toolContent: Record<string, PdfToolContent> = {
       { question: "Why convert WebP to JPG at all?", answer: "WebP is common on websites but not yet accepted by every editor, printer or upload form. JPG is supported almost everywhere, so converting removes compatibility problems in one step." },
       { question: "Will my picture lose quality when converted to JPG?", answer: "At normal viewing sizes, a converted photo looks the same as the original WebP. JPG compression can soften very fine detail slightly, but for sharing, printing and presentations the difference is negligible." },
       { question: "What happens to transparency in a WebP to JPG conversion?", answer: "Transparency is lost, because JPG has no way to store see-through areas. Those areas become solid in the JPG. Use the WebP to PNG converter if transparency matters." },
-    ],
+      { question: "Why won't my WebP image open in my editor or email?", answer: "WebP is a web format: browsers display it happily, but many editors, older programs, email clients and print services still refuse it. Converting to JPG gives you the same picture in the format everything accepts." },
+      { question: "Can I just rename the .webp extension to .jpg?", answer: "No — the file's contents stay WebP whatever the name says, and programs that check the real format will reject it. Convert it here instead: the picture is re-encoded as a genuine JPG." },
+      { question: "A website or form rejected my WebP upload — what now?", answer: "Convert the picture to JPG and upload that instead. Upload systems for jobs, marketplaces, schools and government services commonly accept JPG and PNG only, and JPG is the safest bet for a photograph." },
+      { question: "Can I convert WebP to JPG on my phone?", answer: "Yes. The tool runs in your phone's browser, so a WebP saved from the web can be converted and re-shared or uploaded without a computer." },    ],
   },
   "webp-to-png": {
     aboutText:
@@ -1560,7 +1586,10 @@ export const toolContent: Record<string, PdfToolContent> = {
       { question: "When should I choose PNG instead of JPG for a WebP conversion?", answer: "Choose PNG whenever the picture has transparency, or when it is a graphic, logo or illustration rather than a photograph. Choose JPG when you want the smallest file and the picture has a solid background." },
       { question: "Why is the PNG larger than the original WebP?", answer: "WebP compresses pictures more aggressively than PNG, which stores pixels losslessly. The same picture therefore takes up more space as a PNG — the cost of wider compatibility and preserved transparency." },
       { question: "Will the converted PNG look identical to the WebP?", answer: "For practical purposes, yes. The picture content and any transparency carry over, so the PNG looks the same when placed in a design or viewed on its own." },
-    ],
+      { question: "Can I use the converted PNG in Word, PowerPoint or a design tool?", answer: "Yes. PNG is accepted by office suites and design tools that refuse WebP, and the picture — including any transparency — carries across, so logos and graphics drop straight into documents and slides." },
+      { question: "Can I convert a WebP logo to PNG and keep its transparent background?", answer: "Yes — that is exactly the case PNG is for. The transparent areas of the WebP stay transparent in the PNG, unlike a JPG conversion, where they would become solid." },
+      { question: "Why does my computer save website images as WebP instead of PNG?", answer: "Because the website served them as WebP to load faster; your browser saves what it received. Converting here gives you the PNG copy the site never offered." },
+      { question: "Can I convert WebP to PNG on my phone?", answer: "Yes. The converter runs in your phone's browser, so you can turn a saved WebP into a PNG and use it in apps or uploads straight from the phone." },    ],
   },
   "svg-converter": {
     aboutText:
@@ -1575,7 +1604,10 @@ export const toolContent: Record<string, PdfToolContent> = {
       { question: "Should I export my SVG as PNG or JPG?", answer: "Use PNG for logos, icons and graphics where transparency or sharp edges matter. Use JPG for photographic artwork or when you simply want a smaller file with a solid background." },
       { question: "Will the exported image stay sharp?", answer: "Yes, at the size you export it. SVG artwork is made of shapes rather than pixels, so the export renders cleanly. For very large print use, export at a generous size and check the result before sending it on." },
       { question: "Can I edit the exported PNG or JPG like the SVG?", answer: "No. Once exported, the artwork becomes an ordinary picture made of pixels, so you lose the editable shapes and layers. Always keep your original SVG for future edits." },
-    ],
+      { question: "Can I convert an SVG logo to PNG with a transparent background?", answer: "Yes — choose PNG. The transparent parts of the artwork stay transparent, so the logo can sit over any background in a document, slide or web page. JPG would fill those areas with a solid background." },
+      { question: "My exported image looks blurry — how do I get a sharper one?", answer: "Export at a larger size. The picture is rendered at the dimensions you choose, so pick dimensions at least as large as the biggest place you will use it — for print, export generously and check the result before sending it on." },
+      { question: "Can I put an SVG logo into a Word or PowerPoint document?", answer: "Many office versions struggle with SVG files. Convert the logo to PNG here and insert that instead — it displays and prints reliably, and the transparent background is preserved." },
+      { question: "Can I convert an SVG icon for use as a profile or app image?", answer: "Yes. Export the icon as a PNG at a square, generous size and upload that — platforms accept PNG everywhere, while SVG uploads are often refused." },    ],
   },
   "image-upscaler": {
     aboutText:
@@ -1590,7 +1622,10 @@ export const toolContent: Record<string, PdfToolContent> = {
       { question: "Is this an AI upscaler that restores lost detail?", answer: "No. This tool enlarges pictures with canvas resizing plus sharpening. It makes images bigger and cleaner-looking, but it cannot recover detail that was never captured in the original, the way AI super-resolution tools claim to." },
       { question: "How much can I enlarge a picture before it looks bad?", answer: "It depends on the original. A modest enlargement of a decent photo usually looks fine, while blowing up a tiny, blurry picture several times will still look soft. Preview at your intended size and use the smallest enlargement that does the job." },
       { question: "Will upscaling fix a blurry photo?", answer: "Sharpening can make a slightly soft picture look crisper, but it cannot fix a genuinely blurry or out-of-focus photo. For best results, start from the sharpest original you have." },
-    ],
+      { question: "Can I upscale an image for printing?", answer: "A modest enlargement plus sharpening can make a photo print acceptably at a larger size than the original file suggests, but it cannot add real detail. Preview at the size you intend to print and start from the largest, sharpest version you have." },
+      { question: "Can I enlarge a screenshot or logo for a presentation slide?", answer: "Yes — that is one of its best uses. A small screenshot or logo enlarged modestly and sharpened looks far cleaner full-slide than the original stretched by the presentation software." },
+      { question: "A messaging app shrank my photo — can upscaling restore it?", answer: "It can make the picture bigger and cleaner-looking, but the detail the app discarded is gone for good. If the original photo still exists on the sender's phone, ask for it to be sent as a file or document instead." },
+      { question: "What enlargement should I choose?", answer: "The smallest one that does the job. Each step up spreads the existing pixels thinner, so double the size usually looks better than pushing to the maximum. Preview at your real display or print size before downloading." },    ],
   },
   "image-to-pdf": {
     aboutText:
@@ -1605,7 +1640,10 @@ export const toolContent: Record<string, PdfToolContent> = {
       { question: "How many images can I put in one PDF?", answer: "You can combine multiple pictures into a single PDF, with each picture appearing as a page in the order you choose. For very large sets, consider splitting them into a few documents so the file stays easy to share." },
       { question: "Will my pictures keep their quality in the PDF?", answer: "Yes, for practical purposes. The pictures are placed into the PDF as pages, so they display clearly when viewed or printed at normal sizes." },
       { question: "Can I reorder pages after creating the PDF?", answer: "Arrange your pictures in the right order before converting, since the PDF is assembled in that sequence. If the order is wrong, simply run the conversion again with the pictures rearranged." },
-    ],
+      { question: "Can I make a PDF from photos of documents for an application?", answer: "Yes — that is one of the most common uses. Photograph each page, order them here, and create one PDF to upload to the job, university or government portal that asks for a single document." },
+      { question: "Can I combine JPG and PNG pictures in the same PDF?", answer: "Yes. This tool accepts JPG and PNG pictures together, placing each one on its own page in the order you arrange." },
+      { question: "Can I turn phone photos into a PDF without a computer?", answer: "Yes. The tool runs in your phone's browser, so photos from your gallery can be ordered and combined into a PDF ready to share or upload, straight from the phone." },
+      { question: "How do I share a set of screenshots as one document?", answer: "Add the screenshots in reading order and create the PDF — one screenshot per page. It is far easier to follow than a chain of separate image messages, and it prints as a single document." },    ],
   },
   "jfif-to-png": {
     aboutText:
@@ -1620,7 +1658,10 @@ export const toolContent: Record<string, PdfToolContent> = {
       { question: "What is a JFIF file?", answer: "JFIF is an older image format closely related to JPEG. Some devices and apps save photos with a .jfif extension, which many modern programs do not recognize, even though the picture inside is an ordinary JPEG-style image." },
       { question: "Will converting JFIF to PNG change how my picture looks?", answer: "No. The converted PNG shows the same picture as the JFIF file. Conversion fixes the compatibility problem without altering the image content, though it does not sharpen or repair the image either." },
       { question: "Why is the PNG file larger than the JFIF?", answer: "PNG stores pictures losslessly, while JFIF uses JPEG-style compression to save space. The same picture therefore takes up more room as a PNG." },
-    ],
+      { question: "Why did I receive a photo as a .jfif file?", answer: "Some phones, cameras, browsers and messaging apps save ordinary JPEG-style pictures with the .jfif extension. The picture inside is normal — it is the unfamiliar extension that makes other programs refuse it." },
+      { question: "An upload form rejected my JFIF file — how do I fix it?", answer: "Convert it to PNG here and upload the PNG instead. PNG is accepted almost everywhere a JFIF was refused, and the picture itself does not change." },
+      { question: "Can I open and convert a JFIF file on my phone?", answer: "Yes. The converter runs in your phone's browser, so a JFIF picture can be turned into a PNG and opened, edited or shared without a computer." },
+      { question: "Is JFIF the same as JPG?", answer: "Closely related. JFIF is the container that originally defined how JPEG picture data is stored, so a JFIF file holds a JPEG-style image — which is why the converted PNG looks identical to the original." },    ],
   },
   "jpeg-to-jpg": {
     aboutText:
@@ -1635,7 +1676,10 @@ export const toolContent: Record<string, PdfToolContent> = {
       { question: "Are JPEG and JPG actually different formats?", answer: "No. They are the same format. JPEG is the full name and JPG is the shortened three-letter extension that older systems required. The picture data inside is identical either way." },
       { question: "Will converting JPEG to JPG reduce quality?", answer: "No. Because the format is the same, re-exporting as JPG does not recompress or degrade the picture. It simply gives the file the extension that stricter systems expect." },
       { question: "Could I just rename the file instead?", answer: "Renaming a .jpeg file to .jpg often works, but some systems check more than the name, and renaming is easy to get wrong on a phone. Using the converter produces a clean JPG file without the guesswork." },
-    ],
+      { question: "A form accepts only .jpg files and rejects my .jpeg photo — how do I fix it?", answer: "Re-export the photo here as JPG and upload that copy. The picture is unchanged; only the extension becomes the three-letter form the stricter system expects." },
+      { question: "Can I convert JPEG to JPG on my iPhone or Android phone?", answer: "Yes. The tool runs in the phone's browser, so a .jpeg photo can be saved as a .jpg copy and uploaded to the form that rejected it, without moving to a computer." },
+      { question: "Why do some of my photos end in .jpeg instead of .jpg?", answer: "Both endings come from the same format. The shorter .jpg dates from systems that allowed only three letters per extension; some cameras, phones and apps still write the full .jpeg, which is why a converter like this one is occasionally needed." },
+      { question: "Can I convert a JPEG without uploading it anywhere?", answer: "Yes. The re-export happens locally in your browser — the photo never leaves your device — so it is safe for personal pictures and documents." },    ],
   },
   "screenshot-tool": {
     aboutText:
@@ -1650,7 +1694,10 @@ export const toolContent: Record<string, PdfToolContent> = {
       { question: "Does this tool take a screenshot of my screen?", answer: "No. It annotates images you upload; it does not capture your screen. Capture the screenshot with your device or operating system first, then upload it here to add notes, arrows and highlights." },
       { question: "What kinds of annotations can I add?", answer: "You can mark up your uploaded image with notes, arrows and highlights that draw attention to specific areas, such as an error message, a button or a setting." },
       { question: "Can I annotate any image, or only screenshots?", answer: "You can upload and annotate any image, not just screenshots. Photos, diagrams and design mockups all work the same way once uploaded." },
-    ],
+      { question: "How do I take a screenshot before annotating it?", answer: "Use your device's shortcut: on Windows, Windows key + Shift + S (or Print Screen); on a Mac, Command + Shift + 4; on iPhone or Android, press the side/power and volume buttons together as your model directs. Then upload the capture here and add your notes and arrows." },
+      { question: "Can I annotate a screenshot for a bug report or support ticket?", answer: "Yes — that is what it is for. Mark the error with a highlight, point an arrow at the button or setting involved, and add a short note; support teams resolve tickets faster when the problem area is marked." },
+      { question: "Can I blur or hide private information in a screenshot?", answer: "No — the tool has no blur or redaction feature, and its marks are meant to draw attention, not conceal. Crop the private area out with Crop Image first, or take the screenshot with the sensitive content off screen." },
+      { question: "Can I annotate a screenshot on my phone?", answer: "Yes. The tool runs in your phone's browser: capture the screenshot, upload it, add notes and arrows with touch, and download the marked-up image to send." },    ],
   },
   "random-text-generator": {
     aboutText:
