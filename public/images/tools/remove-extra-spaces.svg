@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" role="img" aria-labelledby="t">
+  <title id="t">Remove Extra Spaces — wide gaps squeezed into single spaces</title>
+  <rect x="6" y="6" width="388" height="288" rx="18" fill="#faf6ef" stroke="#e6ddcb" stroke-width="2"/>
+  <rect x="56" y="88" width="52" height="16" rx="6" fill="#fffdf7" stroke="#1d1a16" stroke-width="4"/>
+  <rect x="150" y="88" width="40" height="16" rx="6" fill="#fffdf7" stroke="#1d1a16" stroke-width="4"/>
+  <rect x="252" y="88" width="64" height="16" rx="6" fill="#fffdf7" stroke="#1d1a16" stroke-width="4"/>
+  <path d="M114 96h28" stroke="#cf3618" stroke-width="4" stroke-linecap="round"/>
+  <polygon points="142,96 126,87 126,105" fill="#cf3618"/>
+  <path d="M246 96h-28" stroke="#cf3618" stroke-width="4" stroke-linecap="round"/>
+  <polygon points="204,96 218,88 218,104" fill="#cf3618"/>
+  <path d="M200 126v30" stroke="#cf3618" stroke-width="5" stroke-linecap="round"/>
+  <polygon points="200,156 191,140 209,140" fill="#cf3618"/>
+  <rect x="76" y="176" width="52" height="16" rx="6" fill="#fffdf7" stroke="#1d1a16" stroke-width="4"/>
+  <rect x="140" y="176" width="40" height="16" rx="6" fill="#fffdf7" stroke="#1d1a16" stroke-width="4"/>
+  <rect x="192" y="176" width="64" height="16" rx="6" fill="#fffdf7" stroke="#1d1a16" stroke-width="4"/>
+  <rect x="268" y="176" width="52" height="16" rx="6" fill="#fffdf7" stroke="#1d1a16" stroke-width="4"/>
+</svg>

@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" role="img" aria-labelledby="t">
+  <title id="t">Temperature Converter — a thermometer reading Celsius and Fahrenheit</title>
+  <rect x="6" y="6" width="388" height="288" rx="18" fill="#faf6ef" stroke="#e6ddcb" stroke-width="2"/>
+  <rect x="188" y="50" width="24" height="152" rx="12" fill="#fffdf7" stroke="#1d1a16" stroke-width="5"/>
+  <circle cx="200" cy="224" r="24" fill="#fffdf7" stroke="#1d1a16" stroke-width="5"/>
+  <rect x="195" y="118" width="10" height="88" rx="5" fill="#cf3618"/>
+  <circle cx="200" cy="224" r="13" fill="#cf3618"/>
+  <path d="M222 72h14M222 102h14M222 132h14M222 162h14" stroke="#1d1a16" stroke-width="4" stroke-linecap="round"/>
+  <text x="138" y="112" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="26" font-weight="700" fill="#1d1a16">°C</text>
+  <text x="264" y="112" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="26" font-weight="700" fill="#1d1a16">°F</text>
+  <path d="M140 164l3.5 8.5 8.5 3.5-8.5 3.5-3.5 8.5-3.5-8.5-8.5-3.5 8.5-3.5z" fill="#cf3618"/>
+</svg>

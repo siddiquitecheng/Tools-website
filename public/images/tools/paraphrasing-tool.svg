@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" role="img" aria-labelledby="t">
+  <title id="t">Paraphrasing Tool — sentences swapped into a fresh wording</title>
+  <rect x="6" y="6" width="388" height="288" rx="18" fill="#faf6ef" stroke="#e6ddcb" stroke-width="2"/>
+  <g stroke="#1d1a16" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="56" y="66" width="116" height="148" rx="8" fill="#fffdf7"/>
+    <path d="M156 66v16h16" fill="none" stroke-width="4"/>
+  </g>
+  <g stroke="#1d1a16" stroke-width="4" stroke-linecap="round" opacity="0.45">
+    <path d="M70 100h88 M70 118h88 M70 136h60"/>
+  </g>
+  <g stroke="#1d1a16" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="228" y="66" width="116" height="148" rx="8" fill="#fffdf7"/>
+    <path d="M328 66v16h16" fill="none" stroke-width="4"/>
+  </g>
+  <g stroke="#1d1a16" stroke-width="4" stroke-linecap="round" opacity="0.45">
+    <path d="M242 100h60 M242 118h88 M242 136h88"/>
+  </g>
+  <path d="M176 116h48" stroke="#cf3618" stroke-width="5" stroke-linecap="round"/>
+  <polygon points="224,116 208,107 208,125" fill="#cf3618"/>
+  <path d="M224 148h-48" stroke="#cf3618" stroke-width="5" stroke-linecap="round"/>
+  <polygon points="160,148 176,139 176,157" fill="#cf3618"/>
+  <rect x="154" y="234" width="92" height="25" rx="6" fill="#cf3618"/>
+  <text x="200.0" y="251" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="700" letter-spacing="1" fill="#faf6ef">REWRITE</text>
+</svg>

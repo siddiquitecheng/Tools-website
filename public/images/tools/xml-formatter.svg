@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" role="img" aria-labelledby="t">
+  <title id="t">XML Formatter — XML tags tidied into a clean indented tree</title>
+  <rect x="6" y="6" width="388" height="288" rx="18" fill="#faf6ef" stroke="#e6ddcb" stroke-width="2"/>
+  <rect x="88" y="56" width="224" height="160" rx="10" fill="#fffdf7" stroke="#1d1a16" stroke-width="5"/>
+  <path d="M88 86h224" stroke="#1d1a16" stroke-width="4"/>
+  <circle cx="106" cy="71" r="4.5" fill="#1d1a16"/>
+  <circle cx="124" cy="71" r="4.5" fill="#1d1a16" opacity="0.45"/>
+  <g stroke="#cf3618" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><path d="M119 110l-7 6 7 6" fill="none"/><path d="M141 130l-7 6 7 6" fill="none"/><path d="M141 150l-7 6 7 6" fill="none"/><path d="M163 170l-7 6 7 6" fill="none"/><path d="M119 190l-7 6 7 6" fill="none"/></g>
+  <g stroke="#1d1a16" stroke-width="4" stroke-linecap="round" opacity="0.45"><path d="M130 116h74M152 136h96M152 156h66M174 176h78M130 196h60"/></g>
+  <rect x="252" y="226" width="52" height="25" rx="6" fill="#cf3618"/>
+  <text x="278.0" y="243" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="700" letter-spacing="1" fill="#faf6ef">XML</text>
+</svg>

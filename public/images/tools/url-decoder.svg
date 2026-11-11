@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" role="img" aria-labelledby="t">
+  <title id="t">URL Decoder — percent-encoded text restored to a clean URL</title>
+  <rect x="6" y="6" width="388" height="288" rx="18" fill="#faf6ef" stroke="#e6ddcb" stroke-width="2"/>
+  <rect x="52" y="86" width="296" height="52" rx="26" fill="#fffdf7" stroke="#1d1a16" stroke-width="5"/>
+  <g stroke="#1d1a16" stroke-width="4" stroke-linecap="round" opacity="0.45"><path d="M76 112h60M212 112h54"/></g>
+  <g stroke="#cf3618" stroke-width="5" stroke-linecap="round" fill="none"><circle cx="163.0" cy="102.0" r="6.0"/><circle cx="185.0" cy="122.0" r="6.0"/><path d="M186.0 96.0L162.0 128.0"/></g>
+  <path d="M200 148v18" stroke="#cf3618" stroke-width="5" stroke-linecap="round"/>
+  <polygon points="200,172 191,157 209,157" fill="#cf3618"/>
+  <rect x="52" y="186" width="296" height="52" rx="26" fill="#fffdf7" stroke="#1d1a16" stroke-width="5"/>
+  <g stroke="#1d1a16" stroke-width="4" stroke-linecap="round" opacity="0.45"><path d="M76 212h224"/></g>
+  <circle cx="330" cy="226" r="17" fill="#faf6ef" stroke="#1d1a16" stroke-width="5"/>
+  <path d="M322 226l7 7 l18 -14" stroke="#cf3618" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+</svg>

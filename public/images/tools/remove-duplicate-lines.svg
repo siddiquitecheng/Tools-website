@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" role="img" aria-labelledby="t">
+  <title id="t">Remove Duplicate Lines — repeated lines dropped, unique lines kept</title>
+  <rect x="6" y="6" width="388" height="288" rx="18" fill="#faf6ef" stroke="#e6ddcb" stroke-width="2"/>
+  <rect x="88" y="60" width="224" height="12" rx="6" fill="#fffdf7" stroke="#1d1a16" stroke-width="4"/>
+  <rect x="88" y="84" width="150" height="12" rx="6" fill="#fffdf7" stroke="#1d1a16" stroke-width="4"/>
+  <rect x="88" y="108" width="190" height="12" rx="6" fill="#fffdf7" stroke="#1d1a16" stroke-width="4"/>
+  <rect x="88" y="132" width="150" height="12" rx="6" fill="#fffdf7" stroke="#1d1a16" stroke-width="4"/>
+  <circle cx="70" cy="90" r="5" fill="#cf3618"/>
+  <circle cx="70" cy="138" r="5" fill="#cf3618"/>
+  <path d="M200 154v28" stroke="#cf3618" stroke-width="5" stroke-linecap="round"/>
+  <polygon points="200,182 191,166 209,166" fill="#cf3618"/>
+  <rect x="88" y="190" width="224" height="12" rx="6" fill="#fffdf7" stroke="#1d1a16" stroke-width="4"/>
+  <rect x="88" y="214" width="150" height="12" rx="6" fill="#fffdf7" stroke="#1d1a16" stroke-width="4"/>
+  <rect x="88" y="238" width="190" height="12" rx="6" fill="#fffdf7" stroke="#1d1a16" stroke-width="4"/>
+</svg>

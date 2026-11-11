@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" role="img" aria-labelledby="t">
+  <title id="t">AI Translator — speech bubbles exchanging languages</title>
+  <rect x="6" y="6" width="388" height="288" rx="18" fill="#faf6ef" stroke="#e6ddcb" stroke-width="2"/>
+  <rect x="56" y="84" width="120" height="72" rx="14" fill="#fffdf7" stroke="#1d1a16" stroke-width="5"/>
+  <polygon points="88,154 88,178 114,154" fill="#fffdf7" stroke="#1d1a16" stroke-width="4" stroke-linejoin="round"/>
+  <text x="116" y="130" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="26" font-weight="700" fill="#1d1a16">EN</text>
+  <path d="M184 120h32" stroke="#cf3618" stroke-width="5" stroke-linecap="round"/>
+  <polygon points="216,120 200,111 200,129" fill="#cf3618"/>
+  <rect x="224" y="84" width="120" height="72" rx="14" fill="#fffdf7" stroke="#1d1a16" stroke-width="5"/>
+  <polygon points="286,154 312,178 312,154" fill="#fffdf7" stroke="#1d1a16" stroke-width="4" stroke-linejoin="round"/>
+  <text x="284" y="130" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="26" font-weight="700" fill="#1d1a16">ES</text>
+  <path d="M200 46l3.5 8.5 8.5 3.5-8.5 3.5-3.5 8.5-3.5-8.5-8.5-3.5 8.5-3.5z" fill="#cf3618"/>
+</svg>

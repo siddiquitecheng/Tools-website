@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" role="img" aria-labelledby="t">
+  <title id="t">AI Humanizer — a robot voice turned into a natural human one</title>
+  <rect x="6" y="6" width="388" height="288" rx="18" fill="#faf6ef" stroke="#e6ddcb" stroke-width="2"/>
+  <g stroke="#1d1a16" stroke-width="5" fill="none" stroke-linecap="round">
+    <rect x="70" y="104" width="76" height="64" rx="12"/>
+    <path d="M108 104v-16"/>
+  </g>
+  <circle cx="108" cy="84" r="5" fill="#cf3618"/>
+  <circle cx="92" cy="136" r="4.5" fill="#1d1a16"/>
+  <circle cx="124" cy="136" r="4.5" fill="#1d1a16"/>
+  <path d="M92 152h32" stroke="#1d1a16" stroke-width="4" stroke-linecap="round"/>
+  <path d="M162 140h74" stroke="#cf3618" stroke-width="5" stroke-linecap="round"/>
+  <polygon points="236,140 220,131 220,149" fill="#cf3618"/>
+  <circle cx="292" cy="120" r="27" fill="#fffdf7" stroke="#1d1a16" stroke-width="5"/>
+  <circle cx="283" cy="115" r="3.5" fill="#1d1a16"/>
+  <circle cx="301" cy="115" r="3.5" fill="#1d1a16"/>
+  <path d="M280 126a12 12 0 0 0 24 0" stroke="#1d1a16" stroke-width="4" fill="none" stroke-linecap="round"/>
+  <path d="M256 198a36 30 0 0 1 72 0" stroke="#1d1a16" stroke-width="5" fill="none" stroke-linecap="round"/>
+  <path d="M200 50l3.5 8.5 8.5 3.5-8.5 3.5-3.5 8.5-3.5-8.5-8.5-3.5 8.5-3.5z" fill="#cf3618"/>
+</svg>

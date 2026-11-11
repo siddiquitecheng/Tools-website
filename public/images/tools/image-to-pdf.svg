@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" role="img" aria-labelledby="t">
+  <title id="t">Image to PDF — photos combined into one PDF document</title>
+  <rect x="6" y="6" width="388" height="288" rx="18" fill="#faf6ef" stroke="#e6ddcb" stroke-width="2"/>
+  <rect x="46" y="84" width="86" height="110" rx="10" fill="#faf6ef" stroke="#1d1a16" stroke-width="5"/>
+  <rect x="62" y="98" width="86" height="110" rx="10" fill="#fffdf7" stroke="#1d1a16" stroke-width="5"/>
+  <circle cx="86" cy="131" r="9" fill="none" stroke="#1d1a16" stroke-width="4"/>
+  <path d="M72 196L95 142L112 167L124 149L138 196" fill="none" stroke="#1d1a16" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M162 150h33" stroke="#cf3618" stroke-width="5" stroke-linecap="round"/>
+  <polygon points="210,150 195,141 195,159" fill="#cf3618"/>
+  <g stroke="#1d1a16" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="224" y="82" width="92" height="126" rx="8" fill="#fffdf7"/>
+    <path d="M300 82v16h16" fill="none" stroke-width="4"/>
+  </g>
+  <g stroke="#1d1a16" stroke-width="4" stroke-linecap="round" opacity="0.45"><path d="M240 118h56"/><path d="M240 136h40"/></g>
+  <rect x="242" y="196" width="56" height="24" rx="6" fill="#cf3618"/>
+  <text x="270" y="212.5" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700" letter-spacing="1" fill="#faf6ef">PDF</text>
+</svg>

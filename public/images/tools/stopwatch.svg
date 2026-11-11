@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" role="img" aria-labelledby="t">
+  <title id="t">Stopwatch — a stopwatch face with a sweeping second hand</title>
+  <rect x="6" y="6" width="388" height="288" rx="18" fill="#faf6ef" stroke="#e6ddcb" stroke-width="2"/>
+  <rect x="188" y="84" width="24" height="14" rx="4" fill="#fffdf7" stroke="#1d1a16" stroke-width="5"/>
+  <path d="M200 98v10" stroke="#1d1a16" stroke-width="5" stroke-linecap="round"/>
+  <g transform="rotate(30 260 113)">
+    <rect x="252" y="108" width="16" height="10" rx="4" fill="#fffdf7" stroke="#1d1a16" stroke-width="4.5"/>
+  </g>
+  <circle cx="200" cy="168" r="60" fill="#fffdf7" stroke="#1d1a16" stroke-width="5"/>
+  <g stroke="#1d1a16" stroke-width="4" stroke-linecap="round">
+    <path d="M200 118v9M200 209v9M150 168h9M241 168h9"/>
+  </g>
+  <path d="M200 168V132" stroke="#1d1a16" stroke-width="5" stroke-linecap="round"/>
+  <path d="M200 168l26 14" stroke="#cf3618" stroke-width="4.5" stroke-linecap="round"/>
+  <circle cx="200" cy="168" r="5.5" fill="#1d1a16"/>
+  <rect x="165" y="246" width="70" height="25" rx="6" fill="#cf3618"/><text x="200" y="263" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12.5" font-weight="700" letter-spacing="1" fill="#faf6ef">LAP</text>
+</svg>

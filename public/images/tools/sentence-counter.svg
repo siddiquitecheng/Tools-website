@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" role="img" aria-labelledby="t">
+  <title id="t">Sentence Counter — sentences marked by their full stops</title>
+  <rect x="6" y="6" width="388" height="288" rx="18" fill="#faf6ef" stroke="#e6ddcb" stroke-width="2"/>
+  <g stroke="#1d1a16" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="84" y="50" width="168" height="182" rx="8" fill="#fffdf7"/>
+    <path d="M236 50v16h16" fill="none" stroke-width="4"/>
+  </g>
+  <g stroke="#1d1a16" stroke-width="4" stroke-linecap="round" opacity="0.45">
+    <path d="M100 88h136 M100 106h136 M100 124h104"/>
+  </g>
+  <g stroke="#1d1a16" stroke-width="4" stroke-linecap="round" opacity="0.45">
+    <path d="M100 152h136 M100 170h88"/>
+  </g>
+  <g stroke="#1d1a16" stroke-width="4" stroke-linecap="round" opacity="0.45">
+    <path d="M100 198h120"/>
+  </g>
+  <circle cx="216" cy="124" r="5.5" fill="#cf3618"/>
+  <circle cx="200" cy="170" r="5.5" fill="#cf3618"/>
+  <circle cx="232" cy="198" r="5.5" fill="#cf3618"/>
+  <rect x="140" y="246" width="120" height="25" rx="6" fill="#cf3618"/>
+  <text x="200.0" y="263" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="700" letter-spacing="1" fill="#faf6ef">SENTENCES</text>
+</svg>

@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" role="img" aria-labelledby="t">
+  <title id="t">Broken Link Checker — a chain link snapped in two</title>
+  <rect x="6" y="6" width="388" height="288" rx="18" fill="#faf6ef" stroke="#e6ddcb" stroke-width="2"/>
+  <g stroke="#1d1a16" stroke-width="6" fill="none" stroke-linecap="round"><path d="M158 116h-16a36 36 0 100 52h16M96 142h44"/></g>
+  <g stroke="#1d1a16" stroke-width="6" fill="none" stroke-linecap="round"><path d="M242 116h16a36 36 0 110 52h-16M260 142h44"/></g>
+  <path d="M204 100l-13 30 17-3-15 31" fill="none" stroke="#cf3618" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="200" cy="222" r="19" fill="#faf6ef" stroke="#1d1a16" stroke-width="5"/>
+  <path d="M192 214l16 16M208 214l-16 16" stroke="#cf3618" stroke-width="5" stroke-linecap="round"/>
+</svg>

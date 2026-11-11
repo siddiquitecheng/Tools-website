@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" role="img" aria-labelledby="t">
+  <title id="t">Character Counter — every character tallied tile by tile</title>
+  <rect x="6" y="6" width="388" height="288" rx="18" fill="#faf6ef" stroke="#e6ddcb" stroke-width="2"/>
+  <!-- letter tiles -->
+  <rect x="56" y="84" width="30" height="30" rx="6" fill="#fffdf7" stroke="#1d1a16" stroke-width="4"/>
+  <rect x="94" y="84" width="30" height="30" rx="6" fill="#fffdf7" stroke="#1d1a16" stroke-width="4"/>
+  <rect x="132" y="84" width="30" height="30" rx="6" fill="#cf3618" stroke="#cf3618" stroke-width="4"/>
+  <rect x="170" y="84" width="30" height="30" rx="6" fill="#fffdf7" stroke="#1d1a16" stroke-width="4"/>
+  <rect x="56" y="124" width="30" height="30" rx="6" fill="#cf3618" stroke="#cf3618" stroke-width="4"/>
+  <rect x="94" y="124" width="30" height="30" rx="6" fill="#fffdf7" stroke="#1d1a16" stroke-width="4"/>
+  <rect x="132" y="124" width="30" height="30" rx="6" fill="#fffdf7" stroke="#1d1a16" stroke-width="4"/>
+  <rect x="170" y="124" width="30" height="30" rx="6" fill="#fffdf7" stroke="#1d1a16" stroke-width="4"/>
+  <rect x="56" y="164" width="30" height="30" rx="6" fill="#fffdf7" stroke="#1d1a16" stroke-width="4"/>
+  <rect x="94" y="164" width="30" height="30" rx="6" fill="#fffdf7" stroke="#1d1a16" stroke-width="4"/>
+  <rect x="132" y="164" width="30" height="30" rx="6" fill="#fffdf7" stroke="#1d1a16" stroke-width="4"/>
+  <rect x="170" y="164" width="30" height="30" rx="6" fill="#cf3618" stroke="#cf3618" stroke-width="4"/>
+  <rect x="222" y="122" width="90" height="25" rx="6" fill="#cf3618"/>
+  <text x="267.0" y="139" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="700" letter-spacing="1" fill="#faf6ef">CHARS</text>
+  <path d="M300 60l3.5 8.5 8.5 3.5-8.5 3.5-3.5 8.5-3.5-8.5-8.5-3.5 8.5-3.5z" fill="#cf3618"/>
+</svg>

@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" role="img" aria-labelledby="t">
+  <title id="t">ROI Calculator — a percent coin with a return arrow circling it</title>
+  <rect x="6" y="6" width="388" height="288" rx="18" fill="#faf6ef" stroke="#e6ddcb" stroke-width="2"/>
+  <path d="M250 78A78 78 0 0 1 264 183" fill="none" stroke="#cf3618" stroke-width="6" stroke-linecap="round"/>
+  <path d="M247 175L264 183L260 164" fill="none" stroke="#cf3618" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="200" cy="138" r="56" fill="#fffdf7" stroke="#1d1a16" stroke-width="5"/>
+  <circle cx="200" cy="138" r="40" fill="none" stroke="#1d1a16" stroke-width="3.5"/>
+  <circle cx="188" cy="124" r="7" fill="none" stroke="#1d1a16" stroke-width="4"/>
+  <circle cx="212" cy="152" r="7" fill="none" stroke="#1d1a16" stroke-width="4"/>
+  <path d="M214 118L186 158" stroke="#1d1a16" stroke-width="4.5" stroke-linecap="round"/>
+  <rect x="161" y="240" width="70" height="25" rx="6" fill="#cf3618"/><text x="196" y="257" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12.5" font-weight="700" letter-spacing="1" fill="#faf6ef">ROI</text>
+</svg>

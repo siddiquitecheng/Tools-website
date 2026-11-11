@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" role="img" aria-labelledby="t">
+  <title id="t">JWT Decoder — the three token segments opened up and read</title>
+  <rect x="6" y="6" width="388" height="288" rx="18" fill="#faf6ef" stroke="#e6ddcb" stroke-width="2"/>
+  <rect x="52" y="58" width="84" height="40" rx="20" fill="#fffdf7" stroke="#1d1a16" stroke-width="5"/>
+  <rect x="158" y="58" width="84" height="40" rx="20" fill="#faf6ef" stroke="#cf3618" stroke-width="5"/>
+  <rect x="264" y="58" width="84" height="40" rx="20" fill="#fffdf7" stroke="#1d1a16" stroke-width="5"/>
+  <g fill="#1d1a16"><circle cx="147" cy="78" r="4"/><circle cx="253" cy="78" r="4"/></g>
+  <path d="M200 108v18" stroke="#cf3618" stroke-width="5" stroke-linecap="round"/>
+  <polygon points="200,132 191,117 209,117" fill="#cf3618"/>
+  <rect x="96" y="146" width="208" height="104" rx="10" fill="#fffdf7" stroke="#1d1a16" stroke-width="5"/>
+  <g stroke="#1d1a16" stroke-width="4" stroke-linecap="round" opacity="0.45"><path d="M120 176h130M120 198h94M120 220h118"/></g>
+  <rect x="268" y="122" width="56" height="25" rx="6" fill="#cf3618"/>
+  <text x="296.0" y="139" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="700" letter-spacing="1" fill="#faf6ef">JWT</text>
+</svg>

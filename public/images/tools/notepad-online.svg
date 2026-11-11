@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" role="img" aria-labelledby="t">
+  <title id="t">Notepad Online — a spiral notepad with a pencil resting beside it</title>
+  <rect x="6" y="6" width="388" height="288" rx="18" fill="#faf6ef" stroke="#e6ddcb" stroke-width="2"/>
+  <rect x="132" y="58" width="136" height="188" rx="8" fill="#fffdf7" stroke="#1d1a16" stroke-width="5"/>
+  <g fill="#faf6ef" stroke="#1d1a16" stroke-width="4">
+    <circle cx="152" cy="58" r="7"/><circle cx="182" cy="58" r="7"/><circle cx="212" cy="58" r="7"/><circle cx="242" cy="58" r="7"/>
+  </g>
+  <g stroke="#1d1a16" stroke-width="3.5" stroke-linecap="round">
+    <path d="M150 100h100M150 128h100M150 156h100M150 184h64M150 212h84"/>
+  </g>
+  <g transform="rotate(24 292 190)">
+    <rect x="280" y="108" width="24" height="14" rx="6" fill="#fffdf7" stroke="#1d1a16" stroke-width="4"/>
+    <rect x="280" y="120" width="24" height="110" fill="#cf3618"/>
+    <path d="M280 230h24l-12 26z" fill="#fffdf7" stroke="#1d1a16" stroke-width="4" stroke-linejoin="round"/>
+    <path d="M288 248l4 8 4-8z" fill="#1d1a16"/>
+  </g>
+</svg>

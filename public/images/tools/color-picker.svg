@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" role="img" aria-labelledby="t">
+  <title id="t">Color Picker — an eyedropper lifting a drop of colour over swatches</title>
+  <rect x="6" y="6" width="388" height="288" rx="18" fill="#faf6ef" stroke="#e6ddcb" stroke-width="2"/>
+  <g transform="rotate(40 240 110)">
+    <rect x="226" y="40" width="28" height="66" rx="12" fill="#fffdf7" stroke="#1d1a16" stroke-width="5"/>
+    <path d="M228 106h24l-12 34z" fill="#fffdf7" stroke="#1d1a16" stroke-width="5" stroke-linejoin="round"/>
+  </g>
+  <path d="M214 146c9 14 15 21 15 30a15 15 0 1 1-30 0c0-9 6-16 15-30z" fill="#cf3618"/>
+  <g stroke="#1d1a16" stroke-width="4">
+    <rect x="108" y="222" width="34" height="34" fill="#fffdf7"/>
+    <rect x="158" y="222" width="34" height="34" fill="#cf3618"/>
+    <rect x="208" y="222" width="34" height="34" fill="#fffdf7"/>
+    <rect x="258" y="222" width="34" height="34" fill="#fffdf7"/>
+  </g>
+</svg>

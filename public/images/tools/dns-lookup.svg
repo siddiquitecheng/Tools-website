@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" role="img" aria-labelledby="t">
+  <title id="t">DNS Lookup — a server answering with A, MX and NS records</title>
+  <rect x="6" y="6" width="388" height="288" rx="18" fill="#faf6ef" stroke="#e6ddcb" stroke-width="2"/>
+  <rect x="60" y="86" width="116" height="56" rx="10" fill="#fffdf7" stroke="#1d1a16" stroke-width="5"/>
+  <rect x="60" y="158" width="116" height="56" rx="10" fill="#fffdf7" stroke="#1d1a16" stroke-width="5"/>
+  <g fill="#cf3618"><circle cx="82" cy="114" r="5.5"/><circle cx="82" cy="186" r="5.5"/></g>
+  <g stroke="#1d1a16" stroke-width="4" stroke-linecap="round" opacity="0.45"><path d="M100 114h56M100 186h56"/></g>
+  <g stroke="#1d1a16" stroke-width="4" fill="none"><path d="M176 114h44M176 150h64M176 186h44"/></g>
+  <rect x="228" y="100" width="44" height="25" rx="6" fill="#cf3618"/>
+  <text x="250.0" y="117" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="700" letter-spacing="1" fill="#faf6ef">A</text>
+  <rect x="248" y="138" width="52" height="25" rx="6" fill="#fffdf7" stroke="#1d1a16" stroke-width="4"/>
+  <text x="274" y="155" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="700" letter-spacing="1" fill="#1d1a16">MX</text>
+  <rect x="228" y="176" width="52" height="25" rx="6" fill="#fffdf7" stroke="#1d1a16" stroke-width="4"/>
+  <text x="254" y="193" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="700" letter-spacing="1" fill="#1d1a16">NS</text>
+  <path d="M330 226l3 7 7 3-7 3-3 7-3-7-7-3 7-3z" fill="#cf3618"/>
+</svg>

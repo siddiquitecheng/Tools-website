@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" role="img" aria-labelledby="t">
+  <title id="t">Rotate Image — a portrait photo turned landscape</title>
+  <rect x="6" y="6" width="388" height="288" rx="18" fill="#faf6ef" stroke="#e6ddcb" stroke-width="2"/>
+  <rect x="62" y="90" width="82" height="114" rx="10" fill="#fffdf7" stroke="#1d1a16" stroke-width="5"/>
+  <circle cx="85" cy="124" r="9" fill="none" stroke="#1d1a16" stroke-width="4"/>
+  <path d="M72 192L93 136L110 162L121 142L134 192" fill="none" stroke="#1d1a16" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M152 100C180 62 216 62 242 94" fill="none" stroke="#cf3618" stroke-width="5" stroke-linecap="round"/>
+  <polygon points="242,102 233,82 251,84" fill="#cf3618"/>
+  <rect x="234" y="112" width="118" height="82" rx="10" fill="#fffdf7" stroke="#1d1a16" stroke-width="5"/>
+  <circle cx="326" cy="138" r="9" fill="none" stroke="#1d1a16" stroke-width="4"/>
+  <path d="M244 182L279 145L302 164L319 150L342 182" fill="none" stroke="#1d1a16" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

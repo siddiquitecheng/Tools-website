@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" role="img" aria-labelledby="t">
+  <title id="t">PDF to Excel — a PDF becomes a spreadsheet grid</title>
+  <rect x="6" y="6" width="388" height="288" rx="18" fill="#faf6ef" stroke="#e6ddcb" stroke-width="2"/>
+  <g stroke="#1d1a16" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="56" y="84" width="88" height="124" rx="8" fill="#fffdf7"/>
+    <path d="M128 84v16h16" fill="none" stroke-width="4"/>
+  </g>
+  <g stroke="#1d1a16" stroke-width="4" stroke-linecap="round" opacity="0.45"><path d="M72 120h56"/><path d="M72 138h40"/></g>
+  <rect x="72" y="196" width="56" height="24" rx="6" fill="#cf3618"/>
+  <text x="100" y="212.5" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700" letter-spacing="1" fill="#faf6ef">PDF</text>
+  <path d="M158 146h37" stroke="#cf3618" stroke-width="5" stroke-linecap="round"/>
+  <polygon points="210,146 195,137 195,155" fill="#cf3618"/>
+  <rect x="224" y="84" width="118" height="124" rx="8" fill="#fffdf7" stroke="#1d1a16" stroke-width="5"/>
+  <rect x="233" y="93" width="41" height="13" rx="3" fill="#cf3618" opacity="0.85"/>
+  <g stroke="#1d1a16" stroke-width="3.5" opacity="0.5"><path d="M224 114h118M224 145h118M224 176h118M283 84v124"/></g>
+  <rect x="255" y="196" width="56" height="24" rx="6" fill="#cf3618"/>
+  <text x="283" y="212.5" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700" letter-spacing="1" fill="#faf6ef">XLS</text>
+</svg>

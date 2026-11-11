@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" role="img" aria-labelledby="t">
+  <title id="t">Case Converter — upper case swapped to lower case</title>
+  <rect x="6" y="6" width="388" height="288" rx="18" fill="#faf6ef" stroke="#e6ddcb" stroke-width="2"/>
+  <text x="96" y="160" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="54" font-weight="700" fill="#1d1a16">AA</text>
+  <text x="304" y="160" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="54" font-weight="700" fill="#1d1a16">aa</text>
+  <path d="M156 112h88" stroke="#cf3618" stroke-width="5" stroke-linecap="round"/>
+  <polygon points="244,112 228,103 228,121" fill="#cf3618"/>
+  <path d="M244 148h-88" stroke="#cf3618" stroke-width="5" stroke-linecap="round"/>
+  <polygon points="140,148 156,139 156,157" fill="#cf3618"/>
+  <path d="M62 190h68M270 190h68" stroke="#1d1a16" stroke-width="4" stroke-linecap="round" opacity="0.45"/>
+  <path d="M200 50l3.5 8.5 8.5 3.5-8.5 3.5-3.5 8.5-3.5-8.5-8.5-3.5 8.5-3.5z" fill="#cf3618"/>
+</svg>

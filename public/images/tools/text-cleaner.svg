@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" role="img" aria-labelledby="t">
+  <title id="t">Text Cleaner — messy markup swept into clean text</title>
+  <rect x="6" y="6" width="388" height="288" rx="18" fill="#faf6ef" stroke="#e6ddcb" stroke-width="2"/>
+  <g stroke="#1d1a16" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="92" y="48" width="168" height="182" rx="8" fill="#fffdf7"/>
+    <path d="M244 48v16h16" fill="none" stroke-width="4"/>
+  </g>
+  <path d="M112 84c14-10 26 10 40 0s26-10 40 0" stroke="#1d1a16" stroke-width="4" fill="none" stroke-linecap="round" opacity="0.45"/>
+  <text x="176" y="128" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="700" fill="#1d1a16" opacity="0.55">&lt;/&gt;</text>
+  <path d="M112 152h148" stroke="#cf3618" stroke-width="4" stroke-linecap="round"/>
+  <g stroke="#1d1a16" stroke-width="4" stroke-linecap="round" opacity="0.45">
+    <path d="M112 178h128 M112 194h128 M112 210h88"/>
+  </g>
+  <path d="M238 138l3.5 8.5 8.5 3.5-8.5 3.5-3.5 8.5-3.5-8.5-8.5-3.5 8.5-3.5z" fill="#cf3618"/>
+  <rect x="152" y="242" width="96" height="25" rx="6" fill="#cf3618"/>
+  <text x="200.0" y="259" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="700" letter-spacing="1" fill="#faf6ef">CLEAN</text>
+</svg>

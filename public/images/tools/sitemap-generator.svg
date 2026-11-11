@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" role="img" aria-labelledby="t">
+  <title id="t">Sitemap Generator — a page tree branching from the home page</title>
+  <rect x="6" y="6" width="388" height="288" rx="18" fill="#faf6ef" stroke="#e6ddcb" stroke-width="2"/>
+  <circle cx="200" cy="66" r="17" fill="#cf3618"/>
+  <g stroke="#1d1a16" stroke-width="4" fill="none"><path d="M200 83v26M200 109H104v18M200 109v18M200 109h96v18"/></g>
+  <g fill="#fffdf7" stroke="#1d1a16" stroke-width="5"><circle cx="104" cy="144" r="15"/><circle cx="200" cy="144" r="15"/><circle cx="296" cy="144" r="15"/></g>
+  <g stroke="#1d1a16" stroke-width="4" fill="none"><path d="M104 159v16M92 175v14M116 175v14M200 159v16M188 175v14M212 175v14M296 159v16M284 175v14M308 175v14"/></g>
+  <g fill="#1d1a16"><circle cx="92" cy="200" r="6"/><circle cx="116" cy="200" r="6"/><circle cx="188" cy="200" r="6"/><circle cx="212" cy="200" r="6"/><circle cx="284" cy="200" r="6"/><circle cx="308" cy="200" r="6"/></g>
+  <g stroke="#1d1a16" stroke-width="4" stroke-linecap="round" opacity="0.45"><path d="M140 244h120"/></g>
+</svg>

@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" role="img" aria-labelledby="t">
+  <title id="t">Unix Time Converter — a raw timestamp becoming a calendar date</title>
+  <rect x="6" y="6" width="388" height="288" rx="18" fill="#faf6ef" stroke="#e6ddcb" stroke-width="2"/>
+  <rect x="96" y="64" width="208" height="42" rx="10" fill="#fffdf7" stroke="#1d1a16" stroke-width="5"/>
+  <g stroke="#1d1a16" stroke-width="4" stroke-linecap="round">
+    <path d="M114 85h22M146 85h22M178 85h22"/>
+  </g>
+  <g stroke="#cf3618" stroke-width="4" stroke-linecap="round">
+    <path d="M226 85h22M258 85h22"/>
+  </g>
+  <path d="M200 118v26" stroke="#cf3618" stroke-width="6" stroke-linecap="round"/>
+  <path d="M200 144l-7-11M200 144l7-11" stroke="#cf3618" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="128" y="152" width="144" height="96" rx="10" fill="#fffdf7" stroke="#1d1a16" stroke-width="5"/>
+  <path d="M128 180h144" stroke="#1d1a16" stroke-width="5"/>
+  <path d="M160 140v24M240 140v24" stroke="#1d1a16" stroke-width="5" stroke-linecap="round"/>
+  <g fill="#1d1a16">
+    <circle cx="156" cy="200" r="4"/><circle cx="184" cy="200" r="4"/><circle cx="240" cy="200" r="4"/>
+    <circle cx="156" cy="224" r="4"/><circle cx="184" cy="224" r="4"/><circle cx="212" cy="224" r="4"/><circle cx="240" cy="224" r="4"/>
+  </g>
+  <circle cx="212" cy="200" r="7" fill="#cf3618"/>
+</svg>

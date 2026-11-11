@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" role="img" aria-labelledby="t">
+  <title id="t">Area Converter — a small plot measured out into acres</title>
+  <rect x="6" y="6" width="388" height="288" rx="18" fill="#faf6ef" stroke="#e6ddcb" stroke-width="2"/>
+  <rect x="64" y="96" width="72" height="72" rx="4" fill="#fffdf7" stroke="#1d1a16" stroke-width="5"/>
+  <text x="100" y="198" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="700" fill="#1d1a16">m²</text>
+  <path d="M150 132h48" stroke="#cf3618" stroke-width="5" stroke-linecap="round"/>
+  <polygon points="198,132 182,123 182,141" fill="#cf3618"/>
+  <rect x="212" y="72" width="120" height="120" rx="4" fill="#fffdf7" stroke="#1d1a16" stroke-width="5"/>
+  <path d="M252 72v120M292 72v120M212 112h120M212 152h120" stroke="#1d1a16" stroke-width="3" opacity="0.45"/>
+  <text x="272" y="220" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="700" fill="#1d1a16">ACRE</text>
+</svg>

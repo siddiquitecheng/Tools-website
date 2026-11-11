@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" role="img" aria-labelledby="t">
+  <title id="t">Text Sorter — lines rearranged into alphabetical order</title>
+  <rect x="6" y="6" width="388" height="288" rx="18" fill="#faf6ef" stroke="#e6ddcb" stroke-width="2"/>
+  <g stroke="#1d1a16" stroke-width="4" stroke-linecap="round" opacity="0.45">
+    <path d="M64 90h150 M64 118h70 M64 146h190 M64 174h110"/>
+  </g>
+  <path d="M200 82v100" stroke="#cf3618" stroke-width="5" stroke-linecap="round"/>
+  <polygon points="200,70 191,88 209,88" fill="#cf3618"/>
+  <polygon points="200,194 191,176 209,176" fill="#cf3618"/>
+  <g stroke="#1d1a16" stroke-width="4" stroke-linecap="round" opacity="0.45">
+    <path d="M232 90h70 M232 118h110 M232 146h150 M232 174h190"/>
+  </g>
+  <text x="232" y="66" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="700" fill="#1d1a16">A</text>
+  <text x="232" y="216" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="700" fill="#1d1a16">Z</text>
+</svg>

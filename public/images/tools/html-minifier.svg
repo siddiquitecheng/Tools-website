@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" role="img" aria-labelledby="t">
+  <title id="t">HTML Minifier — a tall page squeezed into compact HTML</title>
+  <rect x="6" y="6" width="388" height="288" rx="18" fill="#faf6ef" stroke="#e6ddcb" stroke-width="2"/>
+  <rect x="118" y="44" width="164" height="104" rx="10" fill="#fffdf7" stroke="#1d1a16" stroke-width="5"/>
+  <path d="M118 68h164" stroke="#1d1a16" stroke-width="4"/>
+  <circle cx="134" cy="56" r="4" fill="#1d1a16"/>
+  <g stroke="#1d1a16" stroke-width="4" stroke-linecap="round" opacity="0.45"><path d="M136 88h128M136 106h96M136 124h116"/></g>
+  <path d="M200 158v20" stroke="#cf3618" stroke-width="5" stroke-linecap="round"/>
+  <polygon points="200,184 191,169 209,169" fill="#cf3618"/>
+  <rect x="118" y="196" width="164" height="52" rx="10" fill="#fffdf7" stroke="#1d1a16" stroke-width="5"/>
+  <path d="M118 214h164" stroke="#1d1a16" stroke-width="4"/>
+  <g stroke="#1d1a16" stroke-width="4" stroke-linecap="round" opacity="0.45"><path d="M136 232h128"/></g>
+</svg>

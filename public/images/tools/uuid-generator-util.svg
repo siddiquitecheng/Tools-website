@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" role="img" aria-labelledby="t">
+  <title id="t">UUID Generator — an ID card with a unique code row</title>
+  <rect x="6" y="6" width="388" height="288" rx="18" fill="#faf6ef" stroke="#e6ddcb" stroke-width="2"/>
+  <rect x="100" y="84" width="188" height="124" rx="12" fill="#fffdf7" stroke="#1d1a16" stroke-width="5"/>
+  <rect x="118" y="104" width="52" height="64" rx="6" fill="none" stroke="#1d1a16" stroke-width="4"/>
+  <circle cx="144" cy="124" r="10" fill="none" stroke="#1d1a16" stroke-width="4"/>
+  <path d="M126 160a18 12 0 0 1 36 0" fill="none" stroke="#1d1a16" stroke-width="4" stroke-linecap="round"/>
+  <g stroke="#1d1a16" stroke-width="4" stroke-linecap="round">
+    <path d="M188 110h78M188 134h78M188 158h52"/>
+  </g>
+  <g fill="#1d1a16">
+    <circle cx="120" cy="188" r="4"/><circle cx="138" cy="188" r="4"/><circle cx="156" cy="188" r="4"/><circle cx="174" cy="188" r="4"/><circle cx="192" cy="188" r="4"/><circle cx="210" cy="188" r="4"/><circle cx="228" cy="188" r="4"/><circle cx="246" cy="188" r="4"/><circle cx="264" cy="188" r="4"/>
+  </g>
+  <circle cx="292" cy="78" r="17" fill="#cf3618"/>
+  <path d="M292 66l2.8 9.2 9.2 2.8-9.2 2.8-2.8 9.2-2.8-9.2-9.2-2.8 9.2-2.8z" fill="#faf6ef"/>
+  <rect x="147" y="228" width="94" height="25" rx="6" fill="#cf3618"/><text x="194" y="245" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12.5" font-weight="700" letter-spacing="1" fill="#faf6ef">UUID v4</text>
+</svg>

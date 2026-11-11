@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" role="img" aria-labelledby="t">
+  <title id="t">Website Speed Test — a speedometer needle pushed into the fast zone</title>
+  <rect x="6" y="6" width="388" height="288" rx="18" fill="#faf6ef" stroke="#e6ddcb" stroke-width="2"/>
+  <path d="M92 216a108 108 0 01216 0" fill="none" stroke="#1d1a16" stroke-width="5" stroke-linecap="round"/>
+  <g stroke="#1d1a16" stroke-width="4" stroke-linecap="round"><path d="M104 178l14 6M128 138l12 10M168 114l7 13M232 114l-7 13M272 138l-12 10M296 178l-14 6"/></g>
+  <path d="M282 132a108 108 0 0126 84" fill="none" stroke="#cf3618" stroke-width="5" stroke-linecap="round"/>
+  <path d="M200 216L252 150" stroke="#cf3618" stroke-width="6" stroke-linecap="round"/>
+  <circle cx="200" cy="216" r="13" fill="#faf6ef" stroke="#1d1a16" stroke-width="5"/>
+  <circle cx="200" cy="216" r="4" fill="#cf3618"/>
+  <g stroke="#1d1a16" stroke-width="4" stroke-linecap="round" opacity="0.45"><path d="M150 256h100"/></g>
+</svg>

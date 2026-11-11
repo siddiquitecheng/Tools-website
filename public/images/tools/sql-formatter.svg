@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" role="img" aria-labelledby="t">
+  <title id="t">SQL Formatter — a query laid out as a readable table</title>
+  <rect x="6" y="6" width="388" height="288" rx="18" fill="#faf6ef" stroke="#e6ddcb" stroke-width="2"/>
+  <g stroke="#1d1a16" stroke-width="4" stroke-linecap="round" opacity="0.45"><path d="M52 108h74M52 130h56M52 152h66"/></g>
+  <path d="M140 130h20" stroke="#cf3618" stroke-width="5" stroke-linecap="round"/>
+  <polygon points="166,130 151,121 151,139" fill="#cf3618"/>
+  <rect x="186" y="76" width="168" height="140" rx="10" fill="#fffdf7" stroke="#1d1a16" stroke-width="5"/>
+  <path d="M186 112h168M186 148h168M186 184h168M242 76v140M298 76v140" stroke="#1d1a16" stroke-width="4"/>
+  <path d="M196 94h148" stroke="#cf3618" stroke-width="5" stroke-linecap="round"/>
+  <g stroke="#1d1a16" stroke-width="4" stroke-linecap="round" opacity="0.45"><path d="M196 130h36M252 130h36M308 130h36M196 166h36M252 166h36M308 166h36M196 200h36M252 200h36M308 200h36"/></g>
+</svg>

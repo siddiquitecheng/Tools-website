@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" role="img" aria-labelledby="t">
+  <title id="t">Robots.txt Generator — a friendly robot and its rule file</title>
+  <rect x="6" y="6" width="388" height="288" rx="18" fill="#faf6ef" stroke="#e6ddcb" stroke-width="2"/>
+  <rect x="66" y="102" width="104" height="88" rx="16" fill="#fffdf7" stroke="#1d1a16" stroke-width="5"/>
+  <path d="M118 102V74" stroke="#1d1a16" stroke-width="5" stroke-linecap="round"/>
+  <circle cx="118" cy="64" r="9" fill="#cf3618"/>
+  <g fill="#1d1a16"><circle cx="94" cy="138" r="6"/><circle cx="142" cy="138" r="6"/></g>
+  <path d="M94 166h48" stroke="#1d1a16" stroke-width="5" stroke-linecap="round"/>
+  <path d="M66 146H46M170 146h20" stroke="#1d1a16" stroke-width="5" stroke-linecap="round"/>
+  <g stroke="#1d1a16" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"><rect x="216" y="84" width="116" height="140" rx="8" fill="#fffdf7"/><path d="M316 84v16h16" fill="none" stroke-width="4"/></g>
+  <g stroke="#1d1a16" stroke-width="4" stroke-linecap="round" opacity="0.45"><path d="M232 116h84M232 138h64M232 160h76M232 182h50"/></g>
+  <rect x="240" y="232" width="56" height="25" rx="6" fill="#cf3618"/>
+  <text x="268.0" y="249" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="700" letter-spacing="1" fill="#faf6ef">TXT</text>
+</svg>

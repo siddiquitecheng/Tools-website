@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" role="img" aria-labelledby="t">
+  <title id="t">Margin Calculator — a price bar with the margin segment on top</title>
+  <rect x="6" y="6" width="388" height="288" rx="18" fill="#faf6ef" stroke="#e6ddcb" stroke-width="2"/>
+  <rect x="126" y="158" width="58" height="74" fill="#fffdf7" stroke="#1d1a16" stroke-width="5"/>
+  <rect x="216" y="96" width="58" height="136" fill="#fffdf7" stroke="#1d1a16" stroke-width="5"/>
+  <rect x="216" y="96" width="58" height="42" fill="#cf3618"/>
+  <g stroke="#1d1a16" stroke-width="4" stroke-linecap="round">
+    <path d="M138 182h34M138 206h34M228 162h34M228 186h34"/>
+  </g>
+  <path d="M104 232h192" stroke="#1d1a16" stroke-width="5" stroke-linecap="round"/>
+  <rect x="155" y="250" width="90" height="25" rx="6" fill="#cf3618"/><text x="200" y="267" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12.5" font-weight="700" letter-spacing="1" fill="#faf6ef">MARGIN</text>
+</svg>

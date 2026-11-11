@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" role="img" aria-labelledby="t">
+  <title id="t">Reverse Text — words flipped back to front</title>
+  <rect x="6" y="6" width="388" height="288" rx="18" fill="#faf6ef" stroke="#e6ddcb" stroke-width="2"/>
+  <rect x="64" y="92" width="64" height="18" rx="6" fill="#fffdf7" stroke="#1d1a16" stroke-width="4"/>
+  <rect x="140" y="92" width="44" height="18" rx="6" fill="#fffdf7" stroke="#1d1a16" stroke-width="4"/>
+  <rect x="196" y="92" width="84" height="18" rx="6" fill="#fffdf7" stroke="#1d1a16" stroke-width="4"/>
+  <path d="M268 152h-136" stroke="#cf3618" stroke-width="5" stroke-linecap="round"/>
+  <polygon points="116,152 134,143 134,161" fill="#cf3618"/>
+  <rect x="64" y="196" width="84" height="18" rx="6" fill="#fffdf7" stroke="#1d1a16" stroke-width="4"/>
+  <rect x="160" y="196" width="44" height="18" rx="6" fill="#fffdf7" stroke="#1d1a16" stroke-width="4"/>
+  <rect x="216" y="196" width="64" height="18" rx="6" fill="#fffdf7" stroke="#1d1a16" stroke-width="4"/>
+  <rect x="152" y="238" width="96" height="25" rx="6" fill="#cf3618"/>
+  <text x="200.0" y="255" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="700" letter-spacing="1" fill="#faf6ef">REVERSE</text>
+</svg>

@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" role="img" aria-labelledby="t">
+  <title id="t">Timer — an alarm clock ringing with sound waves</title>
+  <rect x="6" y="6" width="388" height="288" rx="18" fill="#faf6ef" stroke="#e6ddcb" stroke-width="2"/>
+  <g stroke="#1d1a16" stroke-width="5" stroke-linecap="round" fill="none">
+    <path d="M146 118L128 96M218 118L236 96"/>
+    <path d="M152 206L140 226M212 206L224 226"/>
+  </g>
+  <circle cx="124" cy="92" r="11" fill="#fffdf7" stroke="#1d1a16" stroke-width="4.5"/>
+  <circle cx="240" cy="92" r="11" fill="#fffdf7" stroke="#1d1a16" stroke-width="4.5"/>
+  <circle cx="182" cy="160" r="56" fill="#fffdf7" stroke="#1d1a16" stroke-width="5"/>
+  <path d="M182 160V132M182 160l22 10" stroke="#1d1a16" stroke-width="5" stroke-linecap="round" fill="none"/>
+  <circle cx="182" cy="160" r="5" fill="#1d1a16"/>
+  <g stroke="#cf3618" stroke-width="4.5" fill="none" stroke-linecap="round">
+    <path d="M234 119A66 66 0 0 1 234 201"/>
+    <path d="M251 105A88 88 0 0 1 251 215"/>
+  </g>
+  <rect x="144" y="246" width="76" height="25" rx="6" fill="#cf3618"/><text x="182" y="263" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12.5" font-weight="700" letter-spacing="1" fill="#faf6ef">5:00</text>
+</svg>

@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" role="img" aria-labelledby="t">
+  <title id="t">Lorem Ipsum Generator — placeholder paragraphs on demand</title>
+  <rect x="6" y="6" width="388" height="288" rx="18" fill="#faf6ef" stroke="#e6ddcb" stroke-width="2"/>
+  <g stroke="#1d1a16" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="96" y="48" width="170" height="192" rx="8" fill="#fffdf7"/>
+    <path d="M250 48v16h16" fill="none" stroke-width="4"/>
+  </g>
+  <text x="181" y="92" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="17" font-style="italic" fill="#1d1a16">Lorem ipsum</text>
+  <g stroke="#1d1a16" stroke-width="4" stroke-linecap="round" opacity="0.45">
+    <path d="M112 118h138 M112 134h138 M112 150h110"/>
+  </g>
+  <g stroke="#1d1a16" stroke-width="4" stroke-linecap="round" opacity="0.45">
+    <path d="M112 182h138 M112 198h120"/>
+  </g>
+  <path d="M308 76l3.5 8.5 8.5 3.5-8.5 3.5-3.5 8.5-3.5-8.5-8.5-3.5 8.5-3.5z" fill="#cf3618"/>
+  <rect x="155" y="252" width="90" height="25" rx="6" fill="#cf3618"/>
+  <text x="200.0" y="269" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="700" letter-spacing="1" fill="#faf6ef">LOREM</text>
+</svg>

@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" role="img" aria-labelledby="t">
+  <title id="t">Rearrange PDF Pages — thumbnails swapping into a new order</title>
+  <rect x="6" y="6" width="388" height="288" rx="18" fill="#faf6ef" stroke="#e6ddcb" stroke-width="2"/>
+  <path d="M84 88C150 52 250 52 316 88" fill="none" stroke="#cf3618" stroke-width="5" stroke-linecap="round"/>
+  <polygon points="316,96 307,78 325,79" fill="#cf3618"/>
+  <path d="M316 212C250 246 150 246 84 212" fill="none" stroke="#cf3618" stroke-width="5" stroke-linecap="round"/>
+  <polygon points="84,220 75,202 93,203" fill="#cf3618"/>
+  <rect x="44" y="98" width="80" height="104" rx="8" fill="#fffdf7" stroke="#1d1a16" stroke-width="5"/>
+  <circle cx="108" cy="114" r="3.2" fill="#1d1a16"/><circle cx="96" cy="114" r="3.2" fill="#1d1a16"/><circle cx="84" cy="114" r="3.2" fill="#1d1a16"/>
+  <g stroke="#1d1a16" stroke-width="4" stroke-linecap="round" opacity="0.45"><path d="M58 140h48M58 156h34"/></g>
+  <rect x="160" y="98" width="80" height="104" rx="8" fill="#fffdf7" stroke="#1d1a16" stroke-width="5"/>
+  <circle cx="224" cy="114" r="3.2" fill="#1d1a16"/>
+  <g stroke="#1d1a16" stroke-width="4" stroke-linecap="round" opacity="0.45"><path d="M174 140h48M174 156h34"/></g>
+  <rect x="276" y="98" width="80" height="104" rx="8" fill="#fffdf7" stroke="#1d1a16" stroke-width="5"/>
+  <circle cx="340" cy="114" r="3.2" fill="#1d1a16"/><circle cx="328" cy="114" r="3.2" fill="#1d1a16"/>
+  <g stroke="#1d1a16" stroke-width="4" stroke-linecap="round" opacity="0.45"><path d="M290 140h48M290 156h34"/></g>
+</svg>

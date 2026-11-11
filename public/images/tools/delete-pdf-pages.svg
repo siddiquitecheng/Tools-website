@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" role="img" aria-labelledby="t">
+  <title id="t">Delete PDF Pages — a marked page removed, one clean PDF left</title>
+  <rect x="6" y="6" width="388" height="288" rx="18" fill="#faf6ef" stroke="#e6ddcb" stroke-width="2"/>
+  <g stroke="#1d1a16" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"><rect x="50" y="72" width="84" height="118" rx="8" fill="#faf6ef"/><path d="M118 72v16h16" fill="none" stroke-width="4"/></g>
+  <g stroke="#1d1a16" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="64" y="86" width="84" height="118" rx="8" fill="#fffdf7" stroke-dasharray="7 6"/>
+    <path d="M132 86v16h16" fill="none" stroke-width="4"/>
+  </g>
+  <g stroke="#1d1a16" stroke-width="4" stroke-linecap="round" opacity="0.45"><path d="M80 120h52"/><path d="M80 138h36"/></g>
+  <circle cx="140" cy="98" r="15" fill="#cf3618"/>
+  <path d="M133 91l14 14M147 91l-14 14" stroke="#faf6ef" stroke-width="4.5" stroke-linecap="round"/>
+  <path d="M162 148h33" stroke="#cf3618" stroke-width="5" stroke-linecap="round"/>
+  <polygon points="210,148 195,139 195,157" fill="#cf3618"/>
+  <g stroke="#1d1a16" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="224" y="86" width="84" height="118" rx="8" fill="#fffdf7"/>
+    <path d="M292 86v16h16" fill="none" stroke-width="4"/>
+  </g>
+  <g stroke="#1d1a16" stroke-width="4" stroke-linecap="round" opacity="0.45"><path d="M240 120h52"/><path d="M240 138h36"/></g>
+  <rect x="238" y="192" width="56" height="24" rx="6" fill="#cf3618"/>
+  <text x="266" y="208.5" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700" letter-spacing="1" fill="#faf6ef">PDF</text>
+</svg>

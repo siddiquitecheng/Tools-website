@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" role="img" aria-labelledby="t">
+  <title id="t">SSL Checker — a shield holding a verified padlock</title>
+  <rect x="6" y="6" width="388" height="288" rx="18" fill="#faf6ef" stroke="#e6ddcb" stroke-width="2"/>
+  <path d="M200 48l96 34v62c0 62-40 96-96 116-56-20-96-54-96-116V82z" fill="#fffdf7" stroke="#1d1a16" stroke-width="5" stroke-linejoin="round"/>
+  <path d="M168 148v-18a32 32 0 0164 0v18" fill="none" stroke="#cf3618" stroke-width="6" stroke-linecap="round"/>
+  <rect x="152" y="148" width="96" height="72" rx="10" fill="#faf6ef" stroke="#1d1a16" stroke-width="5"/>
+  <circle cx="200" cy="176" r="9" fill="#cf3618"/>
+  <path d="M200 182v16" stroke="#cf3618" stroke-width="6" stroke-linecap="round"/>
+  <circle cx="300" cy="232" r="19" fill="#faf6ef" stroke="#1d1a16" stroke-width="5"/>
+  <path d="M290 232l7 7 l20 -14" stroke="#cf3618" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+</svg>

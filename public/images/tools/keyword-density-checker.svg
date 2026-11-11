@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" role="img" aria-labelledby="t">
+  <title id="t">Keyword Density Checker — highlighted words measured in a chart</title>
+  <rect x="6" y="6" width="388" height="288" rx="18" fill="#faf6ef" stroke="#e6ddcb" stroke-width="2"/>
+  <g stroke="#1d1a16" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"><rect x="52" y="66" width="138" height="168" rx="8" fill="#fffdf7"/><path d="M174 66v16h16" fill="none" stroke-width="4"/></g>
+  <rect x="66" y="94" width="52" height="13" rx="4" fill="#cf3618" opacity="0.85"/>
+  <g stroke="#1d1a16" stroke-width="4" stroke-linecap="round" opacity="0.45"><path d="M66 126h108M66 148h88"/></g>
+  <rect x="66" y="168" width="40" height="13" rx="4" fill="#cf3618" opacity="0.85"/>
+  <g stroke="#1d1a16" stroke-width="4" stroke-linecap="round" opacity="0.45"><path d="M66 200h96"/></g>
+  <g fill="#1d1a16"><rect x="238" y="168" width="26" height="66" rx="5"/><rect x="282" y="132" width="26" height="102" rx="5"/></g>
+  <rect x="326" y="96" width="26" height="138" rx="5" fill="#cf3618"/>
+  <path d="M228 234h134" stroke="#1d1a16" stroke-width="5" stroke-linecap="round"/>
+</svg>

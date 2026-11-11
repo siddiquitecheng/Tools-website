@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" role="img" aria-labelledby="t">
+  <title id="t">Time Zone Converter — clocks set to different zones</title>
+  <rect x="6" y="6" width="388" height="288" rx="18" fill="#faf6ef" stroke="#e6ddcb" stroke-width="2"/>
+  <path d="M128 96a140 72 0 0 1 144 0" stroke="#cf3618" stroke-width="5" fill="none" stroke-linecap="round"/>
+  <polygon points="288,100 268,90 271,110" fill="#cf3618"/>
+  <circle cx="116" cy="142" r="46" fill="#fffdf7" stroke="#1d1a16" stroke-width="5"/>
+  <path d="M116 142v-26M116 142h18" stroke="#1d1a16" stroke-width="5" stroke-linecap="round"/>
+  <circle cx="116" cy="142" r="4.5" fill="#cf3618"/>
+  <circle cx="284" cy="142" r="46" fill="#fffdf7" stroke="#1d1a16" stroke-width="5"/>
+  <path d="M284 142v14M284 142h-20" stroke="#1d1a16" stroke-width="5" stroke-linecap="round"/>
+  <circle cx="284" cy="142" r="4.5" fill="#cf3618"/>
+  <text x="116" y="218" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#1d1a16">GMT</text>
+  <text x="284" y="218" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#1d1a16">EST</text>
+</svg>

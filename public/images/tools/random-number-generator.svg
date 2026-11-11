@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" role="img" aria-labelledby="t">
+  <title id="t">Random Number Generator — three lottery balls with drawn numbers</title>
+  <rect x="6" y="6" width="388" height="288" rx="18" fill="#faf6ef" stroke="#e6ddcb" stroke-width="2"/>
+  <circle cx="126" cy="150" r="34" fill="#fffdf7" stroke="#1d1a16" stroke-width="5"/>
+  <circle cx="200" cy="118" r="38" fill="#cf3618"/>
+  <circle cx="274" cy="150" r="34" fill="#fffdf7" stroke="#1d1a16" stroke-width="5"/>
+  <text x="126" y="160" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="26" font-weight="700" fill="#1d1a16">7</text>
+  <text x="200" y="128" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="26" font-weight="700" fill="#faf6ef">42</text>
+  <text x="274" y="160" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="26" font-weight="700" fill="#1d1a16">9</text>
+  <path d="M330 66l3 7.5 7.5 3-7.5 3-3 7.5-3-7.5-7.5-3 7.5-3z" fill="#cf3618"/>
+  <path d="M84 212h232" stroke="#1d1a16" stroke-width="4" stroke-linecap="round"/>
+</svg>

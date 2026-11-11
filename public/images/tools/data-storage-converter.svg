@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" role="img" aria-labelledby="t">
+  <title id="t">Data Storage Converter — bytes scaled up to gigabytes</title>
+  <rect x="6" y="6" width="388" height="288" rx="18" fill="#faf6ef" stroke="#e6ddcb" stroke-width="2"/>
+  <rect x="64" y="96" width="120" height="26" rx="8" fill="#fffdf7" stroke="#1d1a16" stroke-width="4"/>
+  <rect x="64" y="130" width="120" height="26" rx="8" fill="#fffdf7" stroke="#1d1a16" stroke-width="4"/>
+  <rect x="64" y="164" width="120" height="26" rx="8" fill="#fffdf7" stroke="#1d1a16" stroke-width="4"/>
+  <circle cx="84" cy="109" r="4" fill="#cf3618"/>
+  <circle cx="84" cy="143" r="4" fill="#1d1a16"/>
+  <circle cx="84" cy="177" r="4" fill="#1d1a16"/>
+  <text x="124" y="222" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="700" fill="#1d1a16">KB</text>
+  <path d="M196 143h34" stroke="#cf3618" stroke-width="5" stroke-linecap="round"/>
+  <polygon points="230,143 214,134 214,152" fill="#cf3618"/>
+  <rect x="238" y="128" width="96" height="30" rx="6" fill="#cf3618"/>
+  <text x="286" y="150" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" letter-spacing="1" fill="#faf6ef">GB</text>
+  <path d="M286 72l3.5 8.5 8.5 3.5-8.5 3.5-3.5 8.5-3.5-8.5-8.5-3.5 8.5-3.5z" fill="#cf3618"/>
+</svg>

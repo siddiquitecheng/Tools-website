@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" role="img" aria-labelledby="t">
+  <title id="t">Roman Numeral Converter — 42 rewritten as XLII</title>
+  <rect x="6" y="6" width="388" height="288" rx="18" fill="#faf6ef" stroke="#e6ddcb" stroke-width="2"/>
+  <text x="102" y="160" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="46" font-weight="700" fill="#1d1a16">42</text>
+  <text x="298" y="160" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="40" font-weight="700" fill="#1d1a16">XLII</text>
+  <path d="M150 122h100" stroke="#cf3618" stroke-width="5" stroke-linecap="round"/>
+  <polygon points="250,122 234,113 234,131" fill="#cf3618"/>
+  <path d="M250 156h-100" stroke="#cf3618" stroke-width="5" stroke-linecap="round"/>
+  <polygon points="134,156 152,147 152,165" fill="#cf3618"/>
+  <path d="M62 186h80M258 186h80" stroke="#1d1a16" stroke-width="4" stroke-linecap="round" opacity="0.45"/>
+  <path d="M200 54l3.5 8.5 8.5 3.5-8.5 3.5-3.5 8.5-3.5-8.5-8.5-3.5 8.5-3.5z" fill="#cf3618"/>
+</svg>

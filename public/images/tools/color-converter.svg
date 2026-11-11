@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" role="img" aria-labelledby="t">
+  <title id="t">Color Converter — a HEX swatch and an RGB swatch exchanging places</title>
+  <rect x="6" y="6" width="388" height="288" rx="18" fill="#faf6ef" stroke="#e6ddcb" stroke-width="2"/>
+  <rect x="92" y="102" width="72" height="72" rx="12" fill="#cf3618"/>
+  <rect x="236" y="102" width="72" height="72" rx="12" fill="#fffdf7" stroke="#1d1a16" stroke-width="5"/>
+  <g fill="#1d1a16">
+    <rect x="250" y="118" width="44" height="10"/>
+    <rect x="250" y="136" width="44" height="10"/>
+    <rect x="250" y="154" width="44" height="10"/>
+  </g>
+  <path d="M170 118A36 30 0 0 1 230 118" fill="none" stroke="#cf3618" stroke-width="5" stroke-linecap="round"/>
+  <path d="M230 118l-12-2M230 118l-4-11" stroke="#cf3618" stroke-width="4.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M230 158A36 30 0 0 1 170 158" fill="none" stroke="#cf3618" stroke-width="5" stroke-linecap="round"/>
+  <path d="M170 158l12 2M170 158l4 11" stroke="#cf3618" stroke-width="4.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="96" y="196" width="64" height="25" rx="6" fill="#cf3618"/><text x="128" y="213" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12.5" font-weight="700" letter-spacing="1" fill="#faf6ef">HEX</text>
+  <rect x="240" y="196" width="64" height="25" rx="6" fill="#cf3618"/><text x="272" y="213" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12.5" font-weight="700" letter-spacing="1" fill="#faf6ef">RGB</text>
+</svg>

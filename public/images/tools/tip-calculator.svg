@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" role="img" aria-labelledby="t">
+  <title id="t">Tip Calculator — a serving cloche with a coin beside it</title>
+  <rect x="6" y="6" width="388" height="288" rx="18" fill="#faf6ef" stroke="#e6ddcb" stroke-width="2"/>
+  <path d="M102 198A78 62 0 0 1 258 198z" fill="#fffdf7" stroke="#1d1a16" stroke-width="5" stroke-linejoin="round"/>
+  <circle cx="180" cy="128" r="9" fill="#fffdf7" stroke="#1d1a16" stroke-width="4.5"/>
+  <g stroke="#1d1a16" stroke-linecap="round">
+    <path d="M88 198h184" stroke-width="5"/>
+    <path d="M100 214h160" stroke-width="4"/>
+  </g>
+  <circle cx="292" cy="168" r="25" fill="#fffdf7" stroke="#1d1a16" stroke-width="5"/>
+  <path d="M292 154l3.5 10.5 10.5 3.5-10.5 3.5-3.5 10.5-3.5-10.5-10.5-3.5 10.5-3.5z" fill="#cf3618"/>
+  <rect x="133" y="238" width="94" height="25" rx="6" fill="#cf3618"/><text x="180" y="255" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12.5" font-weight="700" letter-spacing="1" fill="#faf6ef">TIP 15%</text>
+</svg>

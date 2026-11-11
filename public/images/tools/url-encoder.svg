@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" role="img" aria-labelledby="t">
+  <title id="t">URL Encoder — unsafe characters encoded with percent signs</title>
+  <rect x="6" y="6" width="388" height="288" rx="18" fill="#faf6ef" stroke="#e6ddcb" stroke-width="2"/>
+  <rect x="52" y="86" width="296" height="52" rx="26" fill="#fffdf7" stroke="#1d1a16" stroke-width="5"/>
+  <g stroke="#1d1a16" stroke-width="4" stroke-linecap="round" opacity="0.45"><path d="M76 112h66M206 112h60"/></g>
+  <g stroke="#cf3618" stroke-width="5" stroke-linecap="round" fill="none"><circle cx="157.0" cy="102.0" r="6.0"/><circle cx="179.0" cy="122.0" r="6.0"/><path d="M180.0 96.0L156.0 128.0"/></g>
+  <rect x="52" y="168" width="296" height="52" rx="26" fill="#fffdf7" stroke="#1d1a16" stroke-width="5"/>
+  <g stroke="#1d1a16" stroke-width="4" stroke-linecap="round" opacity="0.45"><path d="M76 194h196"/></g>
+  <g stroke="#cf3618" stroke-width="5" stroke-linecap="round" fill="none"><circle cx="289.0" cy="184.0" r="6.0"/><circle cx="311.0" cy="204.0" r="6.0"/><path d="M312.0 178.0L288.0 210.0"/></g>
+  <path d="M336 32l3 7 7 3-7 3-3 7-3-7-7-3 7-3z" fill="#cf3618"/>
+</svg>

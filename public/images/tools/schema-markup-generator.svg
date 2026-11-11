@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" role="img" aria-labelledby="t">
+  <title id="t">Schema Markup Generator — braces wrapping structured data blocks</title>
+  <rect x="6" y="6" width="388" height="288" rx="18" fill="#faf6ef" stroke="#e6ddcb" stroke-width="2"/>
+  <path d="M104 62c-22 4-30 16-30 38v26c0 14-6 20-16 24 10 4 16 10 16 24v26c0 22 8 34 30 38M296 62c22 4 30 16 30 38v26c0 14 6 20 16 24-10 4-16 10-16 24v26c0 22-8 34-30 38" fill="none" stroke="#cf3618" stroke-width="5" stroke-linecap="round"/>
+  <g fill="#fffdf7" stroke="#1d1a16" stroke-width="4"><rect x="118" y="88" width="164" height="24" rx="6"/><rect x="142" y="126" width="140" height="24" rx="6"/><rect x="142" y="164" width="116" height="24" rx="6"/><rect x="118" y="202" width="148" height="24" rx="6"/></g>
+  <g fill="#cf3618"><rect x="128" y="96" width="8" height="8" rx="2"/><rect x="152" y="134" width="8" height="8" rx="2"/><rect x="152" y="172" width="8" height="8" rx="2"/><rect x="128" y="210" width="8" height="8" rx="2"/></g>
+</svg>
