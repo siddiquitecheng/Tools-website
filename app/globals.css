@@ -3786,3 +3786,24 @@
     );
   }
 }
+
+/* ============================================================
+   HERO TIGHTEN (post-vibrant follow-up)
+   The hero alone filled tall viewports, pushing the Popular
+   tools row just below the fold. These overrides compact the
+   hero's vertical rhythm (desktop) and trim the gap before the
+   Popular section, so the first tool cards peek into the first
+   screen. Mobile keeps its own tighter rhythm below.
+   ============================================================ */
+@media (min-width: 1024px) {
+  .home-hero {
+    padding-block: 46px 38px;
+    gap: 40px;
+  }
+  .hero-title {
+    font-size: clamp(40px, 4.6vw, 64px);
+  }
+  .hero-eyebrow {
+    margin-bottom: 16px;
+  }
+}
