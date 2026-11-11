@@ -2723,3 +2723,20 @@
   border-radius: 14px;
   box-shadow: 0 14px 30px -18px #1d1a1633;
 }
+
+/* ============================================================
+ * LAYOUT FIX (2026-11-11) — converter first on tool pages.
+ * The ToolShell header is now a compact stack (icon tile, badges,
+ * title, blurb) with the workspace directly beneath it, so the
+ * .tool-page-media illustration moved out of the header into the
+ * "01 Overview" card. The base .tool-page-media rule above (in the
+ * tool-images section) was written for the centred header layout —
+ * width min(320px, 82%), margin 0 auto 18px — so the rule below
+ * overrides it, scoped to the info card: a left-aligned block
+ * figure at a moderate width above the About text. The base rule's
+ * img styling (radius + shadow) is kept and still applies.
+ * ============================================================ */
+.tool-info-card .tool-page-media {
+  width: min(340px, 100%);
+  margin: 16px 0 8px;
+}

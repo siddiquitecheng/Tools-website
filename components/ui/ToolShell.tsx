@@ -99,21 +99,16 @@ export const ToolShell: React.FC<ToolShellProps> = ({
         ]}
       />
 
-      {/* Tool Header — centered, like a SmallPDF tool page */}
-      <header className="tool-page-heading mx-auto mt-7 max-w-3xl text-center">
-        {toolImage ? (
-          <figure className="tool-page-media">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src={toolImage} alt={`${tool.name} illustration`} />
-          </figure>
-        ) : (
-          <span
-            className="tool-page-icon mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-lg shadow-sm"
-            style={{ backgroundColor: accent, color: "white" }}
-          >
-            <Icon className="h-8 w-8" aria-hidden="true" strokeWidth={1.7} />
-          </span>
-        )}
+      {/* Tool Header — compact, centered; the workspace follows directly.
+          The tool illustration lives in the Overview section below so the
+          converter is the first substantial block on the page. */}
+      <header className="tool-page-heading mx-auto mt-4 max-w-3xl text-center">
+        <span
+          className="tool-page-icon mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-lg shadow-sm"
+          style={{ backgroundColor: accent, color: "white" }}
+        >
+          <Icon className="h-8 w-8" aria-hidden="true" strokeWidth={1.7} />
+        </span>
         <div className="mb-3 flex flex-wrap items-center justify-center gap-2">
           <Badge variant="accent">{tool.category}</Badge>
           <ToolUsageBadge
@@ -155,7 +150,7 @@ export const ToolShell: React.FC<ToolShellProps> = ({
       {/* Main Workspace Surface */}
       <section
         aria-label={`${tool.name} workspace`}
-        className="tool-workspace tool-stage mx-auto mt-7 max-w-5xl rounded-2xl border border-[var(--line)] bg-white p-4 shadow-[0_8px_40px_-20px_rgba(15,32,64,0.18)] sm:p-6 lg:p-8"
+        className="tool-workspace tool-stage mx-auto mt-5 max-w-5xl rounded-2xl border border-[var(--line)] bg-white p-4 shadow-[0_8px_40px_-20px_rgba(15,32,64,0.18)] sm:p-6 lg:p-8"
       >
         {children}
       </section>
@@ -170,6 +165,12 @@ export const ToolShell: React.FC<ToolShellProps> = ({
           <h2 className="font-[family-name:var(--font-display)] text-2xl font-bold text-[var(--ink)]">
             About {tool.name}
           </h2>
+          {toolImage && (
+            <figure className="tool-page-media">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src={toolImage} alt={`${tool.name} illustration`} />
+            </figure>
+          )}
           <p className="mt-3 text-sm leading-relaxed text-[var(--ink-soft)]">
             {aboutText ||
               `${tool.name} is a fast, privacy-focused utility designed to handle your workflow cleanly with zero account creation or registration.`}
