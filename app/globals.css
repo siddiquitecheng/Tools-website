@@ -3807,3 +3807,99 @@
     margin-bottom: 16px;
   }
 }
+
+/* ============================================================
+   HERO FIRST SCREEN (post-hero-tighten follow-up)
+   Goal: pull the first row of Popular tool cards into the
+   first screen on desktop, as in the approved vibrant
+   concept. The hero keeps every element (eyebrow, headline,
+   subheading, description, actions, trust row, search) —
+   this block only tightens its vertical rhythm, trims the
+   Popular section's lead-in, and caps the popular cards'
+   illustration stage so a card no longer spends ~260px on
+   its image. Desktop only (min-width: 1024px); the mobile
+   rhythm is untouched.
+   ============================================================ */
+@media (min-width: 1024px) {
+  /* --- Hero: tighter vertical rhythm --- */
+  .home-hero {
+    padding-block: 26px 16px;
+    gap: 40px;
+  }
+  .hero-eyebrow {
+    margin-bottom: 10px;
+  }
+  .hero-title {
+    font-size: clamp(38px, 3.2vw, 52px);
+    letter-spacing: -1.5px;
+  }
+  .hero-subheading {
+    margin-top: 16px;
+    font-size: 18px;
+    line-height: 1.55;
+  }
+  .hero-description {
+    margin-top: 8px;
+    line-height: 1.6;
+  }
+  .hero-actions {
+    margin-top: 20px;
+  }
+  .hero-actions .site-button {
+    min-height: 44px;
+    padding-block: 10px;
+  }
+  .hero-trust {
+    margin-top: 12px;
+  }
+  .home-search {
+    margin-top: 20px;
+  }
+  /* The copy column drives the hero's height; the art is
+     trimmed so its proportions match the tighter rhythm. */
+  .hero-art {
+    height: 400px;
+  }
+
+  /* --- Popular section: shorter lead-in --- */
+  .homepage #popular-tools {
+    padding-top: 18px;
+  }
+  #popular-tools .section-heading {
+    margin-bottom: 16px;
+  }
+  #popular-tools .section-eyebrow {
+    margin-bottom: 8px;
+  }
+  #popular-tools .section-heading h2 {
+    font-size: 30px;
+  }
+  #popular-tools .section-heading p:not(.section-eyebrow) {
+    margin-top: 8px;
+    line-height: 1.55;
+  }
+  #popular-tools .tool-filters {
+    margin-bottom: 14px;
+  }
+  #popular-tools .tool-filters button {
+    padding-block: 9px;
+  }
+
+  /* --- Popular cards: compact illustration stage ---
+     The SVG illustration (400x300) is shown whole on a paper
+     stage (object-fit: contain, no cropping); the stage's
+     background matches the illustration's own paper panel. */
+  #popular-tools .tool-card {
+    padding: 16px 20px;
+  }
+  #popular-tools .tool-card-media {
+    height: 124px;
+    margin-bottom: 8px;
+    background: #faf6ef;
+  }
+  #popular-tools .tool-card-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+}
