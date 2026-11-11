@@ -138,7 +138,7 @@ export const tools: Tool[] = [
   t("delete-pdf-pages", "Delete PDF Pages", "pdf", "client", "Remove selected pages from a PDF.", ["delete", "pdf", "pages"], { accepts: [".pdf"] }),
   t("rearrange-pdf-pages", "Rearrange PDF Pages", "pdf", "client", "Reorder pages visually and export a new PDF.", ["reorder", "pdf", "pages"], { accepts: [".pdf"] }),
 
-  t("image-compressor", "Image Compressor", "image", "client", "Compress JPG, PNG, and WebP images locally.", ["image", "compress", "optimize"], { accepts: [".jpg", ".jpeg", ".png", ".webp"], featured: true }),
+  t("image-compressor", "Image Compressor", "image", "client", "Compress JPG, PNG, and WebP images locally — shrink a photo toward 100 KB, 50 KB or 20 KB for an online form.", ["image", "compress", "optimize"], { accepts: [".jpg", ".jpeg", ".png", ".webp"], featured: true }),
   t("image-resizer", "Image Resizer", "image", "client", "Resize images by dimensions or percentage.", ["image", "resize", "scale"], { accepts: [".jpg", ".jpeg", ".png", ".webp"], featured: true }),
   t("crop-image", "Crop Image", "image", "client", "Crop images with freeform and preset aspect ratios.", ["crop", "image", "aspect"], { accepts: [".jpg", ".jpeg", ".png", ".webp"] }),
   t("rotate-image", "Rotate Image", "image", "client", "Rotate and flip image files in the browser.", ["rotate", "image", "flip"], { accepts: [".jpg", ".jpeg", ".png", ".webp"] }),

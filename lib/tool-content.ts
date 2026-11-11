@@ -15,17 +15,20 @@ import type { PdfToolContent } from "./pdf-tool-content";
 export const toolContent: Record<string, PdfToolContent> = {
   "image-compressor": {
     aboutText:
-      "Image Compressor shrinks JPG, PNG and WebP pictures in your browser so they load faster on web pages and send more reliably by email and messaging apps. The output is always saved as a JPEG named 'compressed' plus your original file name, so a PNG with transparency will come out with a solid background — if keeping transparency matters, use a format converter for that picture instead.",
+      "Image Compressor shrinks JPG, PNG and WebP pictures in your browser so they load faster on web pages and send more reliably by email and messaging apps. The output is always saved as a JPEG named 'compressed' plus your original file name, so a PNG with transparency will come out with a solid background — if keeping transparency matters, use a format converter for that picture instead. It is also built for form uploads: exam and job applications, bank KYC and government portals often cap a photo at 100 KB, 50 KB or even 20 KB. Compress here first, check the resulting size, and if the file is still over the limit, reduce its dimensions with Image Resizer and compress again — that two-step route gets most form photos under the cap.",
     steps: [
       { title: "Choose your image", description: "Pick a JPG, PNG or WebP picture from your device. It is read locally and never uploaded." },
       { title: "Let it compress", description: "The tool prepares a smaller JPEG version right in your browser — no server queue, no waiting for an upload." },
-      { title: "Check the size and preview", description: "Compare the new file size and make sure the picture still looks good to you." },
+      { title: "Check the size and preview", description: "Compare the new file size with the limit your form sets — 100 KB, 50 KB and 20 KB are common caps — and make sure the picture still looks good to you." },
       { title: "Download the JPEG", description: "Save the compressed file and use it for your site, email or upload. Your original stays untouched." },
     ],
     faqs: [
       { question: "Does the Image Compressor reduce image quality?", answer: "Compression discards some image data, so a heavily compressed photo can look slightly softer. For typical web and sharing use the difference is hard to notice, and your original file is never changed, so you can always start again." },
       { question: "What formats can I compress?", answer: "You can compress JPG, PNG and WebP images. Whatever format you start with, the downloaded result is always a JPEG file." },
       { question: "Will my PNG transparency survive compression?", answer: "No. JPEG does not support transparency, so see-through areas in a PNG or WebP are replaced with a solid background in the compressed file." },
+      { question: "How do I compress an image to 100 KB for an online form?", answer: "Compress the picture here and compare the new file size — there is no exact-size dial, so checking the result matters. If the JPEG is still over 100 KB, shrink the picture's dimensions with Image Resizer first and then compress it again; smaller dimensions plus compression bring most form photos under the cap." },
+      { question: "Can I reduce a photo to 50 KB or 20 KB for an exam or job application?", answer: "Yes, with the same two-step route: reduce the photo's dimensions with Image Resizer, then compress it here and check the size. Very small targets like 20 KB need noticeably smaller dimensions, so start from your original photo each time rather than re-compressing an already compressed copy." },
+      { question: "Will a photo compressed for a form still look clear enough?", answer: "For the portrait and document photos forms usually ask for, yes — at sizes around 100 KB they stay clear. Preview the compressed picture at full size before you submit it, and keep your original file untouched in case the form asks for a different size later." },
     ],
   },
   "image-resizer": {
@@ -41,6 +44,8 @@ export const toolContent: Record<string, PdfToolContent> = {
       { question: "Should I resize by dimensions or by percentage?", answer: "Use dimensions when a platform or form gives you an exact size in pixels, such as a banner or profile picture. Use percentage when you simply want the same picture smaller or larger, for example halving a photo before emailing it." },
       { question: "Can I resize without distorting the picture?", answer: "Keep the width and height in the same proportion as the original and the picture will not stretch. Dimensions with a different shape reshape the image to fit, so check the preview before downloading." },
       { question: "Will resizing change my image quality?", answer: "Making a picture smaller usually still looks crisp. Enlarging a small picture can make it look softer, because no new detail is created — start from the largest version you have." },
+      { question: "Can I resize a photo for Instagram or another social platform?", answer: "Yes. Enter the exact width and height in pixels that the platform asks for — a square post size, for example — or scale the picture by percentage, then check the preview. The tool has no built-in platform presets, so take the numbers from the platform's own guidance." },
+      { question: "Can I resize an image for an online form?", answer: "Yes. Forms usually state an exact size in pixels or a maximum dimension. Enter those numbers here, keep the width and height in the same proportion as the original to avoid distortion, and download the resized copy for your upload." },
     ],
   },
   "heic-to-jpg": {
@@ -71,6 +76,9 @@ export const toolContent: Record<string, PdfToolContent> = {
       { question: "What kinds of pictures work best with this Background Remover?", answer: "Pictures with a single, even, solid-color background, such as a product on a white backdrop or an object on a green screen. The more uniform the background color, the cleaner the result." },
       { question: "Can it remove the background from any photo, like a portrait outdoors?", answer: "No. This is a chroma-key tool for solid-color backgrounds, not AI segmentation. It cannot reliably separate a person or pet from a busy, varied or patterned background." },
       { question: "Why do the edges look rough on my photo?", answer: "Rough edges usually mean the background was not a single solid color, or that shadows and shading changed the background tone across the picture. A picture shot against a truly even backdrop gives much smoother edges." },
+      { question: "Can I make a transparent background for a product photo?", answer: "Yes, when the product was photographed against a single solid backdrop, such as a white studio background. The tool clears that one color, and the downloaded cutout has transparent areas where the background was, ready to place over a new background, slide or shop design." },
+      { question: "Can it remove the white background from a logo?", answer: "A logo on a plain white background is one of the best cases for this tool, because the background is a single even color. One caution: if the logo itself contains white areas, those may be cleared along with the background, so check the preview closely before downloading." },
+      { question: "Can I use it for a passport-size photo background?", answer: "If the portrait was taken against one plain, even-colored wall or backdrop, the tool can clear that color so the photo can be placed over the plain background your application requires. It cannot clean up a busy room or outdoor background, and dimensions and file size are separate form requirements — adjust those with Image Resizer and Image Compressor if your form sets them." },
     ],
   },
   "ai-detector": {
@@ -86,6 +94,8 @@ export const toolContent: Record<string, PdfToolContent> = {
       { question: "Does the AI Detector prove text was written by AI?", answer: "No. It gives a probabilistic estimate based on writing patterns, not proof. Human writing can resemble AI output, and AI output can be edited to look human, so always combine the result with context and a careful read." },
       { question: "What kinds of text work best with the detector?", answer: "Longer, continuous prose works best, such as essays and articles. Very short texts, lists, heavily quoted passages and technical writing with fixed phrasing can produce less reliable estimates." },
       { question: "Why might I see an error instead of a result?", answer: "The detector needs a configured AI provider on the site. If no provider is enabled, the tool shows an error rather than inventing a score." },
+      { question: "Can I check whether a text was written by ChatGPT?", answer: "Yes. Paste the text and the detector estimates whether it reads like AI output, including text produced by ChatGPT-style generators. Treat the result as a screening estimate, not proof — edited AI text and formulaic human writing can both blur the line, so use it to decide what to verify, not as a final verdict on an essay or assignment." },
+      { question: "Is the AI Detector free to use with no sign-up?", answer: "Yes. The check is free and needs no account. It runs through the AI provider configured on this site, so if no provider is enabled the tool shows an error instead of a made-up score." },
     ],
   },
   "plagiarism-checker": {
@@ -131,6 +141,8 @@ export const toolContent: Record<string, PdfToolContent> = {
       { question: "Does paraphrasing remove the need for citation?", answer: "No. If the idea comes from another source, it still needs a citation even after rewording. Paraphrasing changes the words, not the ownership of the idea." },
       { question: "How is paraphrasing different from rewriting an article?", answer: "Paraphrasing focuses on short passages and keeps the meaning fairly close to the original. Rewriting a whole article reshapes longer text in a new voice and often reorganizes it." },
       { question: "Why might the tool show an error?", answer: "The paraphrasing feature needs a configured AI provider on the site. If no provider is enabled, it shows an error instead of a rewrite." },
+      { question: "Can it paraphrase a paragraph without changing its meaning?", answer: "That is exactly what it is for: paste a sentence or short passage from an essay, assignment or email and it returns fresh wording with the same meaning. Always compare the rewrite against the original before using it, because a successful paraphrase keeps the facts, tone and emphasis intact." },
+      { question: "Does paraphrasing a source help me avoid plagiarism?", answer: "Rewording alone does not make someone else's ideas yours, and it should not be used to disguise copied work. Use the tool to restate ideas you understand in your own words, restructure the passage yourself, and still cite the source — a citation is needed whenever the idea comes from somewhere else." },
     ],
   },
   "ai-summarizer": {
@@ -161,6 +173,8 @@ export const toolContent: Record<string, PdfToolContent> = {
       { question: "Does humanizing text make it undetectable as AI writing?", answer: "Not reliably, and that should not be the goal. Use the humanizer to polish your own draft and improve readability, not to hide authorship or evade a review process that requires disclosure." },
       { question: "Will the humanizer change my meaning?", answer: "It can, which is why you must review the output carefully. Check facts, emphasis and tone, and correct any sentence that no longer says what you intended." },
       { question: "Why do I see an error instead of a result?", answer: "The humanizer needs a configured AI provider on the site. If no provider is enabled, it shows an error rather than a rewritten text." },
+      { question: "Can I humanize ChatGPT text for free?", answer: "Yes. Paste the draft you generated with ChatGPT or a similar tool and the humanizer reworks it toward natural, human-sounding writing at no cost and with no sign-up. Add your own examples, opinions and details afterwards so the text is genuinely yours." },
+      { question: "How does the humanizer make AI text sound more natural?", answer: "It varies sentence lengths, swaps stiff connectors for simpler ones and loosens the mechanical rhythm that makes generated text easy to spot. Read the result aloud afterwards — if a sentence sounds off or the meaning has shifted, fix it before you use the text." },
     ],
   },
   "word-counter": {
@@ -191,6 +205,8 @@ export const toolContent: Record<string, PdfToolContent> = {
       { question: "What does a JSON formatter do?", answer: "It rewrites JSON with consistent indentation and line breaks so the structure is easy to read. It does not change any keys, values or data types — only how the JSON is presented." },
       { question: "Is formatting the same as validating JSON?", answer: "Not quite. Formatting makes valid JSON readable, but if your JSON has a syntax error the formatter cannot produce output until the error is fixed. A validator focuses on finding and describing those errors in detail." },
       { question: "Will formatting change my data?", answer: "No. Formatting only adjusts whitespace — spaces, line breaks and indentation. The underlying data stays identical, so formatted JSON works exactly like the original in any application." },
+      { question: "Can I format and validate JSON in one click?", answer: "Effectively, yes. Paste your JSON and run the formatter: valid JSON comes back beautified with proper indentation, and if there is a syntax error no output is produced and the message points at the problem spot — so a failed format is itself a quick validity check." },
+      { question: "Is it safe to paste JSON that contains API keys or tokens?", answer: "Yes. The formatter runs entirely in your browser and never uploads your data, so API responses, configuration files and payloads containing keys or tokens stay on your device." },
     ],
   },
   "password-generator": {
@@ -236,6 +252,9 @@ export const toolContent: Record<string, PdfToolContent> = {
       { question: "What is an EMI?", answer: "An equated monthly instalment is a fixed monthly payment that covers both the principal you borrowed and the interest on it, so the amount stays the same each month for the life of the loan." },
       { question: "Why does a longer loan term mean more total interest?", answer: "Because you are borrowing the money for longer, interest accrues over more months. The monthly payment drops, but the sum of all payments — and therefore the interest portion — goes up." },
       { question: "Does the result include lender fees?", answer: "No. The calculation covers principal and interest only. Processing fees, insurance and other charges are set by the lender and add to the real cost, so ask for the full schedule before signing." },
+      { question: "Can I use this as a home loan EMI calculator with total interest?", answer: "Yes. Enter the home loan amount, the annual interest rate and the term, and alongside the monthly EMI you can compare terms to see how the total interest changes — a shorter term raises the monthly payment but cuts the total interest substantially." },
+      { question: "Can it calculate a car loan EMI per month?", answer: "Yes. The same calculation works for car loans and personal loans: enter the amount you plan to borrow, the lender's annual rate and the repayment term to get the monthly instalment." },
+      { question: "How is EMI calculated — what is the formula?", answer: "EMI = P × r × (1 + r)^n ÷ ((1 + r)^n − 1), where P is the loan amount, r is the monthly interest rate (the annual rate divided by 12, then by 100) and n is the number of monthly payments. For example, a loan of 100,000 at 12% a year over 12 months gives r = 0.01 and n = 12, so the EMI works out to about 8,885 a month in the loan's currency." },
     ],
   },
   "loan-calculator": {

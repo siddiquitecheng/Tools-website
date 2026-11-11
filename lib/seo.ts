@@ -129,9 +129,9 @@ const seoOverrides: Record<string, { title: string; description: string }> = {
       "Convert PDF to JPG online free. Render PDF pages as high-quality JPG images in your browser. No signup, no watermark, fully private.",
   },
   "image-compressor": {
-    title: "Compress Images Online Free — JPG, PNG, WebP",
+    title: "Compress Image Online Free — Reduce JPG, PNG to 100 KB, 50 KB, 20 KB",
     description:
-      "Compress images online free: shrink JPG, PNG, and WebP files locally in your browser. Note: output is always JPEG, so PNG transparency is lost.",
+      "Compress images online free: shrink JPG, PNG, and WebP files in your browser toward the 100 KB, 50 KB or 20 KB limits that exam, job and government forms set. No signup. Note: output is always JPEG, so PNG transparency is lost.",
   },
   "heic-to-jpg": {
     title: "HEIC to JPG Converter Online Free — iPhone Photos",
