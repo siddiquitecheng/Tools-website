@@ -1588,4 +1588,154 @@ export const toolContent: Record<string, PdfToolContent> = {
       { question: "Can I reorder pages after creating the PDF?", answer: "Arrange your pictures in the right order before converting, since the PDF is assembled in that sequence. If the order is wrong, simply run the conversion again with the pictures rearranged." },
     ],
   },
+  "jfif-to-png": {
+    aboutText:
+      "JFIF to PNG converts JFIF pictures into standard PNG files that modern apps will actually open. JFIF is an older container closely related to JPEG, and some phones, cameras and messaging apps still save pictures with the .jfif extension — which many programs refuse to preview, edit or accept as an upload. The conversion runs in your browser, the PNG shows the same picture as the original, and the file will usually be larger because PNG stores pictures losslessly.",
+    steps: [
+      { title: "Choose your JFIF file", description: "Pick the .jfif picture from your device. It is read locally and never uploaded." },
+      { title: "Start the conversion", description: "The PNG version is prepared in your browser — no server queue and no waiting for an upload." },
+      { title: "Preview the PNG", description: "Confirm the picture displays correctly and looks the same as the original." },
+      { title: "Download and use it", description: "Save the PNG and open, edit or upload it wherever the JFIF file was rejected. Keep the original as a backup until you are sure." },
+    ],
+    faqs: [
+      { question: "What is a JFIF file?", answer: "JFIF is an older image format closely related to JPEG. Some devices and apps save photos with a .jfif extension, which many modern programs do not recognize, even though the picture inside is an ordinary JPEG-style image." },
+      { question: "Will converting JFIF to PNG change how my picture looks?", answer: "No. The converted PNG shows the same picture as the JFIF file. Conversion fixes the compatibility problem without altering the image content, though it does not sharpen or repair the image either." },
+      { question: "Why is the PNG file larger than the JFIF?", answer: "PNG stores pictures losslessly, while JFIF uses JPEG-style compression to save space. The same picture therefore takes up more room as a PNG." },
+    ],
+  },
+  "jpeg-to-jpg": {
+    aboutText:
+      "JPEG to JPG re-exports a JPEG picture with the shorter .jpg extension, for the older systems, upload forms and apps that reject a file ending in .jpeg. JPEG and JPG are the same format with two different names, so nothing about the picture changes — the quality, colors and size stay the same. It runs in your browser and simply gives the same picture the file name stricter systems expect.",
+    steps: [
+      { title: "Choose your JPEG file", description: "Pick the .jpeg picture from your device. It stays on your device and is never uploaded." },
+      { title: "Re-export as JPG", description: "The JPG version is prepared locally in your browser." },
+      { title: "Preview the JPG", description: "Confirm it looks identical to your original picture." },
+      { title: "Download and submit", description: "Save the JPG and upload or submit it wherever the JPEG file was previously rejected." },
+    ],
+    faqs: [
+      { question: "Are JPEG and JPG actually different formats?", answer: "No. They are the same format. JPEG is the full name and JPG is the shortened three-letter extension that older systems required. The picture data inside is identical either way." },
+      { question: "Will converting JPEG to JPG reduce quality?", answer: "No. Because the format is the same, re-exporting as JPG does not recompress or degrade the picture. It simply gives the file the extension that stricter systems expect." },
+      { question: "Could I just rename the file instead?", answer: "Renaming a .jpeg file to .jpg often works, but some systems check more than the name, and renaming is easy to get wrong on a phone. Using the converter produces a clean JPG file without the guesswork." },
+    ],
+  },
+  "screenshot-tool": {
+    aboutText:
+      "Screenshot Tool lets you upload a screenshot or any image and annotate it — adding notes, arrows and highlights that point exactly at what matters, so a support ticket, tutorial or feedback message is understood the first time. One honest clarification: this tool annotates images you upload, it does not capture your screen itself. Take the screenshot with your device's built-in shortcut first, then upload it here. Everything runs in your browser, so the image never leaves your device.",
+    steps: [
+      { title: "Capture your screenshot", description: "Use your device or operating system's built-in screenshot shortcut to grab the screen you want to explain." },
+      { title: "Upload the image", description: "Open the Screenshot Tool and upload the captured screenshot — or any other image you want to mark up." },
+      { title: "Add your annotations", description: "Add short notes, arrows or highlights close to the parts they describe, such as an error message, a button or a setting." },
+      { title: "Preview and download", description: "Check that every mark is clear and readable, then download the annotated image and send it with your message, ticket or tutorial." },
+    ],
+    faqs: [
+      { question: "Does this tool take a screenshot of my screen?", answer: "No. It annotates images you upload; it does not capture your screen. Capture the screenshot with your device or operating system first, then upload it here to add notes, arrows and highlights." },
+      { question: "What kinds of annotations can I add?", answer: "You can mark up your uploaded image with notes, arrows and highlights that draw attention to specific areas, such as an error message, a button or a setting." },
+      { question: "Can I annotate any image, or only screenshots?", answer: "You can upload and annotate any image, not just screenshots. Photos, diagrams and design mockups all work the same way once uploaded." },
+    ],
+  },
+  "random-text-generator": {
+    aboutText:
+      "Random Text Generator creates random words and strings on demand, in your browser. It is a handy source of filler content when the exact words do not matter, only that there is text to work with — filling test forms, trying out a layout, creating sample data or making example content for a demo. Because the output is random, every generation is different, so repeated tests never run against the same sample twice.",
+    steps: [
+      { title: "Choose the kind of text", description: "Pick the kind of random text you need, such as words or strings." },
+      { title: "Set how much you want", description: "Decide how much random text to generate for your test, layout or example." },
+      { title: "Generate the text", description: "Create the output and review it in the results area. Generate a fresh set if the first one does not suit — each run is different." },
+      { title: "Copy and use it", description: "Copy the text into your form, mockup, demo or document." },
+    ],
+    faqs: [
+      { question: "What kind of random text can I generate?", answer: "The tool creates random words and strings, which you can use as filler content, sample data or examples in tests and mockups." },
+      { question: "Is the output the same each time?", answer: "No. The output is random, so each generation produces different words and strings. Generate again whenever you want a fresh set." },
+      { question: "What is random text used for?", answer: "Common uses include testing forms and layouts, creating sample data, filling mockups and making example content for demos and presentations." },
+    ],
+  },
+  "uuid-generator-util": {
+    aboutText:
+      "UUID Generator (utility version) is the simpler edition of the site's UUID tool: plain controls, no signup and no developer setup — generate a UUID, copy it, and move on. A UUID is a long random-looking identifier that is practically unique every time, used to tell records, files, test accounts and trackers apart even when they share a name. It is a good fit when you need an ID quickly for a form, a test or a document. A UUID is an identifier, not a password, so do not treat one as a secret on its own.",
+    steps: [
+      { title: "Open the tool", description: "Open UUID Generator in your browser — no signup or install is needed, and the UUIDs are created on your own device." },
+      { title: "Generate a UUID", description: "Use the simple controls on the page to create a new UUID." },
+      { title: "Check the full value", description: "Make sure you have the complete identifier on screen, not a shortened copy." },
+      { title: "Copy and paste it exactly", description: "Copy the UUID and paste it exactly where it belongs — a form field, spreadsheet cell, test record or document. Generate a fresh one rather than reusing the same UUID for two different items." },
+    ],
+    faqs: [
+      { question: "Is this the same as the developer UUID Generator?", answer: "This is the simpler utility version, with a plainer interface for quick, everyday generation and copying. The site also offers a developer edition with developer-oriented options, but this one is built for speed and simplicity." },
+      { question: "Can two generated UUIDs ever be the same?", answer: "In practice, no. UUIDs are generated randomly from such a large space that an accidental repeat is vanishingly unlikely, so for everyday use you can treat each generated value as unique." },
+      { question: "Is a UUID a password?", answer: "No. A UUID identifies something; it does not prove who you are. Do not use a UUID as a password or as the only protection for private data." },
+    ],
+  },
+  "unix-time-converter": {
+    aboutText:
+      "Unix Time Converter turns a Unix timestamp — the seconds counted since the start of 1970 — into a readable date and time, in your browser. You meet these long numbers in server logs, data exports, analytics files and app settings, usually at the exact moment you need to know what happened and when. This tool is deliberately focused on that one direction — reading Unix time. For the reverse, turning a date back into a timestamp, use the Timestamp Converter instead.",
+    steps: [
+      { title: "Copy the timestamp", description: "Copy the Unix timestamp from your log, export or message, making sure you have the full number." },
+      { title: "Paste it into the converter", description: "Open the Unix Time Converter and paste the value in — no signup or download is needed." },
+      { title: "Read the date and time", description: "Convert it and read the resulting date and clock time, then compare it with the event you are investigating." },
+      { title: "Check for milliseconds if it looks wrong", description: "If the result lands far in the future or the past, the value was probably in milliseconds rather than seconds — check the source format and convert again." },
+    ],
+    faqs: [
+      { question: "What does a Unix timestamp mean?", answer: "It is the number of seconds since 1 January 1970. Computers use it because a single number is easy to store and compare, even though people find an ordinary date and time much easier to read." },
+      { question: "Why does my timestamp give a date in the far future?", answer: "That usually means the value is in milliseconds, not seconds. A millisecond timestamp is a thousand times larger, so reading it as seconds pushes the date far ahead. Divide by a thousand or check the source format, then convert again." },
+      { question: "Can this tool turn a date back into Unix time?", answer: "No. This converter focuses on reading Unix time as a date and time. For the reverse direction, from a date to a timestamp, use the Timestamp Converter instead." },
+    ],
+  },
+  "coin-flipper": {
+    aboutText:
+      "Coin Flipper flips a virtual coin — heads or tails, instantly, on any device with a browser — for the small decisions a real coin settles when one is not to hand: who goes first, which film to watch, which team kicks off. It also tracks your streaks, so you can watch a run of heads build up, which makes it fun for games and a vivid way for teachers to show how random results produce surprising runs. It is for casual decisions and fun, not for gambling or anything that needs a provably fair system.",
+    steps: [
+      { title: "Open the Coin Flipper", description: "Open the tool in your browser — no signup or download is needed, and flips happen on your own device." },
+      { title: "Flip the coin", description: "Flip the virtual coin and wait for the result to appear." },
+      { title: "Read heads or tails", description: "Use the result to settle your decision or start your game." },
+      { title: "Flip again and watch the streaks", description: "Flip whenever you need another decision, and check the streak tracker to see how many of the same result have come up in a row." },
+    ],
+    faqs: [
+      { question: "What is a streak in the Coin Flipper?", answer: "A streak is a run of the same result, such as four heads in a row. Tracking streaks makes the game more fun and helps show how randomness can produce surprising runs, even though each flip is independent." },
+      { question: "Is a virtual coin flip really fair?", answer: "For casual decisions and games, yes. Each flip is random and independent of the last one, so a run of heads does not make tails more likely next time. It is not designed for gambling or regulated draws." },
+      { question: "Can I use it when I do not have a real coin?", answer: "Yes, that is exactly the point. The Coin Flipper works in any browser, so you can settle a decision during a video call, in class or at a game night without hunting for a coin." },
+    ],
+  },
+  "dice-roller": {
+    aboutText:
+      "Dice Roller rolls one die or several dice at once in your browser, shows each result straight away and keeps a history of your rolls — handy when physical dice are lost, in another room, or not owned by everyone playing online. Use it for board games, role-playing sessions, classroom maths and party games, including games that move by the total of two dice. Results are random and the roller is for casual play and learning, not for gambling or anything that needs a certified random system.",
+    steps: [
+      { title: "Choose how many dice", description: "Open the Dice Roller and pick one die, or several at once if your game uses a total or several players need a result in the same turn." },
+      { title: "Roll the dice", description: "Roll and read the result of each die — and the total if your game moves by the sum." },
+      { title: "Play your turn", description: "Move your piece, settle the battle or record the outcome, just as you would with physical dice." },
+      { title: "Check the history when needed", description: "Look back at the roll history to settle a disagreement or review how the game has progressed, then keep rolling." },
+    ],
+    faqs: [
+      { question: "How many dice can I roll at once?", answer: "You can roll one die or more than one, depending on what your game needs. Roll several at once when the game uses a total, or when several players or characters need a result in the same turn." },
+      { question: "What does the roll history show?", answer: "The history records your past rolls during the session, so you can look back at earlier results. That helps settle disagreements about a roll and lets players review how a game has progressed." },
+      { question: "How is this different from the Coin Flipper?", answer: "A coin flip gives one of two outcomes for a single decision. A dice roller gives numbered results, can roll several dice at once and keeps a history across many turns, which suits longer games." },
+    ],
+  },
+  "notepad-online": {
+    aboutText:
+      "Notepad Online is a plain blank page in your browser for the notes that are too small for a document but too important to trust to memory — a phone number read out on a call, a quick list, a draft message. The key point: notes are saved locally in your browser, so you can close the tab and come back to them later on the same device and browser, with no signup. Local saving also means notes are not synced to your other devices, so copy anything that matters long-term into a document or notes app as well.",
+    steps: [
+      { title: "Open the notepad", description: "Open Notepad Online in your browser — it is ready in seconds, with no signup or install." },
+      { title: "Write your note", description: "Type or paste your list, draft or idea, and tidy it up as you go." },
+      { title: "Let it save locally", description: "Your note is kept in this browser on this device, so it is still here when you return in the same browser." },
+      { title: "Copy important notes elsewhere", description: "Before clearing browser data or switching devices, copy anything that matters into a document, an email draft or a notes app so it is not lost." },
+    ],
+    faqs: [
+      { question: "Where are my notes saved?", answer: "Your notes are saved locally in your browser, on the device you are using. They are not sent to a server by the tool and are not tied to an account, so you can return to them in the same browser later." },
+      { question: "Can I see my notes on another device?", answer: "No, because local saving does not sync between devices. A note written on your phone will not appear on your computer unless you copy it across yourself, so save a copy elsewhere for notes you need everywhere." },
+      { question: "Will I lose my notes if I clear my browser data?", answer: "Yes, clearing browser data can remove locally saved notes. If a note matters, copy it into a document, an email draft or a notes app before clearing data or changing browsers." },
+    ],
+  },
+  "todo-list-online": {
+    aboutText:
+      "Todo List Online is a deliberately simple task list in your browser: add tasks, tick them off as you finish them, and remove them as the day changes — no signup, no teams, deadlines or charts. Tasks are saved in local storage, so your list is still there when you return in the same browser, whether you are planning errands, a study session or a small work project. It is not a full project manager, and that simplicity is the point: keep tasks short and concrete, like buy milk or email the plumber, and the list actually gets done. Lists do not sync between devices, so note down anything you need on the move.",
+    steps: [
+      { title: "Add your tasks", description: "Open Todo List Online and write each task as a short, concrete next step — one task per line of effort." },
+      { title: "Work through the list", description: "Start at the top and work through your tasks in order." },
+      { title: "Tick tasks off as you finish", description: "Mark each task done the moment it is finished, and remove anything that is no longer needed." },
+      { title: "Return to the saved list", description: "Come back later in the same browser to see what is left, since tasks are saved in local storage on your device." },
+    ],
+    faqs: [
+      { question: "Where are my tasks saved?", answer: "Your tasks are saved in local storage in your browser, on the device you are using. They are not sent to a server by the tool and are not tied to an account, so you can return to the list in the same browser later." },
+      { question: "Can I see my todo list on another device?", answer: "No, because local storage does not sync between devices. A list made on your phone will not appear on your computer unless you recreate it there, so note down anything you need on the move." },
+      { question: "What kind of tasks suit this tool?", answer: "Simple, everyday tasks work best: errands, chores, study tasks and small work jobs. It is not a full project manager, so keep tasks short, concrete and easy to tick off one at a time." },
+    ],
+  },
 };
