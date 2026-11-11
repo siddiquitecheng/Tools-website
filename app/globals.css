@@ -2979,3 +2979,344 @@
   color: var(--accent);
   transform: translateY(-2px);
 }
+
+/* ==========================================================================
+ * TOOL STAGE V2 (2026-11-11, appended; everything above unchanged)
+ * Premium upgrade of the tools' OWN interactive UI — the layer Muhammad
+ * called "bohot basic" on /tools/pdf-to-jpg. The shell (ToolShell) and the
+ * Dropzone / file-card / Office convert flow were already premium; what was
+ * still plain was the shared control layer every tool family builds with:
+ * native selects/inputs/sliders, flat primary CTAs, the thin ProgressBar
+ * and the default ResultPanel frame. Everything below is scoped to
+ * .tool-stage (the ToolShell workspace section), so it restyles ONLY tool
+ * workspaces — header, cards and marketing sections are untouched. All
+ * rules are presentation-only: no markup, handler or state changes. The
+ * showcase tool (PdfToImageTool: pdf-to-jpg + pdf-to-png) additionally
+ * carries the .tool-options / .tool-progress / .tool-result-media hooks
+ * and reuses the Office .convert-* motif classes defined above.
+ * ========================================================================== */
+
+/* ---- Stage as hero: deeper layered shadow, warm wash across the top,
+ * a stronger vermilion edge, and a soft rise-in on load. ---- */
+.tool-stage {
+  border-radius: 22px;
+  background:
+    radial-gradient(
+      760px 280px at 50% -90px,
+      var(--accent-soft),
+      transparent 72%
+    ),
+    var(--surface);
+  box-shadow:
+    0 1px 2px #1d1a160d,
+    0 6px 14px -6px #1d1a1614,
+    0 34px 68px -30px #1d1a1640,
+    0 70px 100px -70px #cf361830;
+  animation: stage-in 520ms cubic-bezier(0.22, 1, 0.36, 1) backwards;
+}
+.tool-stage::before {
+  height: 4px;
+  border-radius: 22px 22px 0 0;
+  opacity: 1;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    #cf3618d9 22%,
+    #e85d3d 50%,
+    #cf3618d9 78%,
+    transparent
+  );
+}
+.tool-stage::after {
+  content: "";
+  position: absolute;
+  inset: 4px 0 auto 0;
+  height: 64px;
+  border-radius: 22px 22px 0 0;
+  background: linear-gradient(180deg, #1d1a1605, transparent);
+  pointer-events: none;
+}
+@keyframes stage-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ---- Primary CTA (Button variant="primary" — the elements carrying both
+ * .ui-button and Tailwind's bg-[var(--accent)] utility): vermilion
+ * gradient, deep soft shadow, hover lift + sheen sweep. The gradient is a
+ * background-image layered over the utility's flat background-color, so
+ * if the utility class is ever renamed the button simply stays flat —
+ * nothing breaks. Small (h-8) primaries keep their compact height. ---- */
+.tool-stage .ui-button.bg-\[var\(--accent\)\] {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  background-image: linear-gradient(
+    135deg,
+    #e85d3d 0%,
+    var(--accent) 52%,
+    var(--accent-hover) 100%
+  );
+  box-shadow:
+    0 14px 28px -12px #cf361873,
+    inset 0 1px 0 #ffffff38;
+  transition:
+    transform 200ms cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 200ms ease,
+    background-color 200ms ease;
+}
+.tool-stage .ui-button.bg-\[var\(--accent\)\]:not(.h-8) {
+  min-height: 48px;
+  padding-left: 26px;
+  padding-right: 26px;
+  font-size: 15px;
+}
+.tool-stage .ui-button.bg-\[var\(--accent\)\]:hover {
+  transform: translateY(-1px);
+  box-shadow:
+    0 18px 34px -12px #cf361885,
+    inset 0 1px 0 #ffffff38;
+}
+.tool-stage .ui-button.bg-\[var\(--accent\)\]::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    105deg,
+    transparent 42%,
+    #ffffff40 50%,
+    transparent 58%
+  );
+  transform: translateX(-110%);
+  pointer-events: none;
+}
+.tool-stage .ui-button.bg-\[var\(--accent\)\]:hover::after {
+  transform: translateX(110%);
+  transition: transform 800ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* ---- Options panel (showcase hook in PdfToImageTool): the tool's
+ * controls grouped on a warm paper panel instead of floating loose. ---- */
+.tool-options {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 18px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: linear-gradient(180deg, var(--surface), var(--workspace-tint));
+  box-shadow:
+    inset 0 1px 0 #ffffffa6,
+    0 1px 2px #1d1a1608;
+}
+@media (min-width: 768px) {
+  .tool-options--grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+  }
+}
+@media (max-width: 640px) {
+  .tool-options {
+    padding: 14px;
+  }
+}
+
+/* ---- Controls: taller, rounder, warmer — native selects / inputs /
+ * textareas / range sliders restyled in place (CSS only; the elements
+ * and their handlers are unchanged). ---- */
+.tool-stage select,
+.tool-stage textarea,
+.tool-stage
+  input:not([type="range"]):not([type="checkbox"]):not([type="radio"]):not(
+    [type="file"]
+  ):not([type="color"]):not([type="hidden"]) {
+  border-radius: 12px;
+}
+.tool-stage select {
+  min-height: 48px;
+  padding-left: 16px;
+  font-weight: 500;
+  box-shadow:
+    0 1px 2px #1d1a1608,
+    inset 0 1px 0 #ffffffa6;
+}
+.tool-stage select:focus,
+.tool-stage textarea:focus,
+.tool-stage
+  input:not([type="range"]):not([type="checkbox"]):not([type="radio"]):not(
+    [type="file"]
+  ):not([type="color"]):not([type="hidden"]):focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px #cf36181f;
+  outline: none;
+}
+.tool-stage input[type="range"] {
+  border-color: transparent;
+}
+.tool-stage input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 22px;
+  height: 22px;
+  border-radius: 999px;
+  background: var(--accent);
+  border: 3px solid #fff;
+  box-shadow:
+    0 2px 8px #cf361866,
+    0 0 0 1px var(--line-strong);
+  cursor: pointer;
+  transition:
+    transform 160ms ease,
+    box-shadow 160ms ease;
+}
+.tool-stage input[type="range"]:hover::-webkit-slider-thumb,
+.tool-stage input[type="range"]:focus-visible::-webkit-slider-thumb {
+  transform: scale(1.14);
+  box-shadow:
+    0 4px 12px #cf361873,
+    0 0 0 1px var(--accent);
+}
+.tool-stage input[type="range"]::-moz-range-thumb {
+  width: 16px;
+  height: 16px;
+  border-radius: 999px;
+  background: var(--accent);
+  border: 3px solid #fff;
+  box-shadow:
+    0 2px 8px #cf361866,
+    0 0 0 1px var(--line-strong);
+  cursor: pointer;
+}
+.tool-stage input[type="range"]::-moz-range-track {
+  height: 8px;
+  border-radius: 999px;
+  background: var(--surface-sunk);
+}
+
+/* ---- Progress stage (ProgressBar with the .tool-progress hook — used by
+ * PdfToImageTool, CompressPdfTool, OcrPdfTool): the tool's REAL numeric
+ * progress (state unchanged) presented as a panel: pulsing status dot,
+ * gradient fill, travelling shimmer. ---- */
+.tool-progress {
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 14px 16px;
+  background: linear-gradient(180deg, var(--surface), var(--workspace-tint));
+  box-shadow: inset 0 1px 0 #ffffffa6;
+  animation: panel-in 300ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+.tool-progress > div:first-child {
+  align-items: center;
+}
+.tool-progress > div:first-child > span:first-child {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-mono), monospace;
+  font-size: 12px;
+  color: var(--ink-soft);
+}
+.tool-progress > div:first-child > span:first-child::before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  border-radius: 999px;
+  background: var(--accent);
+  flex-shrink: 0;
+  animation: status-dot-pulse 1.1s ease-in-out infinite;
+}
+.tool-progress > div:last-child {
+  height: 10px;
+  border: none;
+  box-shadow: inset 0 1px 2px #1d1a1614;
+}
+.tool-progress > div:last-child > div {
+  position: relative;
+  overflow: hidden;
+  background-image: linear-gradient(
+    90deg,
+    var(--accent-hover),
+    var(--accent) 55%,
+    #e85d3d
+  );
+  box-shadow: 0 2px 8px -2px #cf361873;
+}
+.tool-progress > div:last-child > div::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    105deg,
+    transparent 30%,
+    #ffffff59 50%,
+    transparent 70%
+  );
+  background-size: 200% 100%;
+  animation: progress-shimmer 1.25s linear infinite;
+}
+
+/* ---- Result panel: stronger frame inside the stage; the done state
+ * rises in like the Office convert result does. ---- */
+.tool-stage .result-panel {
+  border-radius: 18px;
+  border-color: var(--line-strong);
+  box-shadow:
+    0 1px 2px #1d1a1608,
+    0 22px 40px -24px #1d1a162e;
+}
+.tool-stage .result-panel-head {
+  padding: 14px 18px;
+}
+.tool-stage .result-panel--done {
+  animation: panel-in 380ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* ---- Result media tiles (showcase hook in PdfToImageTool): the page
+ * thumbnails become designed cards — lift + soft shadow + a gentle image
+ * settle on hover. They remain the same per-file download links; the
+ * panel footer still carries the Download-all / ZIP action. ---- */
+.tool-result-media a {
+  border-radius: 16px;
+  box-shadow: 0 1px 2px #1d1a1608;
+  transition:
+    transform 260ms cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 260ms ease,
+    border-color 260ms ease;
+}
+.tool-result-media a:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 20px 34px -18px #1d1a1638;
+}
+.tool-result-media a img {
+  transition: transform 500ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+.tool-result-media a:hover img {
+  transform: scale(1.02);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tool-stage,
+  .tool-progress,
+  .tool-stage .result-panel--done {
+    animation: none;
+  }
+  .tool-progress > div:first-child > span:first-child::before,
+  .tool-progress > div:last-child > div::after {
+    animation: none;
+  }
+  .tool-stage .ui-button.bg-\[var\(--accent\)\]:hover,
+  .tool-result-media a:hover,
+  .tool-result-media a:hover img {
+    transform: none;
+  }
+  .tool-stage .ui-button.bg-\[var\(--accent\)\]::after {
+    display: none;
+  }
+}

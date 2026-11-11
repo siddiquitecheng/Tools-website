@@ -1513,33 +1513,76 @@ export const PdfToImageTool: React.FC<{ lockedFormat?: "png" | "jpg" }> = ({
       />
       {file && (
         <div className="space-y-4">
-          {!lockedFormat && (
+          <div className={`tool-options${!lockedFormat ? " tool-options--grid" : ""}`}>
+            {!lockedFormat && (
+              <Select
+                label="Output format"
+                value={format}
+                onChange={(e) => { setFormat(e.target.value as "png" | "jpg"); clearImages(); }}
+                disabled={processing}
+                options={[
+                  { value: "png", label: "PNG (lossless, more memory)" },
+                  { value: "jpg", label: "JPG (smaller, recommended for big PDFs)" },
+                ]}
+              />
+            )}
             <Select
-              label="Output format"
-              value={format}
-              onChange={(e) => { setFormat(e.target.value as "png" | "jpg"); clearImages(); }}
+              label="Render quality"
+              value={String(scale)}
+              onChange={(e) => { setScale(Number(e.target.value)); clearImages(); }}
               disabled={processing}
               options={[
-                { value: "png", label: "PNG (lossless, more memory)" },
-                { value: "jpg", label: "JPG (smaller, recommended for big PDFs)" },
+                { value: "1", label: "Draft (1×) — best for large PDFs" },
+                { value: "2", label: "Standard (2×)" },
+                { value: "3", label: "High (3×)" },
               ]}
             />
-          )}
-          <Select
-            label="Render quality"
-            value={String(scale)}
-            onChange={(e) => { setScale(Number(e.target.value)); clearImages(); }}
-            disabled={processing}
-            options={[
-              { value: "1", label: "Draft (1×) — best for large PDFs" },
-              { value: "2", label: "Standard (2×)" },
-              { value: "3", label: "High (3×)" },
-            ]}
-          />
-          <Button variant="primary" onClick={handleConvert} loading={processing} leftIcon={<Images className="h-4 w-4" />}>
+          </div>
+
+          {/* Conversion stage motif — purely visual, derived from existing
+              state (file, activeFormat, processing, images); no logic. */}
+          <div className="convert-stage" aria-hidden="true">
+            <div className="convert-doc convert-doc--source">
+              <span className="convert-doc-ext">
+                {(file.name.split(".").pop() || "PDF").toUpperCase()}
+              </span>
+              <span className="convert-doc-label">Source</span>
+            </div>
+            <div
+              className={`convert-arrow${processing ? " is-working" : ""}${images.length > 0 && !processing ? " is-done" : ""}`}
+            >
+              <span className="convert-arrow-dot" />
+              <span className="convert-arrow-dot" />
+              <span className="convert-arrow-dot" />
+              <svg
+                className="convert-arrow-head"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2.2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <path d="M5 12h14" />
+                <path d="m13 6 6 6-6 6" />
+              </svg>
+            </div>
+            <div
+              className={`convert-doc convert-doc--target${images.length > 0 && !processing ? " is-done" : ""}`}
+            >
+              <span className="convert-doc-ext">
+                {activeFormat.toUpperCase()}
+              </span>
+              <span className="convert-doc-label">
+                {images.length > 0 && !processing ? "Ready" : "Target"}
+              </span>
+            </div>
+          </div>
+
+          <Button variant="primary" size="lg" className="convert-button" onClick={handleConvert} loading={processing} leftIcon={<Images className="h-4 w-4" />}>
             Convert PDF pages
           </Button>
-          {processing && <ProgressBar value={progress} label={`${progress}%`} />}
+          {processing && <ProgressBar className="tool-progress" value={progress} label={`${progress}%`} />}
           <ErrorNote message={error} />
           {tip && !error && (
             <Card variant="sunk" className="px-4 py-3 text-xs text-[var(--ink-soft)]">
@@ -1564,7 +1607,7 @@ export const PdfToImageTool: React.FC<{ lockedFormat?: "png" | "jpg" }> = ({
                     Preview {images.length} of {pageCount} pages · full set in download
                   </p>
                 )}
-                <div className={`grid gap-4 ${images.length === 1 ? "mx-auto max-w-lg" : "sm:grid-cols-2 lg:grid-cols-3"}`}>
+                <div className={`tool-result-media grid gap-4 ${images.length === 1 ? "mx-auto max-w-lg" : "sm:grid-cols-2 lg:grid-cols-3"}`}>
                   {images.map((img, index) => (
                     <a
                       key={img.name}
@@ -1701,7 +1744,7 @@ export const CompressPdfTool: React.FC = () => {
           <Button variant="primary" onClick={handleCompress} loading={processing}>
             Compress PDF
           </Button>
-          {processing && <ProgressBar value={progress} label={`${progress}%`} />}
+          {processing && <ProgressBar className="tool-progress" value={progress} label={`${progress}%`} />}
           <ErrorNote message={error} />
           {outputUrl && newSize != null && (
             <ResultPanel
@@ -2155,7 +2198,7 @@ export const OcrPdfTool: React.FC = () => {
           </Button>
           {(processing || status) && (
             <div className="space-y-2">
-              <ProgressBar value={progress} label={status || `${progress}%`} />
+              <ProgressBar className="tool-progress" value={progress} label={status || `${progress}%`} />
             </div>
           )}
           <ErrorNote message={error} />
