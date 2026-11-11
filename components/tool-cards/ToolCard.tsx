@@ -4,8 +4,6 @@ import Link from "next/link";
 import { categoryMeta, type Tool } from "@/lib/tools";
 import { isImplementedTool } from "@/lib/tool-capabilities";
 import { getToolAccent, getToolIcon } from "@/components/tool-cards/toolIcon";
-import { getToolImage } from "@/components/tool-cards/toolImage";
-import { ArrowUpRight } from "lucide-react";
 
 interface ToolCardProps {
   tool: Tool;
@@ -15,42 +13,35 @@ interface ToolCardProps {
 export function ToolCard({ tool, usageCount }: ToolCardProps) {
   const accent = getToolAccent(tool);
   const Icon = getToolIcon(tool);
-  const image = getToolImage(tool);
+  const implemented = isImplementedTool(tool.id);
 
   return (
     <Link
       href={`/tools/${tool.id}`}
-      className="tool-card group"
+      className="tool-card group scroll-reveal"
       style={{ "--cat-accent": accent } as CSSProperties}
     >
-      {image && (
-        <span className="tool-card-media">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src={image} alt={`${tool.name} illustration`} loading="lazy" />
-        </span>
-      )}
       <div className="tool-card-top">
         <span
           className="tool-card-icon"
-          style={{ backgroundColor: `${accent}1a`, color: accent }}
+          style={{ backgroundColor: accent, color: "white" }}
         >
           <Icon aria-hidden="true" className="h-6 w-6" strokeWidth={1.8} />
         </span>
-        {!isImplementedTool(tool.id) && (
+        {!implemented && (
           <span className="rounded-full bg-[var(--surface-sunk)] px-2 py-1 text-xs text-[var(--ink-soft)]">
             Coming soon
           </span>
         )}
-        {isImplementedTool(tool.id) && (
-          <ArrowUpRight
-            aria-hidden="true"
-            className="h-4 w-4 text-[var(--ink-faint)] transition-colors group-hover:text-[var(--accent)]"
-          />
-        )}
       </div>
       <h3>{tool.name}</h3>
       <p className="tool-card-description">{tool.blurb}</p>
-      <span className="tool-card-cat">{categoryMeta[tool.category].name} tools</span>
+      <div className="tool-card-foot">
+        <span className="tool-card-cat">
+          {categoryMeta[tool.category].name} tools
+        </span>
+        {implemented && <span className="tool-card-open">Open →</span>}
+      </div>
       {typeof usageCount === "number" && usageCount > 0 && (
         <p className="mt-4 text-xs text-[var(--ink-faint)]">
           {usageCount.toLocaleString()} uses

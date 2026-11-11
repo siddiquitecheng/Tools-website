@@ -181,10 +181,20 @@ export const ToolShell: React.FC<ToolShellProps> = ({
         {children}
       </section>
 
+      {/* Below-stage layout: on desktop (≥1024px) the Overview /
+          Workflow / FAQ sections run in a main column and the Related
+          tools sit in a sticky right rail — the concept's two-column
+          arrangement under the stage. On mobile everything stacks in
+          the original order. Layout only: every section, heading,
+          number and line of copy below is unchanged. */}
+      <div
+        className={`tool-below${related.length > 0 ? " tool-below--rail" : ""}`}
+      >
+        <div className="tool-below-main">
       {/* Info & FAQ Grid */}
-      <section className="mt-14 grid gap-8 lg:grid-cols-2">
+      <section className="tool-info-grid mt-14 grid gap-8 lg:grid-cols-2">
         {/* About & Trust Bullets */}
-        <Card variant="surface" className="tool-info-card p-6">
+        <Card variant="surface" className="tool-info-card scroll-reveal p-6">
           <p className="section-eyebrow">
             <span className="section-index">01</span> Overview
           </p>
@@ -220,7 +230,7 @@ export const ToolShell: React.FC<ToolShellProps> = ({
         </Card>
 
         {/* How to use */}
-        <Card variant="surface" className="tool-info-card p-6">
+        <Card variant="surface" className="tool-info-card scroll-reveal p-6">
           <p className="section-eyebrow">
             <span className="section-index">02</span> Workflow
           </p>
@@ -249,15 +259,15 @@ export const ToolShell: React.FC<ToolShellProps> = ({
 
       {/* FAQ Section */}
       <section className="mt-12">
-        <p className="section-eyebrow">
+        <p className="section-eyebrow scroll-reveal">
           <span className="section-index">03</span> Good to know
         </p>
-        <h2 className="font-[family-name:var(--font-display)] text-2xl font-bold text-[var(--ink)]">
+        <h2 className="scroll-reveal font-[family-name:var(--font-display)] text-2xl font-bold text-[var(--ink)]">
           Frequently Asked Questions
         </h2>
-        <div className="mt-4 grid gap-4 md:grid-cols-3">
+        <div className="tool-faq-grid mt-4 grid gap-4 md:grid-cols-3">
           {defaultFaqs.map((faq, idx) => (
-            <Card key={idx} variant="sunk" className="tool-faq-card p-5">
+            <Card key={idx} variant="sunk" className="tool-faq-card scroll-reveal p-5">
               <h3 className="text-sm font-bold text-[var(--ink)]">
                 {faq.question}
               </h3>
@@ -268,14 +278,16 @@ export const ToolShell: React.FC<ToolShellProps> = ({
           ))}
         </div>
       </section>
+        </div>
 
-      {/* Related Tools */}
+      {/* Related Tools — sticky right rail on desktop */}
       {related.length > 0 && (
+        <aside className="tool-below-rail">
         <section className="mt-14">
           <p className="section-eyebrow">
             <span className="section-index">04</span> Keep going
           </p>
-          <div className="flex items-center justify-between">
+          <div className="tool-related-head scroll-reveal flex items-center justify-between">
             <h2 className="font-[family-name:var(--font-display)] text-2xl font-bold text-[var(--ink)]">
               Related {tool.category} tools
             </h2>
@@ -287,7 +299,7 @@ export const ToolShell: React.FC<ToolShellProps> = ({
             </Link>
           </div>
 
-          <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="tool-related-grid mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {related.map((relTool) => (
               <ToolCard
                 key={relTool.id}
@@ -302,7 +314,9 @@ export const ToolShell: React.FC<ToolShellProps> = ({
             ))}
           </div>
         </section>
+        </aside>
       )}
+      </div>
     </div>
   );
 };

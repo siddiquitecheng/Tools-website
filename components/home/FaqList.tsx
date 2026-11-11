@@ -18,7 +18,7 @@ export function FaqList({ faqs }: { faqs: FaqQA[] }) {
       {faqs.map((faq, index) => {
         const open = openIndex === index;
         return (
-          <div className="faq-item" key={faq.question}>
+          <div className="faq-item scroll-reveal" key={faq.question}>
             <h3>
               <button
                 type="button"

@@ -19,7 +19,7 @@ export function CategoryCard({ category, count }: CategoryCardProps) {
   return (
     <Link
       href={`/category/${category}`}
-      className="category-card group"
+      className="category-card group scroll-reveal"
       style={{ "--cat-accent": color } as CSSProperties}
     >
       <div className="flex items-start justify-between gap-3">
