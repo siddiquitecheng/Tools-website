@@ -134,7 +134,7 @@ export const pdfToolContent: Record<string, PdfToolContent> = {
   },
   "png-to-pdf": {
     aboutText:
-      "PNG to PDF combines one or more PNG images into a single PDF, keeping the order you set.",
+      "PNG to PDF combines one or more PNG images into a single PDF, keeping the order you set. It runs entirely in your browser, so the images are never uploaded — handy for bundling screenshots, scanned pages or exported designs into one document you can share or print.",
     steps: [
       { title: "Upload your PNGs", description: "Add one or more images; order matters for the final PDF." },
       { title: "Reorder if needed", description: "Use the up/down arrows on each file chip before converting." },
@@ -144,11 +144,14 @@ export const pdfToolContent: Record<string, PdfToolContent> = {
       { question: "Is PNG to PDF free to use?", answer: "Yes, PNG to PDF is completely free without signup or added branding. File-size, page-count and request limits apply." },
       { question: "What happens to transparency?", answer: "PDF pages have no alpha channel, so transparent pixels render as solid white." },
       { question: "Does this work on mobile devices?", answer: "Yes, it works on phones, tablets, and desktop browsers." },
+      { question: "How do I convert multiple PNG images into a single PDF?", answer: "Add all the PNG files, then use the up and down arrows on each file chip to set the order — the PDF follows that order from first chip to last. Convert once and you get one PDF containing every image as its own page." },
+      { question: "Can I rearrange the images before creating the PDF?", answer: "Yes. Each added image appears as a file chip with up and down arrows; move the chips until the order looks right, then convert. The page order in the downloaded PDF matches the chip order." },
+      { question: "Can I turn PNG screenshots into one PDF for sharing?", answer: "Yes — that is a typical use. Add the screenshots in the order you want them read, convert, and share the single PDF instead of sending a pile of separate image files. It all happens in your browser, so nothing is uploaded." },
     ],
   },
   "pdf-to-png": {
     aboutText:
-      "PDF to PNG renders each page as a lossless PNG image, ideal for pages with diagrams, screenshots, or fine text detail.",
+      "PDF to PNG renders each page as a lossless PNG image, ideal for pages with diagrams, screenshots, or fine text detail. Every page becomes its own PNG file: download single pages directly, or take a multi-page result as one ZIP. The rendering happens locally in your browser, so your document never leaves your device.",
     steps: [
       { title: "Upload your PDF", description: "Every page is rendered locally onto a canvas." },
       { title: "Choose render quality", description: "Pick Draft, Standard, or High resolution before converting." },
@@ -158,6 +161,9 @@ export const pdfToolContent: Record<string, PdfToolContent> = {
       { question: "Is PDF to PNG free to use?", answer: "Yes, PDF to PNG is completely free without signup or added branding. File-size, page-count and request limits apply." },
       { question: "Why PNG instead of JPG?", answer: "PNG is lossless, so text and line art stay crisp — useful for diagrams and screenshots." },
       { question: "Does this work on mobile devices?", answer: "Yes, it works on phones, tablets, and desktop browsers." },
+      { question: "How do I convert PDF pages to PNG images for free?", answer: "Upload the PDF, choose a render quality, and convert. Each page is rendered as a PNG in your browser — download the pages you need one by one, or download the whole set as a ZIP." },
+      { question: "Can I download just one page of the PDF as a PNG?", answer: "Yes. Every page is rendered, and single pages can be downloaded directly, so you can take only the page you need instead of saving the full ZIP." },
+      { question: "Which render quality should I pick for sharp text?", answer: "Choose High when small text, diagrams or line art must stay crisp, Standard for everyday use, and Draft when you need a quick, light preview of a long document. Higher quality renders larger image files." },
     ],
   },
   "merge-pdf": {
@@ -213,7 +219,7 @@ export const pdfToolContent: Record<string, PdfToolContent> = {
   },
   "rotate-pdf": {
     aboutText:
-      "Rotate PDF turns every page in a document by 90, 180, or 270 degrees — useful for scans saved sideways or upside down.",
+      "Rotate PDF turns every page in a document by 90, 180, or 270 degrees — useful for scans saved sideways or upside down. It is the standard fix for documents fed through a scanner the wrong way round: upload, pick the angle, and download a copy that opens the right way up in any reader.",
     steps: [
       { title: "Upload your PDF", description: "Works with any standard PDF." },
       { title: "Choose a rotation angle", description: "Pick 90°, 180°, or 270° clockwise." },
@@ -223,6 +229,9 @@ export const pdfToolContent: Record<string, PdfToolContent> = {
       { question: "Is Rotate PDF free to use?", answer: "Yes, Rotate PDF is completely free without signup or added branding. File-size, page-count and request limits apply." },
       { question: "Can I rotate just one page?", answer: "This tool rotates every page at once. For per-page control, rotate the file, then use Rearrange PDF Pages to fine-tune order." },
       { question: "Does this work on mobile devices?", answer: "Yes, it works on phones, tablets, and desktop browsers." },
+      { question: "How do I fix a PDF that was scanned sideways?", answer: "Upload the PDF and choose 90° if the pages lean one way or 270° if they lean the other; 180° fixes pages that are completely upside down. Every page is turned together, and the rotated result is what you download." },
+      { question: "Can I rotate a PDF permanently, not just in the viewer?", answer: "Yes. The rotation is applied to the pages in the file you download, so it stays rotated in any PDF reader or when printed — it is not just a temporary view setting." },
+      { question: "Does rotating a PDF change the text or images on the pages?", answer: "No. Rotating only changes each page's orientation; the text, images and layout on the pages are left exactly as they were." },
     ],
   },
   "unlock-pdf": {
@@ -307,7 +316,7 @@ export const pdfToolContent: Record<string, PdfToolContent> = {
   },
   "watermark-pdf": {
     aboutText:
-      "Watermark PDF stamps text across every page, either centered once or tiled, at the opacity and angle you choose.",
+      "Watermark PDF stamps text across every page, either centered once or tiled, at the opacity and angle you choose. Typical uses are stamping 'Draft' or 'Confidential' on working documents, or putting a name across handouts and reports before they are shared. The stamping happens locally in your browser, so the document is never uploaded.",
     steps: [
       { title: "Upload your PDF", description: "Works with any standard PDF." },
       { title: "Set the watermark text and style", description: "Adjust opacity, font size, angle, and placement." },
@@ -317,11 +326,14 @@ export const pdfToolContent: Record<string, PdfToolContent> = {
       { question: "Is Watermark PDF free to use?", answer: "Yes, Watermark PDF is completely free without signup or added branding. File-size, page-count and request limits apply." },
       { question: "Can I tile the watermark across the page?", answer: "Yes, switch placement to Tiled to repeat the text across the whole page." },
       { question: "Does this work on mobile devices?", answer: "Yes, it works on phones, tablets, and desktop browsers." },
+      { question: "How do I add a text watermark to every page of a PDF?", answer: "Upload the PDF, type your watermark text, then set the opacity, font size, angle and placement. Apply it and download — the same watermark is stamped on every page of the document." },
+      { question: "Can I stamp 'Confidential' diagonally across each page?", answer: "Yes. Set the watermark text to 'Confidential', keep the centered placement, and adjust the angle so the text runs diagonally. Lower the opacity if you want the page content to stay easy to read underneath." },
+      { question: "Can a watermark added here be removed from the PDF later?", answer: "The watermark is stamped into the pages of the downloaded file, and this tool has no un-watermark step — so keep your original, unwatermarked PDF if you might need a clean copy later." },
     ],
   },
   "delete-pdf-pages": {
     aboutText:
-      "Delete PDF Pages removes the pages you list from a document and rebuilds a clean PDF with the rest.",
+      "Delete PDF Pages removes the pages you list from a document and rebuilds a clean PDF with the rest. People use it to strip blank pages out of scans, remove a cover sheet, or cut pages they do not want to pass on before sharing a document. It runs in your browser, so the file is never uploaded.",
     steps: [
       { title: "Upload your PDF", description: "The tool reads the page count automatically." },
       { title: "List pages to remove", description: "Use comma-separated numbers and ranges, e.g. \"2, 4-6\"." },
@@ -331,11 +343,14 @@ export const pdfToolContent: Record<string, PdfToolContent> = {
       { question: "Is Delete PDF Pages free to use?", answer: "Yes, Delete PDF Pages is completely free without signup or added branding. File-size, page-count and request limits apply." },
       { question: "Can I delete every page?", answer: "No, at least one page must remain in the document." },
       { question: "Does this work on mobile devices?", answer: "Yes, it works on phones, tablets, and desktop browsers." },
+      { question: "How do I remove specific pages from a PDF for free?", answer: "Upload the PDF, type the page numbers you want gone — single numbers or ranges such as \"2, 4-6\" — then download the new PDF built from the remaining pages. No signup is needed, and the work happens in your browser." },
+      { question: "Can I delete several pages or a whole range at once?", answer: "Yes. The page list accepts comma-separated numbers and ranges together, for example \"2, 4-6, 9\" removes pages 2, 4, 5, 6 and 9 in one pass. At least one page must remain in the document." },
+      { question: "Does deleting pages change my original PDF file?", answer: "No. You download a new PDF that leaves the listed pages out; the original file on your device is untouched, and the pages that remain keep their original order and content." },
     ],
   },
   "rearrange-pdf-pages": {
     aboutText:
-      "Rearrange PDF Pages lets you set a new page order for a document and exports a PDF that follows it.",
+      "Rearrange PDF Pages lets you set a new page order for a document and exports a PDF that follows it. It is the quick way to fix a scan whose pages came out in the wrong sequence, or to move an appendix, summary or signed page where it belongs. Everything runs in your browser, so the document is never uploaded.",
     steps: [
       { title: "Upload your PDF", description: "The current page order is pre-filled for you." },
       { title: "Edit the page order", description: "List page numbers in the order you want them to appear." },
@@ -345,6 +360,9 @@ export const pdfToolContent: Record<string, PdfToolContent> = {
       { question: "Is Rearrange PDF Pages free to use?", answer: "Yes, Rearrange PDF Pages is completely free without signup or added branding. File-size, page-count and request limits apply." },
       { question: "Can I drop a page by leaving it out?", answer: "Yes — any page number left out of the new order is excluded from the result." },
       { question: "Does this work on mobile devices?", answer: "Yes, it works on phones, tablets, and desktop browsers." },
+      { question: "How do I change the order of pages in a PDF?", answer: "Upload the PDF and the current page order appears pre-filled in the order box. Rewrite the list so the numbers run in the order you want the pages to appear, then apply and download the rebuilt PDF." },
+      { question: "Can I move the last page of a PDF to the front?", answer: "Yes. Move the last page's number to the start of the pre-filled order list, keeping every other page listed after it in the sequence you want, then apply — the downloaded PDF opens with that page first." },
+      { question: "Does rearranging pages change the pages themselves?", answer: "No. Only the sequence changes; each page's content, size and quality stay as they were, and your original file is untouched — the new order is saved in the PDF you download." },
     ],
   },
 };
