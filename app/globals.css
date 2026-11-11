@@ -4018,3 +4018,27 @@
     transform: none;
   }
 }
+
+/* ==========================================================================
+ * Concept parity — rail card fix (2026-11-11)
+ * In the narrow 2-column Related rail (~160px cards) descriptions wrapped
+ * to 3 lines and collided with the pinned foot row. Rail cards now stack
+ * in a single full-width column (same ~340px width as homepage cards,
+ * whose 2-line descriptions are verified clean), size to their content,
+ * and the 2-line description clamp is re-asserted in rail scope.
+ * ========================================================================== */
+@media (min-width: 1024px) {
+  .tool-below-rail .tool-related-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .tool-below-rail .tool-card {
+    height: auto;
+  }
+  .tool-below-rail .tool-card-description {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+}
