@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" role="img" aria-labelledby="t">
+  <title id="t">Image Compressor — a photo squeezed down to a smaller file size</title>
+  <rect x="6" y="6" width="388" height="288" rx="18" fill="#faf6ef" stroke="#e6ddcb" stroke-width="2"/>
+  <!-- compression arrows -->
+  <g stroke="#cf3618" stroke-width="5" stroke-linecap="round">
+    <path d="M64 28l24 22"/>
+    <path d="M336 28l-24 22"/>
+    <path d="M64 238l24-22"/>
+    <path d="M336 238l-24-22"/>
+  </g>
+  <g fill="#cf3618">
+    <polygon points="96,57 89,39 77,51"/>
+    <polygon points="304,57 311,39 323,51"/>
+    <polygon points="96,209 89,227 77,215"/>
+    <polygon points="304,209 311,227 323,215"/>
+  </g>
+  <!-- photo frame -->
+  <rect x="98" y="58" width="204" height="148" rx="10" fill="#fffdf7" stroke="#1d1a16" stroke-width="5"/>
+  <circle cx="140" cy="96" r="13" fill="none" stroke="#1d1a16" stroke-width="4"/>
+  <path d="M118 188l50-64 34 36 28-28 54 56" fill="none" stroke="#1d1a16" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- size chip -->
+  <rect x="152" y="228" width="96" height="27" rx="6" fill="#cf3618"/>
+  <text x="200" y="246" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700" letter-spacing="1" fill="#faf6ef">100 KB</text>
+</svg>

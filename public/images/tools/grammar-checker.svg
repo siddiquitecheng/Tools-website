@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" role="img" aria-labelledby="t">
+  <title id="t">Grammar Checker — an error wave fixed with a check mark</title>
+  <rect x="6" y="6" width="388" height="288" rx="18" fill="#faf6ef" stroke="#e6ddcb" stroke-width="2"/>
+  <!-- document -->
+  <g stroke="#1d1a16" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="94" y="60" width="148" height="152" rx="8" fill="#fffdf7"/>
+    <path d="M226 60v16h16" fill="none" stroke-width="4"/>
+  </g>
+  <g stroke="#1d1a16" stroke-width="4" stroke-linecap="round" opacity="0.45">
+    <path d="M110 94h116M110 116h116M110 176h100"/>
+  </g>
+  <!-- error wave under the second line -->
+  <path d="M110 126q7-7 14 0t14 0t14 0t14 0t14 0t14 0t14 0" fill="none" stroke="#cf3618" stroke-width="4" stroke-linecap="round"/>
+  <!-- corrected line, solid -->
+  <path d="M110 152h96" stroke="#1d1a16" stroke-width="4" stroke-linecap="round"/>
+  <!-- fixed badge -->
+  <circle cx="256" cy="192" r="25" fill="#cf3618"/>
+  <path d="M243 192l9 10 18-20" fill="none" stroke="#faf6ef" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

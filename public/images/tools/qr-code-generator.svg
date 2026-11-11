@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" role="img" aria-labelledby="t">
+  <title id="t">QR Code Generator — a QR code inside scanner brackets</title>
+  <rect x="6" y="6" width="388" height="288" rx="18" fill="#faf6ef" stroke="#e6ddcb" stroke-width="2"/>
+  <!-- scanner brackets -->
+  <g stroke="#cf3618" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M104 60H84v24"/>
+    <path d="M296 60h20v24"/>
+    <path d="M84 216v24h20"/>
+    <path d="M316 216v24h-20"/>
+  </g>
+  <!-- sparkle -->
+  <path d="M336 30l3.5 8.5 8.5 3.5-8.5 3.5-3.5 8.5-3.5-8.5-8.5-3.5 8.5-3.5z" fill="#cf3618"/>
+  <!-- QR body -->
+  <rect x="110" y="50" width="150" height="150" rx="10" fill="#fffdf7" stroke="#1d1a16" stroke-width="5"/>
+  <!-- finder patterns -->
+  <g stroke="#1d1a16" stroke-width="5" fill="#fffdf7">
+    <rect x="128" y="68" width="38" height="38" rx="6"/>
+    <rect x="204" y="68" width="38" height="38" rx="6"/>
+    <rect x="128" y="144" width="38" height="38" rx="6"/>
+  </g>
+  <g fill="#1d1a16">
+    <rect x="139" y="79" width="16" height="16" rx="3"/>
+    <rect x="215" y="79" width="16" height="16" rx="3"/>
+    <rect x="139" y="155" width="16" height="16" rx="3"/>
+    <!-- data modules -->
+    <rect x="176" y="68" width="13" height="13"/>
+    <rect x="176" y="104" width="13" height="13"/>
+    <rect x="190" y="122" width="13" height="13"/>
+    <rect x="222" y="122" width="13" height="13"/>
+    <rect x="240" y="140" width="13" height="13"/>
+    <rect x="204" y="158" width="13" height="13"/>
+    <rect x="176" y="158" width="13" height="13"/>
+    <rect x="176" y="176" width="13" height="13"/>
+    <rect x="222" y="176" width="13" height="13"/>
+    <rect x="240" y="176" width="13" height="13"/>
+    <rect x="244" y="86" width="13" height="13"/>
+  </g>
+</svg>

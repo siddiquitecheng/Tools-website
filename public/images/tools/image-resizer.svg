@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" role="img" aria-labelledby="t">
+  <title id="t">Image Resizer — a photo resized to new measured dimensions</title>
+  <rect x="6" y="6" width="388" height="288" rx="18" fill="#faf6ef" stroke="#e6ddcb" stroke-width="2"/>
+  <!-- original size (dashed) -->
+  <rect x="88" y="56" width="224" height="148" rx="10" fill="none" stroke="#1d1a16" stroke-width="4" stroke-dasharray="10 8" opacity="0.5"/>
+  <!-- resized photo -->
+  <rect x="120" y="88" width="168" height="112" rx="8" fill="#fffdf7" stroke="#1d1a16" stroke-width="5"/>
+  <circle cx="148" cy="116" r="9" fill="none" stroke="#1d1a16" stroke-width="4"/>
+  <path d="M130 186l32-42 22 20 14-14 26 36" fill="none" stroke="#1d1a16" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- corner handles -->
+  <g fill="#fffdf7" stroke="#1d1a16" stroke-width="4">
+    <rect x="114" y="82" width="12" height="12" rx="3"/>
+    <rect x="282" y="82" width="12" height="12" rx="3"/>
+    <rect x="114" y="194" width="12" height="12" rx="3"/>
+    <rect x="282" y="194" width="12" height="12" rx="3"/>
+  </g>
+  <!-- new-width measurement arrow -->
+  <path d="M124 224h160" stroke="#cf3618" stroke-width="4" stroke-linecap="round"/>
+  <polygon points="120,224 132,218 132,230" fill="#cf3618"/>
+  <polygon points="288,224 276,218 276,230" fill="#cf3618"/>
+  <!-- ruler -->
+  <g stroke="#1d1a16" stroke-width="4" stroke-linecap="round">
+    <path d="M88 242h224"/>
+    <path d="M88 242v12M120 242v8M152 242v8M184 242v8M216 242v8M248 242v8M280 242v8M312 242v12"/>
+  </g>
+</svg>

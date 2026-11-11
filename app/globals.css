@@ -2675,3 +2675,51 @@
     display: none;
   }
 }
+
+/* ==========================================================================
+ * Tool images — Phase 1 (2026-11-11, appended; everything above unchanged)
+ * Per-tool SVG illustrations (public/images/tools/<slug>.svg, manifest in
+ * lib/tool-images.ts). A tool without an SVG renders its icon chip/tile
+ * exactly as before — these rules only style the two new media wrappers.
+ * ========================================================================== */
+
+/* ToolCard: illustration panel above the card's top row. The SVG carries
+ * its own paper panel, so the wrapper only handles sizing and clipping. */
+.tool-card-media {
+  display: block;
+  margin-bottom: 14px;
+  border-radius: 10px;
+  overflow: hidden;
+  line-height: 0;
+}
+.tool-card-media img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* Homepage popular grid is a two-column layout (icon column + text): let
+ * the media span the full card width on its own row and push the icon
+ * column down beneath it. Cards without media keep the original rows. */
+.popular-grid .tool-card-media {
+  grid-column: 1 / -1;
+  margin-bottom: 2px;
+}
+.popular-grid .tool-card:has(.tool-card-media) .tool-card-top {
+  grid-row: 2 / span 2;
+}
+
+/* ToolShell header: illustration panel in place of the 56px icon tile,
+ * centred above the badges/title like the tile was. */
+.tool-page-media {
+  width: min(320px, 82%);
+  margin: 0 auto 18px;
+  line-height: 0;
+}
+.tool-page-media img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 14px;
+  box-shadow: 0 14px 30px -18px #1d1a1633;
+}

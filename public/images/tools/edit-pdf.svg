@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" role="img" aria-labelledby="t">
+  <title id="t">Edit PDF — a pencil adding text and marks to a PDF page</title>
+  <rect x="6" y="6" width="388" height="288" rx="18" fill="#faf6ef" stroke="#e6ddcb" stroke-width="2"/>
+  <path d="M150 28l3 7 7 3-7 3-3 7-3-7-7-3 7-3z" fill="#cf3618"/>
+  <!-- document -->
+  <g stroke="#1d1a16" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="104" y="60" width="132" height="158" rx="8" fill="#fffdf7"/>
+    <path d="M220 60v16h16" fill="none" stroke-width="4"/>
+  </g>
+  <g stroke="#1d1a16" stroke-width="4" stroke-linecap="round" opacity="0.45">
+    <path d="M120 96h100M120 114h100M120 156h100M120 174h64"/>
+  </g>
+  <!-- newly added line + caret -->
+  <path d="M120 134h74" stroke="#cf3618" stroke-width="4" stroke-linecap="round"/>
+  <path d="M202 127v14" stroke="#cf3618" stroke-width="4" stroke-linecap="round"/>
+  <!-- pencil -->
+  <g transform="rotate(45 252 168)">
+    <rect x="240" y="112" width="24" height="88" rx="5" fill="#fffdf7" stroke="#1d1a16" stroke-width="5"/>
+    <path d="M240 132h24" stroke="#1d1a16" stroke-width="4"/>
+    <polygon points="240,200 264,200 252,224" fill="#cf3618" stroke="#1d1a16" stroke-width="4" stroke-linejoin="round"/>
+  </g>
+</svg>

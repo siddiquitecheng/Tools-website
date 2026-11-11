@@ -2,6 +2,7 @@ import React from "react";
 import Link from "next/link";
 import { Tool, getRelatedTools } from "@/lib/tools";
 import { getToolAccent, getToolIcon } from "@/components/tool-cards/toolIcon";
+import { getToolImage } from "@/components/tool-cards/toolImage";
 import { Breadcrumbs } from "./Breadcrumbs";
 import { Badge } from "./Badge";
 import { Card } from "./Card";
@@ -41,6 +42,7 @@ export const ToolShell: React.FC<ToolShellProps> = ({
   const related = relatedTools ?? getRelatedTools(tool);
   const Icon = getToolIcon(tool);
   const accent = getToolAccent(tool);
+  const toolImage = getToolImage(tool);
 
   const trustNotice = [
     "word-to-pdf",
@@ -99,12 +101,19 @@ export const ToolShell: React.FC<ToolShellProps> = ({
 
       {/* Tool Header — centered, like a SmallPDF tool page */}
       <header className="tool-page-heading mx-auto mt-7 max-w-3xl text-center">
-        <span
-          className="tool-page-icon mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-lg shadow-sm"
-          style={{ backgroundColor: accent, color: "white" }}
-        >
-          <Icon className="h-8 w-8" aria-hidden="true" strokeWidth={1.7} />
-        </span>
+        {toolImage ? (
+          <figure className="tool-page-media">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src={toolImage} alt={`${tool.name} illustration`} />
+          </figure>
+        ) : (
+          <span
+            className="tool-page-icon mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-lg shadow-sm"
+            style={{ backgroundColor: accent, color: "white" }}
+          >
+            <Icon className="h-8 w-8" aria-hidden="true" strokeWidth={1.7} />
+          </span>
+        )}
         <div className="mb-3 flex flex-wrap items-center justify-center gap-2">
           <Badge variant="accent">{tool.category}</Badge>
           <ToolUsageBadge

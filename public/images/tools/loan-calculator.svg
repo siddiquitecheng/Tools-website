@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" role="img" aria-labelledby="t">
+  <title id="t">Loan Calculator — a loan document with percent and rising coins</title>
+  <rect x="6" y="6" width="388" height="288" rx="18" fill="#faf6ef" stroke="#e6ddcb" stroke-width="2"/>
+  <!-- loan document -->
+  <g stroke="#1d1a16" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="84" y="64" width="118" height="142" rx="8" fill="#fffdf7"/>
+    <path d="M186 64v16h16" fill="none" stroke-width="4"/>
+  </g>
+  <!-- percent sign, drawn -->
+  <circle cx="112" cy="100" r="7" fill="none" stroke="#cf3618" stroke-width="4"/>
+  <circle cx="140" cy="126" r="7" fill="none" stroke="#cf3618" stroke-width="4"/>
+  <path d="M146 94l-40 38" stroke="#cf3618" stroke-width="4" stroke-linecap="round"/>
+  <g stroke="#1d1a16" stroke-width="4" stroke-linecap="round" opacity="0.45">
+    <path d="M100 156h86M100 174h64"/>
+  </g>
+  <!-- approval seal -->
+  <circle cx="172" cy="182" r="13" fill="none" stroke="#cf3618" stroke-width="4.5"/>
+  <circle cx="172" cy="182" r="3" fill="#cf3618"/>
+  <!-- coin stack -->
+  <g fill="#fffdf7" stroke="#1d1a16" stroke-width="5">
+    <ellipse cx="268" cy="200" rx="36" ry="11"/>
+    <ellipse cx="268" cy="181" rx="36" ry="11"/>
+    <ellipse cx="268" cy="162" rx="36" ry="11"/>
+  </g>
+  <ellipse cx="268" cy="162" rx="22" ry="6" fill="none" stroke="#1d1a16" stroke-width="3.5"/>
+  <!-- rising arrow -->
+  <path d="M318 214V146" stroke="#cf3618" stroke-width="5" stroke-linecap="round"/>
+  <polygon points="318,132 309,148 327,148" fill="#cf3618"/>
+</svg>

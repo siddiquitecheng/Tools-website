@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" role="img" aria-labelledby="t">
+  <title id="t">JPG to PDF — a JPG photo becomes a PDF document</title>
+  <rect x="6" y="6" width="388" height="288" rx="18" fill="#faf6ef" stroke="#e6ddcb" stroke-width="2"/>
+  <!-- source photo -->
+  <rect x="44" y="88" width="110" height="90" rx="8" fill="#fffdf7" stroke="#1d1a16" stroke-width="5"/>
+  <circle cx="72" cy="112" r="9" fill="none" stroke="#1d1a16" stroke-width="4"/>
+  <path d="M54 164l30-36 20 20 14-14 26 30" fill="none" stroke="#1d1a16" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="68" y="190" width="62" height="25" rx="6" fill="#faf6ef" stroke="#1d1a16" stroke-width="3.5"/>
+  <text x="99" y="207" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12.5" font-weight="700" letter-spacing="1" fill="#1d1a16">JPG</text>
+  <!-- conversion spark + arrow -->
+  <path d="M196 78l4 9 9 4-9 4-4 9-4-9-9-4 9-4z" fill="#cf3618"/>
+  <path d="M168 140h60" stroke="#cf3618" stroke-width="5" stroke-linecap="round"/>
+  <polygon points="242,140 226,131 226,149" fill="#cf3618"/>
+  <!-- result PDF document -->
+  <g stroke="#1d1a16" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="252" y="78" width="92" height="122" rx="8" fill="#fffdf7"/>
+    <path d="M328 78v16h16" fill="none" stroke-width="4"/>
+  </g>
+  <g stroke="#1d1a16" stroke-width="4" stroke-linecap="round" opacity="0.45">
+    <path d="M268 114h60M268 132h60M268 150h42"/>
+  </g>
+  <rect x="268" y="186" width="60" height="25" rx="6" fill="#cf3618"/>
+  <text x="298" y="203" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700" letter-spacing="1" fill="#faf6ef">PDF</text>
+</svg>

@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" role="img" aria-labelledby="t">
+  <title id="t">OCR PDF — a scan line turning a scanned page into searchable text</title>
+  <rect x="6" y="6" width="388" height="288" rx="18" fill="#faf6ef" stroke="#e6ddcb" stroke-width="2"/>
+  <!-- scanned document -->
+  <g stroke="#1d1a16" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="118" y="58" width="132" height="152" rx="8" fill="#fffdf7"/>
+    <path d="M234 58v16h16" fill="none" stroke-width="4"/>
+  </g>
+  <g stroke="#1d1a16" stroke-width="4" stroke-linecap="round" opacity="0.45">
+    <path d="M134 92h100M134 110h100"/>
+  </g>
+  <!-- scan line -->
+  <path d="M108 138h152" stroke="#cf3618" stroke-width="5" stroke-linecap="round"/>
+  <polygon points="102,138 118,129 118,147" fill="#cf3618"/>
+  <polygon points="266,138 250,129 250,147" fill="#cf3618"/>
+  <!-- recognised text below the scan line -->
+  <g stroke="#1d1a16" stroke-width="4" stroke-linecap="round">
+    <path d="M134 162h100M134 180h72"/>
+  </g>
+  <!-- OCR chip -->
+  <rect x="128" y="196" width="56" height="25" rx="6" fill="#cf3618"/>
+  <text x="156" y="213" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12.5" font-weight="700" letter-spacing="1" fill="#faf6ef">OCR</text>
+  <!-- magnifier -->
+  <circle cx="256" cy="204" r="27" fill="#faf6ef" stroke="#1d1a16" stroke-width="5"/>
+  <path d="M276 224l26 26" stroke="#1d1a16" stroke-width="6" stroke-linecap="round"/>
+  <g stroke="#1d1a16" stroke-width="4" stroke-linecap="round">
+    <path d="M240 196h32M240 208h24"/>
+  </g>
+</svg>

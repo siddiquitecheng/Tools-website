@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" role="img" aria-labelledby="t">
+  <title id="t">BMI Calculator — a gauge needle resting in the healthy zone</title>
+  <rect x="6" y="6" width="388" height="288" rx="18" fill="#faf6ef" stroke="#e6ddcb" stroke-width="2"/>
+  <!-- height ruler -->
+  <g stroke="#1d1a16" stroke-width="4" stroke-linecap="round">
+    <path d="M58 66v168"/>
+    <path d="M58 66h20M58 90h14M58 114h14M58 138h14M58 162h14M58 186h14M58 210h14M58 234h20"/>
+  </g>
+  <!-- gauge arc -->
+  <path d="M126 196a92 92 0 0 1 184 0" fill="none" stroke="#1d1a16" stroke-width="5" stroke-linecap="round"/>
+  <!-- healthy zone segment -->
+  <path d="M179 113a92 92 0 0 1 78 0" fill="none" stroke="#cf3618" stroke-width="7" stroke-linecap="round"/>
+  <!-- ticks -->
+  <g stroke="#1d1a16" stroke-width="4" stroke-linecap="round">
+    <path d="M126 196h14M138 150l12 7M172 116l7 12M218 104v14M264 116l-7 12M298 150l-12 7M310 196h-14"/>
+  </g>
+  <!-- needle + hub -->
+  <path d="M218 196l25-68" stroke="#cf3618" stroke-width="5" stroke-linecap="round"/>
+  <circle cx="218" cy="196" r="8" fill="#1d1a16"/>
+  <!-- result chip -->
+  <rect x="180" y="218" width="78" height="25" rx="6" fill="#cf3618"/>
+  <text x="219" y="235" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12.5" font-weight="700" letter-spacing="1" fill="#faf6ef">BMI 22</text>
+</svg>

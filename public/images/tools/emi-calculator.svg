@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" role="img" aria-labelledby="t">
+  <title id="t">EMI Calculator — a calculator working out a monthly installment</title>
+  <rect x="6" y="6" width="388" height="288" rx="18" fill="#faf6ef" stroke="#e6ddcb" stroke-width="2"/>
+  <!-- calculator body -->
+  <rect x="130" y="50" width="140" height="198" rx="12" fill="#fffdf7" stroke="#1d1a16" stroke-width="5"/>
+  <!-- display -->
+  <rect x="148" y="68" width="104" height="34" rx="6" fill="#faf6ef" stroke="#1d1a16" stroke-width="4"/>
+  <path d="M158 82h64" stroke="#1d1a16" stroke-width="4" stroke-linecap="round"/>
+  <path d="M158 93h40" stroke="#cf3618" stroke-width="4" stroke-linecap="round"/>
+  <!-- button grid -->
+  <g fill="none" stroke="#1d1a16" stroke-width="3.5">
+    <rect x="148" y="118" width="28" height="22" rx="5"/>
+    <rect x="186" y="118" width="28" height="22" rx="5"/>
+    <rect x="224" y="118" width="28" height="22" rx="5"/>
+    <rect x="148" y="150" width="28" height="22" rx="5"/>
+    <rect x="186" y="150" width="28" height="22" rx="5"/>
+    <rect x="224" y="150" width="28" height="22" rx="5"/>
+    <rect x="148" y="182" width="28" height="22" rx="5"/>
+    <rect x="186" y="182" width="28" height="22" rx="5"/>
+  </g>
+  <rect x="224" y="182" width="28" height="22" rx="5" fill="#cf3618"/>
+  <path d="M232 190h12M232 197h12" stroke="#faf6ef" stroke-width="3.5" stroke-linecap="round"/>
+  <!-- EMI chip -->
+  <rect x="169" y="236" width="62" height="25" rx="6" fill="#cf3618"/>
+  <text x="200" y="253" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700" letter-spacing="1" fill="#faf6ef">EMI</text>
+</svg>

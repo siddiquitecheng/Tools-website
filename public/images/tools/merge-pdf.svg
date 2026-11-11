@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" role="img" aria-labelledby="t">
+  <title id="t">Merge PDF — two documents combine into one PDF</title>
+  <rect x="6" y="6" width="388" height="288" rx="18" fill="#faf6ef" stroke="#e6ddcb" stroke-width="2"/>
+  <!-- source document 1 -->
+  <g stroke="#1d1a16" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="44" y="58" width="64" height="84" rx="8" fill="#fffdf7"/>
+    <path d="M96 58v12h12" fill="none" stroke-width="4"/>
+  </g>
+  <g stroke="#1d1a16" stroke-width="4" stroke-linecap="round" opacity="0.45">
+    <path d="M58 88h36M58 104h28"/>
+  </g>
+  <!-- source document 2 -->
+  <g stroke="#1d1a16" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="44" y="166" width="64" height="84" rx="8" fill="#fffdf7"/>
+    <path d="M96 166v12h12" fill="none" stroke-width="4"/>
+  </g>
+  <g stroke="#1d1a16" stroke-width="4" stroke-linecap="round" opacity="0.45">
+    <path d="M58 196h36M58 212h28"/>
+  </g>
+  <!-- converging flow lines -->
+  <g stroke="#1d1a16" stroke-width="4" fill="none" stroke-linecap="round">
+    <path d="M112 100c26 0 40 46 62 48"/>
+    <path d="M112 208c26 0 40-58 62-58"/>
+  </g>
+  <!-- plus badge -->
+  <circle cx="196" cy="149" r="18" fill="#faf6ef" stroke="#1d1a16" stroke-width="5"/>
+  <path d="M196 139v20M186 149h20" stroke="#cf3618" stroke-width="5" stroke-linecap="round"/>
+  <!-- arrow to result -->
+  <path d="M222 149h22" stroke="#cf3618" stroke-width="5" stroke-linecap="round"/>
+  <polygon points="248,149 233,140 233,158" fill="#cf3618"/>
+  <!-- merged document -->
+  <g stroke="#1d1a16" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="254" y="88" width="88" height="120" rx="8" fill="#fffdf7"/>
+    <path d="M326 88v16h16" fill="none" stroke-width="4"/>
+  </g>
+  <g stroke="#1d1a16" stroke-width="4" stroke-linecap="round" opacity="0.45">
+    <path d="M270 124h56M270 142h56M270 160h40"/>
+  </g>
+  <!-- PDF chip -->
+  <rect x="268" y="194" width="60" height="25" rx="6" fill="#cf3618"/>
+  <text x="298" y="211" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700" letter-spacing="1" fill="#faf6ef">PDF</text>
+</svg>

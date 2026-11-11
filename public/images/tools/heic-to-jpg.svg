@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" role="img" aria-labelledby="t">
+  <title id="t">HEIC to JPG — an iPhone HEIC photo converts to JPG</title>
+  <rect x="6" y="6" width="388" height="288" rx="18" fill="#faf6ef" stroke="#e6ddcb" stroke-width="2"/>
+  <!-- source HEIC photo -->
+  <rect x="48" y="88" width="104" height="88" rx="8" fill="#fffdf7" stroke="#1d1a16" stroke-width="5"/>
+  <circle cx="74" cy="110" r="8.5" fill="none" stroke="#1d1a16" stroke-width="4"/>
+  <path d="M58 162l24-32 16 16 10-10 34 26" fill="none" stroke="#1d1a16" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="64" y="188" width="72" height="25" rx="6" fill="#faf6ef" stroke="#1d1a16" stroke-width="3.5"/>
+  <text x="100" y="205" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12.5" font-weight="700" letter-spacing="1" fill="#1d1a16">HEIC</text>
+  <!-- conversion spark + arrow -->
+  <path d="M200 78l4 9 9 4-9 4-4 9-4-9-9-4 9-4z" fill="#cf3618"/>
+  <path d="M174 140h52" stroke="#cf3618" stroke-width="5" stroke-linecap="round"/>
+  <polygon points="240,140 224,131 224,149" fill="#cf3618"/>
+  <!-- result JPG photo -->
+  <rect x="252" y="88" width="104" height="88" rx="8" fill="#fffdf7" stroke="#1d1a16" stroke-width="5"/>
+  <circle cx="280" cy="110" r="8.5" fill="none" stroke="#1d1a16" stroke-width="4"/>
+  <path d="M262 162l24-32 16 16 10-10 34 26" fill="none" stroke="#1d1a16" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="273" y="188" width="62" height="25" rx="6" fill="#cf3618"/>
+  <text x="304" y="205" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12.5" font-weight="700" letter-spacing="1" fill="#faf6ef">JPG</text>
+</svg>

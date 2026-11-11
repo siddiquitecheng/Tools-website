@@ -3,6 +3,7 @@ import Link from "next/link";
 import { type Tool } from "@/lib/tools";
 import { isImplementedTool } from "@/lib/tool-capabilities";
 import { getToolAccent, getToolIcon } from "@/components/tool-cards/toolIcon";
+import { getToolImage } from "@/components/tool-cards/toolImage";
 import { ArrowUpRight } from "lucide-react";
 
 interface ToolCardProps {
@@ -13,9 +14,16 @@ interface ToolCardProps {
 export function ToolCard({ tool, usageCount }: ToolCardProps) {
   const accent = getToolAccent(tool);
   const Icon = getToolIcon(tool);
+  const image = getToolImage(tool);
 
   return (
     <Link href={`/tools/${tool.id}`} className="tool-card group">
+      {image && (
+        <span className="tool-card-media">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src={image} alt={`${tool.name} illustration`} loading="lazy" />
+        </span>
+      )}
       <div className="tool-card-top">
         <span
           className="tool-card-icon"

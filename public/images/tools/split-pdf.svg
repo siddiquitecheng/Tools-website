@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" role="img" aria-labelledby="t">
+  <title id="t">Split PDF — one document cut into two PDFs</title>
+  <rect x="6" y="6" width="388" height="288" rx="18" fill="#faf6ef" stroke="#e6ddcb" stroke-width="2"/>
+  <!-- source document -->
+  <g stroke="#1d1a16" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="52" y="70" width="96" height="134" rx="8" fill="#fffdf7"/>
+    <path d="M132 70v16h16" fill="none" stroke-width="4"/>
+  </g>
+  <g stroke="#1d1a16" stroke-width="4" stroke-linecap="round" opacity="0.45">
+    <path d="M68 104h64M68 122h48"/>
+  </g>
+  <!-- split line -->
+  <path d="M100 78v118" stroke="#cf3618" stroke-width="4" stroke-dasharray="8 7" stroke-linecap="round"/>
+  <!-- PDF chip -->
+  <rect x="70" y="190" width="54" height="23" rx="6" fill="#cf3618"/>
+  <text x="97" y="206" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="700" letter-spacing="1" fill="#faf6ef">PDF</text>
+  <!-- diverging flow lines -->
+  <g stroke="#1d1a16" stroke-width="4" fill="none" stroke-linecap="round">
+    <path d="M156 96c34 0 54-12 84-12"/>
+    <path d="M156 178c34 0 54 18 84 18"/>
+  </g>
+  <!-- scissors -->
+  <g stroke="#1d1a16" stroke-width="4.5" stroke-linecap="round" fill="none">
+    <path d="M204 128l28 24"/>
+    <path d="M204 146l28-24"/>
+    <circle cx="196" cy="124" r="7.5" fill="#fffdf7"/>
+    <circle cx="196" cy="150" r="7.5" fill="#fffdf7"/>
+  </g>
+  <circle cx="207" cy="137" r="3" fill="#1d1a16"/>
+  <!-- output document 1 -->
+  <g stroke="#1d1a16" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="248" y="48" width="88" height="78" rx="8" fill="#fffdf7"/>
+    <path d="M320 48v14h14" fill="none" stroke-width="4"/>
+  </g>
+  <g stroke="#1d1a16" stroke-width="4" stroke-linecap="round" opacity="0.45">
+    <path d="M264 80h56M264 96h40"/>
+  </g>
+  <!-- output document 2 -->
+  <g stroke="#1d1a16" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="248" y="162" width="88" height="78" rx="8" fill="#fffdf7"/>
+    <path d="M320 162v14h14" fill="none" stroke-width="4"/>
+  </g>
+  <g stroke="#1d1a16" stroke-width="4" stroke-linecap="round" opacity="0.45">
+    <path d="M264 194h56M264 210h40"/>
+  </g>
+</svg>

@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" role="img" aria-labelledby="t">
+  <title id="t">Mortgage Calculator — a house with a percent sign for its loan</title>
+  <rect x="6" y="6" width="388" height="288" rx="18" fill="#faf6ef" stroke="#e6ddcb" stroke-width="2"/>
+  <!-- chimney -->
+  <rect x="240" y="72" width="22" height="34" fill="#fffdf7" stroke="#1d1a16" stroke-width="5"/>
+  <!-- roof -->
+  <path d="M92 140L200 60l108 80" fill="none" stroke="#1d1a16" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- house body -->
+  <rect x="122" y="140" width="156" height="98" fill="#fffdf7" stroke="#1d1a16" stroke-width="5"/>
+  <!-- window -->
+  <rect x="140" y="158" width="26" height="26" fill="none" stroke="#1d1a16" stroke-width="4"/>
+  <path d="M153 158v26M140 171h26" stroke="#1d1a16" stroke-width="3.5"/>
+  <!-- door -->
+  <rect x="184" y="182" width="34" height="56" fill="none" stroke="#1d1a16" stroke-width="4.5"/>
+  <circle cx="210" cy="212" r="3" fill="#1d1a16"/>
+  <!-- percent sign, drawn -->
+  <circle cx="238" cy="162" r="6" fill="none" stroke="#cf3618" stroke-width="4"/>
+  <circle cx="258" cy="182" r="6" fill="none" stroke="#cf3618" stroke-width="4"/>
+  <path d="M262 158l-28 28" stroke="#cf3618" stroke-width="4" stroke-linecap="round"/>
+  <!-- ground -->
+  <path d="M76 238h248" stroke="#1d1a16" stroke-width="4" stroke-linecap="round" opacity="0.45"/>
+</svg>

@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" role="img" aria-labelledby="t">
+  <title id="t">Compress PDF — a large document squeezed into a smaller PDF</title>
+  <rect x="6" y="6" width="388" height="288" rx="18" fill="#faf6ef" stroke="#e6ddcb" stroke-width="2"/>
+  <!-- original larger size (dashed) -->
+  <rect x="118" y="50" width="164" height="178" rx="10" fill="none" stroke="#1d1a16" stroke-width="4" stroke-dasharray="10 8" opacity="0.5"/>
+  <!-- compression arrows -->
+  <g stroke="#cf3618" stroke-width="5" stroke-linecap="round">
+    <path d="M92 32l26 22"/>
+    <path d="M308 32l-26 22"/>
+    <path d="M92 234l26-22"/>
+    <path d="M308 234l-26-22"/>
+  </g>
+  <g fill="#cf3618">
+    <polygon points="126,62 118,44 106,56"/>
+    <polygon points="274,62 282,44 294,56"/>
+    <polygon points="126,204 118,222 106,210"/>
+    <polygon points="274,204 282,222 294,210"/>
+  </g>
+  <!-- compressed document -->
+  <g stroke="#1d1a16" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="152" y="76" width="96" height="126" rx="8" fill="#fffdf7"/>
+    <path d="M232 76v16h16" fill="none" stroke-width="4"/>
+  </g>
+  <g stroke="#1d1a16" stroke-width="4" stroke-linecap="round" opacity="0.45">
+    <path d="M168 110h64M168 128h64M168 146h44"/>
+  </g>
+  <!-- PDF chip -->
+  <rect x="170" y="214" width="60" height="25" rx="6" fill="#cf3618"/>
+  <text x="200" y="231" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700" letter-spacing="1" fill="#faf6ef">PDF</text>
+</svg>
