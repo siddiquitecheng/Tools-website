@@ -4,6 +4,7 @@ import localFont from "next/font/local";
 
 import { Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
+import { ScrollFx } from "@/components/layout/ScrollFx";
 import { ToastProvider } from "@/components/ui/Toast";
 import { buildSiteMetadata } from "@/lib/seo";
 
@@ -52,11 +53,12 @@ export default function RootLayout({
         className={`${body.className} min-h-full bg-[var(--bg)] text-[var(--ink)]`}
       >
         <ToastProvider>
-          <div className="flex min-h-screen flex-col">
+          <div id="top" className="flex min-h-screen flex-col">
             <Header />
             <main className="flex-1">{children}</main>
             <Footer />
           </div>
+          <ScrollFx />
         </ToastProvider>
       </body>
     </html>

@@ -18,8 +18,29 @@ export function Header() {
     document.addEventListener("pointerdown", closeOutside);
     return () => document.removeEventListener("pointerdown", closeOutside);
   }, []);
+  // Scrolled state with hysteresis (on at 24px, off below 8px) behind
+  // an rAF throttle. The old single threshold (scrollY > 12) flip-flopped:
+  // .is-scrolled used to shrink the sticky header's height, which shifted
+  // the page under the scroll position and pushed scrollY back across the
+  // threshold — toggling the class on and off, seen as a blink/jitter.
+  // The class now only drives paint-level changes (shadow, logo scale).
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 12);
+    let ticking = false;
+    const update = () => {
+      ticking = false;
+      setScrolled((previous) => {
+        const y = window.scrollY;
+        if (!previous && y > 24) return true;
+        if (previous && y < 8) return false;
+        return previous;
+      });
+    };
+    const onScroll = () => {
+      if (!ticking) {
+        ticking = true;
+        requestAnimationFrame(update);
+      }
+    };
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);

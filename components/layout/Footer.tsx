@@ -1,11 +1,11 @@
 import Link from "next/link";
-import { ShieldCheck } from "lucide-react";
+import { ArrowUp, ShieldCheck } from "lucide-react";
 import { BrandLogo } from "./BrandLogo";
 
 export function Footer() {
   return (
     <footer className="site-footer">
-      <div className="page-container footer-main">
+      <div className="page-container footer-main reveal">
         <div className="footer-brand">
           <Link href="/" className="brand" aria-label="ALETOOL home">
             <BrandLogo />
@@ -39,12 +39,22 @@ export function Footer() {
           <Link href="/terms">Terms of service</Link>
         </div>
       </div>
+      <div className="page-container footer-wordmark-band" aria-hidden="true">
+        <span className="footer-wordmark" data-parallax="0.02">
+          aletool<span className="footer-wordmark-dot">.</span>
+        </span>
+      </div>
       <div className="page-container footer-bottom">
         <span>
           © {new Date().getFullYear()} ALETOOL. Made for your everyday.
         </span>
-        <span className="footer-local">
-          <ShieldCheck size={13} /> No signup. No watermark. Less friction.
+        <span className="footer-bottom-right">
+          <span className="footer-local">
+            <ShieldCheck size={13} /> No signup. No watermark. Less friction.
+          </span>
+          <a href="#top" className="to-top">
+            <ArrowUp size={13} /> Back to top
+          </a>
         </span>
       </div>
     </footer>

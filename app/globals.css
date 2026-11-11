@@ -2740,3 +2740,242 @@
   width: min(340px, 100%);
   margin: 16px 0 8px;
 }
+
+/* ============================================================
+ * CHROME POLISH (2026-11-11) — navbar stability fix, nav and
+ * logo micro-interactions, ScrollFx reveal/parallax support and
+ * the footer restyle. Everything in this section is additive:
+ * base rules above stay untouched and these later rules win by
+ * source order at equal-or-higher specificity.
+ *
+ * NAVBAR BLINK — ROOT CAUSE, fixed here and in Header.tsx.
+ * .site-header is sticky, and .is-scrolled shrank .header-inner
+ * (height 76px -> 62px; 66px -> 58px under 640px) with
+ * `transition: height 250ms ease` on .header-inner, while
+ * Header.tsx flipped the class at a single threshold
+ * (window.scrollY > 12, no hysteresis). Because the header is
+ * in-flow and sticky, the animated 14px shrink shifted the whole
+ * page under the scroll position, pushing scrollY back across
+ * the threshold and flipping the class again — a flip-flop loop
+ * perceived as the navbar blinking/sticking, plus a visible page
+ * slide on every toggle. The fix below pins the inner height at
+ * both breakpoints and removes the height transition, so the
+ * scrolled state changes ONLY paint-level properties (shadow,
+ * logo transform); Header.tsx adds enter/exit hysteresis
+ * (24px / 8px) behind an rAF-throttled listener.
+ * ============================================================ */
+
+/* — Navbar stability: height pinned, no layout animation — */
+.header-inner {
+  transition: none;
+}
+.site-header.is-scrolled .header-inner {
+  height: 76px;
+}
+@media (max-width: 640px) {
+  .site-header.is-scrolled .header-inner {
+    height: 66px;
+  }
+}
+/* Scrolled state = shadow only (plus the logo scale further down). */
+.site-header.is-scrolled {
+  box-shadow:
+    0 1px 0 #1d1a1612,
+    0 18px 38px -24px #1d1a1645;
+}
+
+/* — Nav micro-interactions: animated underlines, softer states — */
+.nav-menu summary {
+  transition:
+    border-color 180ms ease,
+    color 180ms ease,
+    background-color 180ms ease;
+}
+.desktop-nav a,
+.header-guide {
+  position: relative;
+}
+.desktop-nav a::after,
+.header-guide::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -6px;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--accent);
+  transform: scaleX(0);
+  transform-origin: 0 50%;
+  transition: transform 240ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+.desktop-nav a:hover::after,
+.desktop-nav a:focus-visible::after,
+.header-guide:hover::after,
+.header-guide:focus-visible::after {
+  transform: scaleX(1);
+}
+
+/* — Logo life: soft layered shadow, 3D tilt + shine on hover,
+ *    a slight settle (transform only) once the header is scrolled.
+ *    The shadow/tilt live on .brand-mark-wrap so the shine sweep
+ *    (::after) clips to the mark's rounded corners. — */
+.brand-logo {
+  transition: transform 300ms ease;
+}
+.site-header.is-scrolled .brand-logo {
+  transform: scale(0.96);
+}
+.brand-tagline {
+  letter-spacing: 1.9px;
+}
+@media (max-width: 640px) {
+  .brand-tagline {
+    letter-spacing: 1.3px;
+  }
+}
+.brand-mark-wrap {
+  position: relative;
+  display: block;
+  flex-shrink: 0;
+  line-height: 0;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow:
+    0 1px 2px #1d1a161f,
+    0 10px 22px -12px #1d1a1640;
+  transition:
+    transform 320ms cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 320ms ease;
+}
+.brand-mark-wrap::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    115deg,
+    transparent 32%,
+    #faf6ef59 50%,
+    transparent 68%
+  );
+  transform: translateX(-130%);
+  transition: transform 650ms ease;
+  pointer-events: none;
+}
+.brand:hover .brand-mark-wrap,
+.brand:focus-visible .brand-mark-wrap {
+  transform: perspective(360px) rotateY(-9deg) rotateX(3deg) translateY(-1px);
+  box-shadow:
+    0 2px 3px #1d1a161f,
+    0 16px 30px -12px #1d1a1652;
+}
+.brand:hover .brand-mark-wrap::after,
+.brand:focus-visible .brand-mark-wrap::after {
+  transform: translateX(130%);
+}
+
+/* — ScrollFx reveals + parallax support. The hidden reveal state
+ *    requires html.js-fx (added by ScrollFx on mount, never for
+ *    reduced-motion visitors) and yields to HomeMotion's
+ *    .motion-ready system on the homepage, so no-JS and
+ *    reduced-motion visitors always see content. Smooth scrolling
+ *    itself already lives in @layer base (html scroll-behavior)
+ *    with the global reduced-motion override — not duplicated. — */
+@media (prefers-reduced-motion: no-preference) {
+  html.js-fx:not(.motion-ready) .reveal {
+    opacity: 0;
+    transform: translateY(14px);
+    transition:
+      opacity 650ms cubic-bezier(0.22, 1, 0.36, 1),
+      transform 650ms cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  html.js-fx:not(.motion-ready) .reveal.in {
+    opacity: 1;
+    transform: none;
+  }
+}
+[data-parallax] {
+  will-change: transform;
+}
+
+/* — Footer restyle: roomier rhythm, editorial column headings
+ *    with a vermilion tick, a ghost wordmark band with a gentle
+ *    parallax drift (data-parallax, driven by ScrollFx), and a
+ *    pill back-to-top. All links/labels unchanged. — */
+.site-footer {
+  background: linear-gradient(180deg, transparent, #1d1a1605);
+}
+.footer-main {
+  padding-block: 68px 30px;
+}
+.footer-column h3 {
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+.footer-column h3::before {
+  content: "";
+  display: inline-block;
+  width: 14px;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--accent);
+  margin-right: 9px;
+  vertical-align: middle;
+}
+.footer-column a {
+  font-size: 13px;
+  transition:
+    color 150ms ease,
+    transform 180ms ease;
+}
+.footer-column a:hover {
+  transform: translateX(3px);
+}
+.footer-wordmark-band {
+  padding-block: 10px 22px;
+}
+.footer-wordmark {
+  display: block;
+  font-family: var(--font-display, "Bricolage Grotesque", Georgia, sans-serif);
+  font-size: clamp(72px, 13vw, 168px);
+  font-weight: 700;
+  line-height: 0.95;
+  letter-spacing: -0.02em;
+  color: #1d1a160f;
+  user-select: none;
+}
+.footer-wordmark-dot {
+  color: #cf361859;
+}
+.footer-bottom {
+  align-items: center;
+  font-size: 11px;
+}
+.footer-bottom-right {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 18px;
+}
+.to-top {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--ink);
+  background: var(--surface);
+  border: 1px solid var(--line-strong);
+  border-radius: 999px;
+  padding: 7px 13px;
+  transition:
+    border-color 180ms ease,
+    color 180ms ease,
+    transform 180ms ease;
+}
+.to-top:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  transform: translateY(-2px);
+}
