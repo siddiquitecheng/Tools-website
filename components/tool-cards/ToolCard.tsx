@@ -19,7 +19,7 @@ export function ToolCard({ tool, usageCount }: ToolCardProps) {
       <div className="tool-card-top">
         <span
           className="tool-card-icon"
-          style={{ backgroundColor: accent, color: "white" }}
+          style={{ backgroundColor: `${accent}1a`, color: accent }}
         >
           <Icon aria-hidden="true" className="h-6 w-6" strokeWidth={1.8} />
         </span>

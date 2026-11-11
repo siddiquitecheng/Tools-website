@@ -11,8 +11,9 @@ import {
   ShieldCheck,
   Sparkles,
   Upload,
-  Zap,
 } from "lucide-react";
+import { FaqList } from "@/components/home/FaqList";
+import { HomeMotion } from "@/components/home/HomeMotion";
 import { ToolExplorer, ToolSearch } from "@/components/home/ToolExplorer";
 import { WorkspaceIllustration } from "@/components/home/WorkspaceIllustration";
 import { CategoryCard } from "@/components/tool-cards/CategoryCard";
@@ -119,6 +120,7 @@ export default async function HomePage() {
   const faqLd = generateFaqJsonLd(homeFaqs);
   return (
     <div className="homepage">
+      <HomeMotion />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -144,10 +146,15 @@ export default async function HomePage() {
           <div className="hero-eyebrow">
             <span /> Your everyday digital toolbox
           </div>
-          <h1>
-            Less busywork.
-            <br />
-            <span>More possibilities.</span>
+          <h1 className="hero-title">
+            <span className="reveal-line">
+              <span>Free online tools,</span>
+            </span>
+            <span className="reveal-line">
+              <span>
+                minus the <em className="hero-underline">busywork.</em>
+              </span>
+            </span>
           </h1>
           <p className="hero-subheading">
             Free online tools — 137 PDF, image, AI, calculator and converter
@@ -158,7 +165,11 @@ export default async function HomePage() {
             get you from to-do to done.
           </p>
           <div className="hero-actions">
-            <Link href="/tools" className="site-button site-button-primary">
+            <Link
+              href="/tools"
+              className="site-button site-button-primary"
+              data-magnetic
+            >
               Explore all tools <ArrowRight size={18} />
             </Link>
             <Link
@@ -184,25 +195,44 @@ export default async function HomePage() {
         <WorkspaceIllustration />
       </section>
 
-      <div className="benefits-strip">
-        <div className="page-container benefits-inner">
-          <span>
-            <LayoutIcon /> <strong>{publicTools.length} tools.</strong> One
-            happy workflow.
-          </span>
-          <span>
-            <ShieldCheck size={18} /> Local processing where possible
-          </span>
-          <span>
-            <Zap size={18} /> Open a tool. Get it done.
-          </span>
+      <div className="stats-strip">
+        <div className="page-container stats-inner reveal">
+          <div className="stat">
+            <span className="stat-value">{publicTools.length}</span>
+            <span className="stat-label">Free tools</span>
+          </div>
+          <div className="stat">
+            <span className="stat-value">{categories.length}</span>
+            <span className="stat-label">Categories</span>
+          </div>
+          <div className="stat">
+            <span className="stat-value">0</span>
+            <span className="stat-label">Signups needed</span>
+          </div>
+          <div className="stat">
+            <span className="stat-value">100%</span>
+            <span className="stat-label">Free · No watermark</span>
+          </div>
+        </div>
+      </div>
+
+      <div className="tool-ticker" aria-hidden="true">
+        <div className="ticker-track">
+          {[...featured, ...featured].map((tool, index) => (
+            <span className="ticker-item" key={`${tool.id}-${index}`}>
+              {tool.name}
+              <i />
+            </span>
+          ))}
         </div>
       </div>
 
       <section className="home-section page-container" id="popular-tools">
-        <div className="section-heading">
+        <div className="section-heading reveal">
           <div>
-            <p className="section-eyebrow">LESS EFFORT. BETTER RESULTS.</p>
+            <p className="section-eyebrow">
+              <span className="section-index">01</span> Popular tools
+            </p>
             <h2>Your next task, sorted.</h2>
             <p>The tools you reach for, ready when you need them.</p>
           </div>
@@ -218,14 +248,16 @@ export default async function HomePage() {
 
       <section className="category-section">
         <div className="page-container home-section">
-          <div className="section-heading">
+          <div className="section-heading reveal">
             <div>
-              <p className="section-eyebrow">FIND YOUR FLOW</p>
+              <p className="section-eyebrow">
+                <span className="section-index">02</span> Browse by category
+              </p>
               <h2>A little help for every kind of work.</h2>
               <p>Pick a category. Find the right tool. Keep moving.</p>
             </div>
           </div>
-          <div className="category-grid">
+          <div className="category-grid reveal">
             {categories.map((category) => (
               <CategoryCard
                 key={category}
@@ -238,8 +270,10 @@ export default async function HomePage() {
       </section>
 
       <section className="home-section page-container workflow-section">
-        <div className="workflow-copy">
-          <p className="section-eyebrow">BUILT TO BE SIMPLE</p>
+        <div className="workflow-copy reveal">
+          <p className="section-eyebrow">
+            <span className="section-index">03</span> How it works
+          </p>
           <h2>
             Three steps.
             <br />
@@ -253,7 +287,7 @@ export default async function HomePage() {
             Find your tool <ArrowRight size={17} />
           </Link>
         </div>
-        <div className="workflow-steps">
+        <div className="workflow-steps reveal">
           {[
             {
               icon: Upload,
@@ -286,7 +320,7 @@ export default async function HomePage() {
       </section>
 
       <section className="page-container">
-        <div className="privacy-feature">
+        <div className="privacy-feature reveal">
           <div className="privacy-art" aria-hidden="true">
             <div className="privacy-orbit orbit-one" />
             <div className="privacy-orbit orbit-two" />
@@ -298,7 +332,9 @@ export default async function HomePage() {
             </i>
           </div>
           <div>
-            <p className="section-eyebrow">YOUR WORK IS YOURS</p>
+            <p className="section-eyebrow">
+              <span className="section-index">04</span> Privacy first
+            </p>
             <h2>
               A simpler workflow.
               <br />A thoughtful approach to privacy.
@@ -316,14 +352,14 @@ export default async function HomePage() {
 
       {recent.length > 0 && (
         <section className="home-section page-container">
-          <div className="section-heading">
+          <div className="section-heading reveal">
             <div>
-              <p className="section-eyebrow">MEET YOUR NEXT FAVORITE</p>
+              <p className="section-eyebrow">Meet your next favorite</p>
               <h2>Fresh in the workshop.</h2>
             </div>
             <Sparkles size={24} className="text-[var(--accent)]" />
           </div>
-          <div className="recent-grid">
+          <div className="recent-grid reveal">
             {recent.map((tool) => (
               <ToolCard key={tool.id} tool={tool} />
             ))}
@@ -332,52 +368,33 @@ export default async function HomePage() {
       )}
 
       <section className="home-section page-container">
-        <div className="section-heading">
+        <div className="section-heading reveal">
           <div>
-            <p className="section-eyebrow">GOOD TO KNOW</p>
+            <p className="section-eyebrow">Good to know</p>
             <h2>Frequently asked questions</h2>
             <p>Quick answers about using ALETOOL.</p>
           </div>
         </div>
-        <div className="mt-8 grid gap-4 md:grid-cols-2">
-          {homeFaqs.map((faq) => (
-            <div
-              key={faq.question}
-              className="rounded-xl border border-[var(--line)] bg-[var(--surface)] p-5"
-            >
-              <h3 className="font-semibold text-[var(--ink)]">{faq.question}</h3>
-              <p className="mt-2 text-sm leading-7 text-[var(--ink-soft)]">
-                {faq.answer}
-              </p>
-            </div>
-          ))}
-        </div>
+        <FaqList faqs={homeFaqs} />
       </section>
 
       <section className="page-container home-cta-wrap">
-        <div className="home-cta">
+        <div className="home-cta reveal">
           <span className="cta-icon">
             <CheckCircle2 size={30} />
           </span>
           <h2>Good tools. Less friction.</h2>
           <p>Your next task is a little easier from here.</p>
-          <Link href="/tools" className="site-button site-button-primary">
+          <Link
+            href="/tools"
+            className="site-button site-button-primary"
+            data-magnetic
+          >
             Find the right tool <ArrowRight size={18} />
           </Link>
           <span className="cta-note">Free to use. No account needed.</span>
         </div>
       </section>
     </div>
-  );
-}
-
-function LayoutIcon() {
-  return (
-    <span className="mini-grid" aria-hidden="true">
-      <i />
-      <i />
-      <i />
-      <i />
-    </span>
   );
 }

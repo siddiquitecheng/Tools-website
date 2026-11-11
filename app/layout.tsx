@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Bricolage_Grotesque, Instrument_Sans } from "next/font/google";
 import localFont from "next/font/local";
 
 import { Footer } from "@/components/layout/Footer";
@@ -8,13 +9,19 @@ import { buildSiteMetadata } from "@/lib/seo";
 
 import "./globals.css";
 
-// Headings share the Inter body font (SmallPDF-style clean sans), so no
-// separate display font is loaded. --font-display maps to --font-body
-// in globals.css, keeping every existing font-display usage working.
-// Bundle fonts locally so builds do not depend on Google's font service.
-const body = localFont({
-  src: "./fonts/Inter-Variable.ttf",
-  weight: "100 900",
+// Editorial redesign: Bricolage Grotesque carries display/headline type,
+// Instrument Sans is the body face. Both are exposed as CSS variables that
+// globals.css consumes (--font-display / --font-body). JetBrains Mono stays
+// bundled locally for code and editorial index labels.
+const display = Bricolage_Grotesque({
+  subsets: ["latin"],
+  variable: "--font-display",
+  display: "swap",
+  preload: true,
+});
+
+const body = Instrument_Sans({
+  subsets: ["latin"],
   variable: "--font-body",
   display: "swap",
   preload: true,
@@ -39,7 +46,7 @@ export default function RootLayout({
     <html
       lang="en"
       suppressHydrationWarning
-      className={`${body.variable} ${mono.variable} h-full antialiased`}
+      className={`${display.variable} ${body.variable} ${mono.variable} h-full antialiased`}
     >
       <body
         className={`${body.className} min-h-full bg-[var(--bg)] text-[var(--ink)]`}
