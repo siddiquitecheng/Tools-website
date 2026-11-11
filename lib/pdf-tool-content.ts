@@ -23,6 +23,7 @@ export const pdfToolContent: Record<string, PdfToolContent> = {
       { question: "Is PDF to Word free to use?", answer: "Yes, PDF to Word is completely free without signup or added branding. File-size, page-count and request limits apply." },
       { question: "Will the layout stay the same?", answer: "Page-image mode embeds the rendered page. Editable mode reconstructs supported text and tables; original graphics, fonts and complex layouts are not retained. Review the result in your editor." },
       { question: "Does this work on scanned PDFs?", answer: "Image-only documents can attempt English OCR in editable mode. For mixed scanned/text pages, run OCR PDF first. Page-image mode does not require selectable text." },
+      { question: "How do I convert a PDF into an editable Word document?", answer: "Choose the editable conversion mode. It reconstructs horizontal text and detected tables into a .docx you can edit in Word or Google Docs. The other mode embeds page images, which look exact but are not editable text." },
     ],
   },
   "word-to-pdf": {
@@ -37,6 +38,9 @@ export const pdfToolContent: Record<string, PdfToolContent> = {
       { question: "Is Word to PDF free to use?", answer: "Yes, Word to PDF is completely free without signup or added branding. File-size, page-count and request limits apply." },
       { question: "Are my files uploaded anywhere?", answer: "Browser processing stays on your device. Choosing the server Office engine uploads the document to the configured conversion service." },
       { question: "Does this support old .doc files?", answer: "Not yet. Save the file as .docx in Word, then convert." },
+      { question: "How do I convert a Word document to PDF without losing formatting?", answer: "Upload the .docx and download the rendered PDF, then review page breaks, fonts and images before sharing. Browser rendering can substitute fonts and shift pagination on complex layouts; where the server Office engine is configured, it renders with a real Office engine for a closer match." },
+      { question: "Can I convert DOCX to PDF on my phone without installing an app?", answer: "Yes. The converter runs in your phone's browser, so you can turn a .docx into a PDF on Android or iPhone with nothing to install." },
+      { question: "Can I turn my resume in Word into a PDF for job applications?", answer: "Yes — upload the .docx resume and download the PDF version employers expect. Check fonts and page breaks in the result first, since rendering can differ slightly from Word." },
     ],
   },
   "pdf-to-excel": {
@@ -107,6 +111,8 @@ export const pdfToolContent: Record<string, PdfToolContent> = {
       { question: "Is PDF to JPG free to use?", answer: "Yes, PDF to JPG is completely free without signup or added branding. File-size, page-count and request limits apply." },
       { question: "What resolution should I pick?", answer: "Standard (2×) suits most uses. Use High (3×) for print or close zooming." },
       { question: "Does this work on mobile devices?", answer: "Yes, it works on phones, tablets, and desktop browsers." },
+      { question: "Can I download PDF pages as JPG images one by one?", answer: "Yes. Each page is rendered as its own JPG — single pages download directly, and multi-page results are also offered as a ZIP." },
+      { question: "Can I extract the original images embedded in a PDF?", answer: "This tool renders each whole page as a JPG rather than extracting embedded image files at their original resolution. If a page is mostly one photo, choose the High (3×) render quality for the closest result." },
     ],
   },
   "jpg-to-pdf": {
@@ -121,6 +127,9 @@ export const pdfToolContent: Record<string, PdfToolContent> = {
       { question: "Is JPG to PDF free to use?", answer: "Yes, JPG to PDF is completely free without signup or added branding. File-size, page-count and request limits apply." },
       { question: "Can I control the page size?", answer: "Yes, choose Fit to image, A4, or Letter before converting." },
       { question: "Does this work on mobile devices?", answer: "Yes, it works on phones, tablets, and desktop browsers." },
+      { question: "Can I convert multiple JPG photos into one single PDF?", answer: "Yes. Add as many JPGs as you need and the tool builds one PDF with every image on its own page, in the order you set." },
+      { question: "Can I make a PDF from photos of documents like a passport, ID or certificates?", answer: "Yes — this is a common way to prepare document uploads. Photograph or scan each document as a JPG, add the images in order, and choose the A4 page size if the receiving form expects standard pages." },
+      { question: "Can I arrange the images in order before making the PDF?", answer: "Yes. Use the up/down arrows on each file chip to set the order first; the pages of the PDF follow the order you choose." },
     ],
   },
   "png-to-pdf": {
@@ -163,6 +172,10 @@ export const pdfToolContent: Record<string, PdfToolContent> = {
       { question: "Is Merge PDF free to use?", answer: "Yes, Merge PDF is completely free without signup or added branding. File-size, page-count and request limits apply." },
       { question: "Does file order matter?", answer: "Yes. Pages are combined in the order the files are listed — reorder them with the arrows before merging." },
       { question: "Is there a file size limit?", answer: "There's no fixed limit, but very large or numerous files take longer to process in the browser." },
+      { question: "How do I combine PDF files into one without losing quality?", answer: "Merging copies each file's pages into the new document exactly as they are — pages are not re-compressed or re-rendered, so text, images and quality stay the same as in the original files." },
+      { question: "Can I merge PDF files on my phone?", answer: "Yes. The tool runs in your phone's browser on Android or iPhone, so you can combine PDFs without installing an app." },
+      { question: "Can I merge a PDF and JPG files together into one document?", answer: "Not directly — Merge PDF accepts PDF files only. Convert the JPG with JPG to PDF first, then add the resulting PDF here and merge everything into one document." },
+      { question: "Is Merge PDF a free PDF combiner?", answer: "Yes — it works as a free PDF combiner: join multiple PDFs into one file, in any order you set with the arrows, and download the combined document." },
     ],
   },
   "split-pdf": {
@@ -177,6 +190,8 @@ export const pdfToolContent: Record<string, PdfToolContent> = {
       { question: "Is Split PDF free to use?", answer: "Yes, Split PDF is completely free without signup or added branding. File-size, page-count and request limits apply." },
       { question: "How do I write a page range?", answer: "Use comma-separated numbers and ranges, e.g. \"1-3, 5\", matching the page numbers shown in your viewer." },
       { question: "Does this work on mobile devices?", answer: "Yes, it works on phones, tablets, and desktop browsers." },
+      { question: "How do I extract only the pages I need from a PDF?", answer: "Choose the extract mode and enter the pages to keep — for example \"1-3, 5\" — and the tool builds a single new PDF containing just those pages." },
+      { question: "Can I separate a PDF into individual one-page files?", answer: "Yes. Use the split-every-N-pages mode with N set to 1, and the tool delivers a ZIP of one-page PDFs." },
     ],
   },
   "compress-pdf": {
@@ -191,6 +206,9 @@ export const pdfToolContent: Record<string, PdfToolContent> = {
       { question: "Is Compress PDF free to use?", answer: "Yes, Compress PDF is completely free without signup or added branding. File-size, page-count and request limits apply." },
       { question: "Will text stay selectable?", answer: "Yes, the recommended Keep text selectable mode preserves text and links. The optional Flatten pages mode converts pages to images and removes selectable text and interactive links." },
       { question: "What if the file doesn't shrink?", answer: "For text-heavy PDFs that are already small, the tool falls back to a lossless optimization pass instead of producing a larger file." },
+      { question: "How do I compress a PDF to 200 KB for an online application form?", answer: "There is no exact-size dial. Upload the file, choose the Smallest file level, and compare the before/after size shown by the tool. How far a file shrinks depends on its content: PDFs with large scanned images compress the most, while text-heavy files may already be close to their smallest size." },
+      { question: "How do I make a PDF small enough to email?", answer: "Compress the file and check the resulting size before attaching it. Many email providers cap attachments at around 25 MB, and the tool never produces a file larger than your original." },
+      { question: "Can I make a PDF smaller without losing quality?", answer: "Partly. The recommended mode keeps text and links intact while optimizing embedded images and file structure. Higher compression trades some image quality for size, and text-heavy PDFs that are already small get a lossless optimization pass instead of a larger output." },
     ],
   },
   "rotate-pdf": {
@@ -219,6 +237,7 @@ export const pdfToolContent: Record<string, PdfToolContent> = {
       { question: "Is Unlock PDF free to use?", answer: "Yes, Unlock PDF is completely free without signup or added branding. File-size, page-count and request limits apply." },
       { question: "Can I unlock a PDF I don't own?", answer: "Only unlock PDFs you own or have explicit permission to open." },
       { question: "Is my password stored anywhere?", answer: "No. The password is used locally in your browser only, and is never stored or uploaded." },
+      { question: "Can I add a password to a PDF instead of removing one?", answer: "Yes — use the Protect PDF tool. It adds an open password and can restrict printing, copying and editing, with encryption done locally in your browser." },
     ],
   },
   "protect-pdf": {
@@ -233,6 +252,7 @@ export const pdfToolContent: Record<string, PdfToolContent> = {
       { question: "Is Protect PDF free to use?", answer: "Yes, Protect PDF is completely free without signup or added branding. File-size, page-count and request limits apply." },
       { question: "Is my password stored anywhere?", answer: "No. Encryption happens locally and the password is never stored or uploaded." },
       { question: "Does this work on mobile devices?", answer: "Yes, it works on phones, tablets, and desktop browsers." },
+      { question: "How do I remove a password I added to a PDF?", answer: "Use the Unlock PDF tool with the password you set. It produces a copy without the open-password restriction, entirely in your browser." },
     ],
   },
   "edit-pdf": {
@@ -247,6 +267,9 @@ export const pdfToolContent: Record<string, PdfToolContent> = {
       { question: "Is Edit PDF free to use?", answer: "Yes, Edit PDF is completely free without signup or added branding. File-size, page-count and request limits apply." },
       { question: "Can I edit multiple pages at once?", answer: "Apply an edit to one page, download the result, then repeat on additional pages as needed." },
       { question: "Is whiteout true redaction?", answer: "Whiteout covers content visually. For sensitive documents, verify the underlying text was removed before sharing." },
+      { question: "Can I add text to a PDF without Adobe Acrobat?", answer: "Yes. Upload the PDF, choose the text overlay, type your text, position it on the page and apply — everything runs in your browser, with no Acrobat or other software to install." },
+      { question: "Can I fill in a PDF form with this tool?", answer: "Not field by field — the editor does not fill interactive form fields. For a flat form, place a text overlay where each answer belongs, one page at a time, which produces the same filled-in appearance." },
+      { question: "Can I highlight, draw on, or insert images into a PDF?", answer: "No. This editor adds text overlays and whiteout boxes only — there are no highlight, drawing or image-insertion tools." },
     ],
   },
   "ocr-pdf": {
@@ -261,6 +284,9 @@ export const pdfToolContent: Record<string, PdfToolContent> = {
       { question: "Is OCR PDF free to use?", answer: "Yes, OCR PDF is completely free without signup or added branding. File-size, page-count and request limits apply." },
       { question: "How long does OCR take?", answer: "It depends on page count and image size — usually a few seconds per page, longer for large or high-resolution scans." },
       { question: "How accurate is the text?", answer: "Accuracy depends on scan quality. Clear, high-contrast, well-aligned scans OCR best." },
+      { question: "How do I make a scanned PDF searchable and selectable?", answer: "Upload the scan, choose the searchable PDF output and run OCR. The tool adds a recognized text layer over the pages — alignment is approximate — so you can search and select the text afterwards." },
+      { question: "Can I turn a scanned document into copyable text?", answer: "Yes. Choose the plain text (.txt) output to get the recognized text on its own, or use the searchable PDF output and copy text from the pages. Recognition covers printed English text." },
+      { question: "Does OCR run without uploading my PDF to a server?", answer: "Yes. Recognition runs locally in your browser — the file is not uploaded, and you keep the tab open while pages are processed one by one." },
     ],
   },
   "sign-pdf": {
@@ -275,6 +301,8 @@ export const pdfToolContent: Record<string, PdfToolContent> = {
       { question: "Is Sign PDF free to use?", answer: "Yes, Sign PDF is completely free without signup or added branding. File-size, page-count and request limits apply." },
       { question: "Is this a legally binding e-signature?", answer: "This adds a visual signature mark, not a certified digital signature. Check your requirements before using it for legal documents." },
       { question: "Does this work on mobile devices?", answer: "Yes — drawing works with touch or a mouse on phones, tablets, and desktops." },
+      { question: "Can I sign a PDF without printing or scanning it?", answer: "Yes. Upload the document, add your signature on screen, and download the signed copy — no printer, scanner or paper copy is involved." },
+      { question: "How do I create an electronic signature and place it on a PDF?", answer: "Type your name or draw your signature with a mouse or finger, then position it on the chosen page and apply. The result is a visual signature mark, not a certified digital signature." },
     ],
   },
   "watermark-pdf": {
