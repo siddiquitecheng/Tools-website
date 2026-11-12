@@ -59,6 +59,54 @@ export function HomeMotion() {
       .querySelectorAll(".reveal")
       .forEach((element) => observer.observe(element));
 
+    // Animated counters for the stats band (Cool Design Concept): the
+    // value counts up over 600ms ease-out the first time it scrolls into
+    // view. The server-rendered value is what reduced-motion visitors
+    // keep (this whole effect is skipped for them above) and what is
+    // shown until the band is seen. Suffixes ("%", "+") are preserved.
+    const counters: Array<{
+      element: HTMLElement;
+      target: number;
+      suffix: string;
+    }> = [];
+    document
+      .querySelectorAll<HTMLElement>(".stat-value")
+      .forEach((element) => {
+        const match = element.textContent?.trim().match(/^(\d+)(.*)$/);
+        if (!match) return;
+        const target = Number(match[1]);
+        if (Number.isFinite(target) && target > 0) {
+          counters.push({ element, target, suffix: match[2] ?? "" });
+        }
+      });
+    let counterObserver: IntersectionObserver | null = null;
+    if (counters.length > 0) {
+      counterObserver = new IntersectionObserver(
+        (entries) => {
+          for (const entry of entries) {
+            if (!entry.isIntersecting) continue;
+            counterObserver?.unobserve(entry.target);
+            const item = counters.find(
+              (counter) => counter.element === entry.target,
+            );
+            if (!item) continue;
+            const startedAt = performance.now();
+            const tick = (now: number) => {
+              const t = Math.min((now - startedAt) / 600, 1);
+              const eased = 1 - Math.pow(1 - t, 3);
+              item.element.textContent = `${Math.round(
+                item.target * eased,
+              )}${item.suffix}`;
+              if (t < 1) requestAnimationFrame(tick);
+            };
+            requestAnimationFrame(tick);
+          }
+        },
+        { threshold: 0.4 },
+      );
+      counters.forEach((counter) => counterObserver?.observe(counter.element));
+    }
+
     // Cursor spotlight (delegated pointer tracking)
     const finePointer = window.matchMedia("(pointer: fine)").matches;
     const onPointerMove = (event: PointerEvent) => {
@@ -102,6 +150,7 @@ export function HomeMotion() {
     return () => {
       window.removeEventListener("scroll", onScroll);
       observer.disconnect();
+      counterObserver?.disconnect();
       if (finePointer) {
         document.removeEventListener("pointermove", onPointerMove);
       }

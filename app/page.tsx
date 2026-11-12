@@ -15,7 +15,7 @@ import {
 import { FaqList } from "@/components/home/FaqList";
 import { HomeMotion } from "@/components/home/HomeMotion";
 import { ToolExplorer, ToolSearch } from "@/components/home/ToolExplorer";
-import { WorkspaceIllustration } from "@/components/home/WorkspaceIllustration";
+import { ToolSpotlight } from "@/components/home/ToolSpotlight";
 import { CategoryCard } from "@/components/tool-cards/CategoryCard";
 import { ToolCard } from "@/components/tool-cards/ToolCard";
 import { categories } from "@/lib/tools";
@@ -179,6 +179,21 @@ export default async function HomePage() {
               <FileText size={18} /> Browse PDF tools
             </Link>
           </div>
+          <ToolSearch tools={publicTools} />
+          <div className="hero-chips">
+            <Link href="/tools/merge-pdf" className="hero-chip">
+              Merge PDF
+            </Link>
+            <Link href="/tools/image-compressor" className="hero-chip">
+              Image Compressor
+            </Link>
+            <Link href="/tools/emi-calculator" className="hero-chip">
+              EMI Calculator
+            </Link>
+            <Link href="/tools/qr-code-generator" className="hero-chip">
+              QR Code Generator
+            </Link>
+          </div>
           <div className="hero-trust">
             <span>
               <Check size={15} /> Free to use
@@ -190,10 +205,20 @@ export default async function HomePage() {
               <Check size={15} /> No watermark
             </span>
           </div>
-          <ToolSearch tools={publicTools} />
         </div>
-        <WorkspaceIllustration />
+        <ToolSpotlight />
       </section>
+
+      <div className="tool-ticker" aria-hidden="true">
+        <div className="ticker-track">
+          {[...featured, ...featured].map((tool, index) => (
+            <span className="ticker-item" key={`${tool.id}-${index}`}>
+              {tool.name}
+              <i />
+            </span>
+          ))}
+        </div>
+      </div>
 
       <section className="home-section page-container" id="popular-tools">
         <div className="section-heading reveal">
@@ -241,16 +266,6 @@ export default async function HomePage() {
         </div>
       </div>
 
-      <div className="tool-ticker" aria-hidden="true">
-        <div className="ticker-track">
-          {[...featured, ...featured].map((tool, index) => (
-            <span className="ticker-item" key={`${tool.id}-${index}`}>
-              {tool.name}
-              <i />
-            </span>
-          ))}
-        </div>
-      </div>
 
       <section className="category-section">
         <div className="page-container home-section">

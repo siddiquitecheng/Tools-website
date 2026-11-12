@@ -4042,3 +4042,587 @@
     overflow: hidden;
   }
 }
+
+/* ==========================================================================
+ * COOL ROLLOUT (2026-11-11, appended; everything above unchanged)
+ * Live implementation of the approved "AleTool — Cool Design Concept":
+ * a dark sticky navbar, a compact two-column hero whose right side is the
+ * auto-rotating Tool spotlight card, the dark tool-name marquee directly
+ * under the hero, the deep stats band as an inset rounded panel with
+ * count-up numbers (HomeMotion), and a dark premium footer with the
+ * rainbow hairline. Cool character comes from the concept's own devices:
+ * the #eef3f7 hero wash, the green-black chrome (#0d120f–#182420), and
+ * the violet/teal stops in the footer hairline; the brand accent stays
+ * vermilion (#cf3618 → #e8481f) and per-category colours are untouched.
+ * All live copy, links and the header hysteresis scroll fix are
+ * preserved — this block changes paint and layout rhythm only.
+ * ========================================================================== */
+
+:root {
+  --deep: #101613;
+  --deep-2: #182420;
+  --deep-line: rgba(250, 246, 239, 0.14);
+  --verm-2: #e8481f;
+  --shadow-card: 0 18px 40px -18px rgba(29, 26, 22, 0.28);
+}
+
+/* ---- Homepage cool wash: the concept's pale-blue hero tint fading
+ *      into the page background (full-bleed, fixed height). ---- */
+.homepage {
+  background-image: linear-gradient(180deg, #eef3f7 0px, var(--bg) 640px);
+  background-repeat: no-repeat;
+}
+
+/* ---- Dark navbar (paint only — heights and the hysteresis-driven
+ *      .is-scrolled behaviour are untouched). ---- */
+.site-header {
+  background: rgba(13, 18, 15, 0.88);
+  backdrop-filter: blur(14px);
+  border-bottom-color: transparent;
+}
+.site-header.is-scrolled {
+  background: rgba(10, 14, 11, 0.96);
+  border-bottom-color: var(--deep-line);
+  box-shadow: 0 14px 34px -16px rgba(0, 0, 0, 0.65);
+}
+.desktop-nav a,
+.header-guide {
+  color: rgba(250, 246, 239, 0.72);
+}
+.desktop-nav a:hover,
+.header-guide:hover {
+  color: #fff;
+}
+.desktop-nav a::after,
+.header-guide::after {
+  background: var(--verm-2);
+}
+.nav-menu summary {
+  background: rgba(250, 246, 239, 0.06);
+  border-color: rgba(250, 246, 239, 0.18);
+  color: #faf6ef;
+}
+.nav-menu[open] summary {
+  background: rgba(232, 72, 31, 0.16);
+  border-color: var(--verm-2);
+  color: #fff;
+}
+.site-header .header-cta {
+  background: linear-gradient(135deg, var(--verm-2), var(--accent));
+  color: #fff;
+  box-shadow: 0 10px 24px -10px rgba(207, 54, 24, 0.75);
+}
+.site-header .header-cta:hover {
+  background: linear-gradient(135deg, var(--verm-2), var(--accent));
+  box-shadow: 0 16px 30px -10px rgba(207, 54, 24, 0.8);
+}
+
+/* Brand on dark chrome (header + footer): paper tile, ink "A",
+ * vermilion crossbar and dot, cream wordmark — the concept's tile. */
+.site-header .brand-wordmark,
+.site-footer .brand-wordmark {
+  color: #faf6ef;
+}
+.site-header .brand-dot,
+.site-footer .brand-dot {
+  color: var(--verm-2);
+}
+.site-header .brand-tagline,
+.site-footer .brand-tagline {
+  color: rgba(250, 246, 239, 0.55);
+}
+.site-header .brand-mark rect,
+.site-footer .brand-mark rect {
+  fill: #faf6ef;
+}
+.site-header .brand-mark path:first-of-type,
+.site-footer .brand-mark path:first-of-type {
+  stroke: #1d1a16;
+}
+/* The concept's logo 3D flip on hover, staged as a full 360° flip-spin
+ * of the tile (lands un-mirrored; a true two-face 180° flip would need
+ * a back-face element inside BrandLogo). */
+.site-header .brand-mark-wrap {
+  transition:
+    transform 720ms cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 320ms ease;
+}
+.site-header .brand:hover .brand-mark-wrap,
+.site-header .brand:focus-visible .brand-mark-wrap {
+  transform: perspective(600px) rotateY(360deg);
+}
+
+/* ---- Hero: concept pill, solid-accent headline word, concept search,
+ *      ghost quick chips, dotted trust line. ---- */
+.hero-eyebrow {
+  display: inline-flex;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 8px 16px;
+  font-family: var(--font-body), Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.7px;
+  color: var(--ink-soft);
+}
+.hero-eyebrow > span {
+  box-shadow: none;
+}
+.hero-title {
+  font-weight: 800;
+}
+.hero-underline {
+  color: var(--accent);
+  background-image: none;
+  animation: none;
+}
+.home-search {
+  max-width: 560px;
+}
+.search-field {
+  border-color: var(--line);
+  border-radius: 14px;
+  min-height: 54px;
+  padding: 4px 4px 4px 18px;
+  box-shadow: 0 14px 34px -18px rgba(29, 26, 22, 0.3);
+}
+.search-field:focus-within {
+  border-color: var(--ink);
+  box-shadow: 0 18px 38px -16px rgba(29, 26, 22, 0.35);
+}
+.search-field input {
+  font-size: 16px;
+  font-weight: 500;
+}
+.search-submit {
+  background: var(--ink);
+  color: var(--bg);
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+}
+.search-submit:hover {
+  background: var(--accent);
+  color: #fff;
+}
+.hero-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 14px;
+}
+.hero-chip {
+  display: inline-flex;
+  align-items: center;
+  min-height: 38px;
+  padding: 8px 15px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--ink-soft);
+  font-size: 0.88rem;
+  font-weight: 600;
+  transition:
+    color 180ms ease,
+    border-color 180ms ease,
+    background-color 180ms ease;
+}
+.hero-chip:hover {
+  color: var(--ink);
+  border-color: var(--ink);
+  background: var(--surface);
+}
+.hero-trust {
+  font-size: 13.5px;
+  font-weight: 500;
+  gap: 10px;
+}
+.hero-trust svg {
+  display: none;
+}
+.hero-trust > span {
+  gap: 10px;
+}
+.hero-trust > span + span::before {
+  content: "·";
+  color: var(--verm-2);
+  font-weight: 800;
+}
+@media (min-width: 1024px) {
+  .home-hero {
+    grid-template-columns: 1.05fr 0.95fr;
+    gap: 60px;
+    padding-block: 22px 14px;
+  }
+  .hero-eyebrow {
+    margin-bottom: 16px;
+  }
+  .hero-title {
+    font-size: clamp(2.35rem, 4.6vw, 3.4rem);
+    letter-spacing: -0.025em;
+    line-height: 1.05;
+  }
+  .hero-actions {
+    margin-top: 18px;
+  }
+  .home-search {
+    margin-top: 18px;
+  }
+}
+
+/* ---- Tool spotlight card (components/home/ToolSpotlight) ---- */
+.spotlight {
+  --c: var(--accent);
+  min-width: 0;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-top: 3px solid var(--c);
+  border-radius: 22px;
+  padding: 26px 28px 24px;
+  box-shadow: var(--shadow-card);
+  transition: border-top-color 0.5s ease;
+  animation: rise-in 800ms 80ms ease both;
+}
+.spot-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+.spot-live {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+.spot-pulse {
+  position: relative;
+  flex-shrink: 0;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #0d9488;
+}
+.spot-pulse::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 1.5px solid #0d9488;
+  animation: spot-pulse-ring 2s ease-out infinite;
+}
+@keyframes spot-pulse-ring {
+  from {
+    transform: scale(0.55);
+    opacity: 0.65;
+  }
+  to {
+    transform: scale(1.3);
+    opacity: 0;
+  }
+}
+.spot-count {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--ink-soft);
+  font-variant-numeric: tabular-nums;
+}
+.spot-swap {
+  animation: spot-in 0.5s cubic-bezier(0.2, 0.8, 0.3, 1) both;
+}
+@keyframes spot-in {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+.spot-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  margin-top: 20px;
+  margin-bottom: 18px;
+  border-radius: 16px;
+  background: var(--c);
+  color: #fff;
+  transition: background 0.5s ease;
+}
+.spot-title {
+  margin: 0;
+  font-family: var(--font-display, "Bricolage Grotesque", Georgia, sans-serif);
+  font-size: 1.65rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+}
+.spot-desc {
+  margin-top: 8px;
+  min-height: 3.2em;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--ink-soft);
+}
+.spot-foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 18px;
+}
+.spot-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 5px 12px;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--c) 12%, transparent);
+  color: var(--c);
+  font-size: 0.82rem;
+  font-weight: 700;
+  transition:
+    color 0.5s ease,
+    background 0.5s ease;
+}
+.spot-chip-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--c);
+}
+.spot-open {
+  color: var(--c);
+  font-size: 0.95rem;
+  font-weight: 700;
+  transition: color 0.5s ease;
+}
+.spot-open:hover {
+  text-decoration: underline;
+}
+.spot-dots {
+  display: flex;
+  gap: 7px;
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 1px solid var(--line);
+}
+.spot-dot {
+  width: 22px;
+  height: 10px;
+  padding: 0;
+  border: 0;
+  border-radius: 999px;
+  background: var(--line);
+  cursor: pointer;
+  transition:
+    width 0.3s ease,
+    background 0.3s ease;
+}
+.spot-dot:hover {
+  background: var(--line-strong);
+}
+.spot-dot.on {
+  width: 38px;
+  background: var(--c);
+}
+.spot-next {
+  margin-top: 14px;
+  font-size: 0.86rem;
+  color: var(--ink-soft);
+}
+.spot-next b {
+  color: var(--ink);
+  font-weight: 700;
+}
+@media (max-width: 640px) {
+  .spotlight {
+    width: 100%;
+    max-width: 560px;
+    margin-inline: auto;
+  }
+}
+
+/* ---- Marquee: the live tool ticker, restyled to the concept's dark
+ *      strip and concept speed (36s). Markup and tool names unchanged. ---- */
+.tool-ticker {
+  background: var(--deep);
+  border-bottom: 0;
+  padding-block: 15px;
+  mask-image: none;
+}
+.ticker-track {
+  animation-duration: 36s;
+}
+.ticker-item {
+  color: rgba(250, 246, 239, 0.85);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+.ticker-item i {
+  background: var(--verm-2);
+}
+
+/* ---- Stats band: concept gradient, inset rounded panel, ghost
+ *      wordmark (pure CSS, decorative), concept label colour. ---- */
+.ink-band {
+  background: linear-gradient(160deg, var(--deep-2), var(--deep) 60%);
+  border-block-color: transparent;
+  position: relative;
+  overflow: hidden;
+}
+.ink-band::after {
+  content: "aletool.";
+  position: absolute;
+  right: -10px;
+  bottom: -38px;
+  font-family: var(--font-display, "Bricolage Grotesque", Georgia, sans-serif);
+  font-size: 8.5rem;
+  font-weight: 800;
+  line-height: 1;
+  color: rgba(250, 246, 239, 0.045);
+  pointer-events: none;
+}
+.ink-band .stats-inner,
+.ink-band .ink-band-note {
+  position: relative;
+  z-index: 1;
+}
+.ink-band .stat-label {
+  color: rgba(250, 246, 239, 0.62);
+}
+.ink-band-note {
+  color: rgba(250, 246, 239, 0.75);
+}
+@media (min-width: 641px) {
+  .homepage .ink-band {
+    width: min(100% - 64px, 1200px);
+    margin-inline: auto;
+    border-radius: 28px;
+  }
+}
+@media (max-width: 640px) {
+  .homepage .ink-band {
+    margin-inline: 20px;
+    border-radius: 20px;
+  }
+}
+
+/* ---- Dark premium footer: concept gradient, rainbow hairline,
+ *      ghost wordmark and cream link system. Links/labels unchanged. ---- */
+.site-footer {
+  position: relative;
+  margin-top: 72px;
+  background: linear-gradient(180deg, var(--deep-2), var(--deep) 55%);
+  border-top: 0;
+  color: rgba(250, 246, 239, 0.6);
+}
+.site-footer::before {
+  content: "";
+  display: block;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(232, 72, 31, 0.65),
+    rgba(124, 58, 237, 0.65),
+    rgba(13, 148, 136, 0.65),
+    transparent
+  );
+}
+.footer-column h3 {
+  color: rgba(250, 246, 239, 0.45);
+  letter-spacing: 2px;
+}
+.footer-column h3::before {
+  display: none;
+}
+.footer-column a {
+  color: rgba(250, 246, 239, 0.82);
+}
+.footer-column a:hover {
+  color: #fff;
+  transform: translateX(4px);
+}
+.footer-wordmark {
+  color: rgba(250, 246, 239, 0.055);
+}
+.footer-wordmark-dot {
+  color: rgba(232, 72, 31, 0.4);
+}
+.footer-bottom {
+  border-top-color: var(--deep-line);
+  color: rgba(250, 246, 239, 0.55);
+}
+.to-top {
+  background: rgba(250, 246, 239, 0.07);
+  border-color: var(--deep-line);
+  color: #faf6ef;
+}
+.to-top:hover {
+  border-color: var(--accent);
+  color: #fff;
+}
+
+/* ---- System dark mode, scoped to the redesigned surfaces: the
+ *      homepage subtree flips its tokens to the concept's dark values
+ *      (the header, marquee, stats band and footer are dark in both
+ *      modes already). Tool pages and other routes are untouched. ---- */
+@media (prefers-color-scheme: dark) {
+  .homepage {
+    --bg: #0e120f;
+    --surface: #171d18;
+    --surface-sunk: #131814;
+    --ink: #f2ede1;
+    --ink-soft: #b6ae9d;
+    --ink-faint: #8f887a;
+    --line: #2a332b;
+    --line-strong: #3a443c;
+    --accent-soft: #2a1a14;
+    background-color: #0e120f;
+    background-image: linear-gradient(180deg, #101a22 0px, #0e120f 640px);
+    color: #f2ede1;
+  }
+  .homepage .privacy-feature {
+    background: var(--deep);
+    color: #f3eee1;
+  }
+  .homepage .search-submit {
+    background: #faf6ef;
+    color: #16130f;
+  }
+  .homepage .search-submit:hover {
+    background: var(--accent);
+    color: #fff;
+  }
+  .spotlight {
+    box-shadow: 0 18px 40px -18px rgba(0, 0, 0, 0.7);
+  }
+  .search-field {
+    box-shadow: 0 14px 34px -18px rgba(0, 0, 0, 0.6);
+  }
+}
+
+/* ---- Reduced motion: still the spotlight swap and pulse. ---- */
+@media (prefers-reduced-motion: reduce) {
+  .spotlight,
+  .spot-swap {
+    animation: none;
+  }
+  .spot-pulse::after {
+    animation: none;
+  }
+  .site-header .brand:hover .brand-mark-wrap,
+  .site-header .brand:focus-visible .brand-mark-wrap {
+    transform: none;
+  }
+}
