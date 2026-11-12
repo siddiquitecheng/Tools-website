@@ -49,7 +49,11 @@ export function ScrollFx() {
           }
         }
       },
-      { threshold: 0.12, rootMargin: "0px 0px -40px 0px" },
+      // THEME FIX: was "0px 0px -40px 0px" — reveals only started once
+      // the element was already in view, so with the 650ms fade it
+      // arrived late and blurry. +80px starts the reveal just before
+      // the element scrolls in, so it is sharp on arrival.
+      { threshold: 0.12, rootMargin: "0px 0px 80px 0px" },
     );
 
     const scrollRevealObserver = new IntersectionObserver(
@@ -66,10 +70,11 @@ export function ScrollFx() {
           window.setTimeout(() => {
             element.classList.remove("scroll-reveal", "in");
             element.style.transitionDelay = "";
-          }, delay + 800);
+          }, delay + 450);
         }
       },
-      { threshold: 0.12, rootMargin: "0px 0px -40px 0px" },
+      // THEME FIX: +80px — see the reveal observer above.
+      { threshold: 0.12, rootMargin: "0px 0px 80px 0px" },
     );
 
     const staggerDelay = (element: Element) => {

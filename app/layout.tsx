@@ -49,6 +49,22 @@ export default function RootLayout({
       suppressHydrationWarning
       className={`${display.variable} ${body.variable} ${mono.variable} h-full antialiased`}
     >
+      <head>
+        {/*
+         * No-flash theme script (THEME FIX): sets <html data-theme>
+         * BEFORE first paint from the saved choice in localStorage
+         * ("aletool-theme") or, with no saved choice, from the system
+         * prefers-color-scheme. The manual toggle (ThemeToggle) and
+         * the [data-theme] token block in globals.css do the rest.
+         * suppressHydrationWarning on <html> covers the attribute
+         * this script sets before React hydrates.
+         */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){try{var s=localStorage.getItem('aletool-theme');var t=(s==='light'||s==='dark')?s:(window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');document.documentElement.setAttribute('data-theme',t);}catch(e){}})();`,
+          }}
+        />
+      </head>
       <body
         className={`${body.className} min-h-full bg-[var(--bg)] text-[var(--ink)]`}
       >

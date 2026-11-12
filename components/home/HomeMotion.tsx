@@ -5,7 +5,9 @@ import { useEffect, useRef } from "react";
 /**
  * Homepage motion layer, kept deliberately small:
  * - a top scroll-progress bar (rendered by this component),
- * - blur-fade reveals for elements carrying the `.reveal` class,
+ * - fade-rise reveals for elements carrying the `.reveal` class
+ *   (THEME FIX: the old blur + 800ms made headings arrive blurred
+ *   and sharpen ~1s late — read as a glitch),
  * - cursor spotlight on `.tool-card` / `.category-card` (delegated, so it
  *   keeps working when the tool explorer re-renders its grid),
  * - magnetic pull on elements carrying `data-magnetic`.
@@ -43,7 +45,10 @@ export function HomeMotion() {
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
 
-    // Blur-fade reveals
+    // Fade-rise reveals. rootMargin extends 80px BELOW the viewport so
+    // the reveal starts before the element scrolls in — it is sharp by
+    // the time it arrives (THEME FIX: the old -40px margin plus the
+    // 800ms blur made headings pop in late and blurry).
     const observer = new IntersectionObserver(
       (entries) => {
         for (const entry of entries) {
@@ -53,59 +58,16 @@ export function HomeMotion() {
           }
         }
       },
-      { threshold: 0.12, rootMargin: "0px 0px -40px 0px" },
+      { threshold: 0.12, rootMargin: "0px 0px 80px 0px" },
     );
     document
       .querySelectorAll(".reveal")
       .forEach((element) => observer.observe(element));
 
-    // Animated counters for the stats band (Cool Design Concept): the
-    // value counts up over 600ms ease-out the first time it scrolls into
-    // view. The server-rendered value is what reduced-motion visitors
-    // keep (this whole effect is skipped for them above) and what is
-    // shown until the band is seen. Suffixes ("%", "+") are preserved.
-    const counters: Array<{
-      element: HTMLElement;
-      target: number;
-      suffix: string;
-    }> = [];
-    document
-      .querySelectorAll<HTMLElement>(".stat-value")
-      .forEach((element) => {
-        const match = element.textContent?.trim().match(/^(\d+)(.*)$/);
-        if (!match) return;
-        const target = Number(match[1]);
-        if (Number.isFinite(target) && target > 0) {
-          counters.push({ element, target, suffix: match[2] ?? "" });
-        }
-      });
-    let counterObserver: IntersectionObserver | null = null;
-    if (counters.length > 0) {
-      counterObserver = new IntersectionObserver(
-        (entries) => {
-          for (const entry of entries) {
-            if (!entry.isIntersecting) continue;
-            counterObserver?.unobserve(entry.target);
-            const item = counters.find(
-              (counter) => counter.element === entry.target,
-            );
-            if (!item) continue;
-            const startedAt = performance.now();
-            const tick = (now: number) => {
-              const t = Math.min((now - startedAt) / 600, 1);
-              const eased = 1 - Math.pow(1 - t, 3);
-              item.element.textContent = `${Math.round(
-                item.target * eased,
-              )}${item.suffix}`;
-              if (t < 1) requestAnimationFrame(tick);
-            };
-            requestAnimationFrame(tick);
-          }
-        },
-        { threshold: 0.4 },
-      );
-      counters.forEach((counter) => counterObserver?.observe(counter.element));
-    }
+    // Stats values are NOT counted up (THEME FIX): the old 600ms
+    // count-up showed wrong intermediate values (133 / 97%) that read
+    // as a glitch. The server-rendered final values (137 / 100%) stay
+    // and simply fade in with the stats band's own .reveal.
 
     // Cursor spotlight (delegated pointer tracking)
     const finePointer = window.matchMedia("(pointer: fine)").matches;
@@ -150,7 +112,6 @@ export function HomeMotion() {
     return () => {
       window.removeEventListener("scroll", onScroll);
       observer.disconnect();
-      counterObserver?.disconnect();
       if (finePointer) {
         document.removeEventListener("pointermove", onPointerMove);
       }

@@ -6,6 +6,7 @@ import { ArrowRight, ChevronDown, LayoutGrid } from "lucide-react";
 import { categories, categoryMeta } from "@/lib/tools";
 import { getCategoryIcon } from "@/components/tool-cards/categoryIcon";
 import { BrandLogo } from "./BrandLogo";
+import { ThemeToggle } from "./ThemeToggle";
 
 export function Header() {
   const menuRef = useRef<HTMLDetailsElement>(null);
@@ -112,6 +113,7 @@ export function Header() {
           <Link href="/category/ai">AI tools</Link>
         </nav>
         <div className="header-actions">
+          <ThemeToggle />
           <Link href="/blog" className="header-guide">
             How-to guides
           </Link>

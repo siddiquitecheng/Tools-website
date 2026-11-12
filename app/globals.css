@@ -1,20 +1,24 @@
 @import "tailwindcss";
 
 /*
- * Editorial design tokens (concept v2, approved 2026-11-11): warm paper
- * background, warm ink text, and a single vermilion accent. Display type
- * is Bricolage Grotesque (--font-display), body is Instrument Sans
- * (--font-body); both variables are set by next/font in app/layout.tsx.
+ * Editorial design tokens: one cool paper for the whole site (the
+ * concept's cool light tone, #eef3f7), cool ink, and a single vermilion
+ * accent kept from the approved concept. Display type is Bricolage
+ * Grotesque (--font-display), body is Instrument Sans (--font-body);
+ * both variables are set by next/font in app/layout.tsx.
+ * Dark values live in the [data-theme="dark"] block appended at the
+ * end of this file (THEME FIX) — never in a prefers-color-scheme
+ * media query, so the manual toggle can override the system.
  */
 :root {
-  --bg: #faf6ef;
-  --surface: #fffdf8;
-  --surface-sunk: #f2ecdf;
-  --ink: #1d1a16;
-  --ink-soft: #5d574d;
-  --ink-faint: #8d8577;
-  --line: #e6ddcd;
-  --line-strong: #d3c7ad;
+  --bg: #eef3f7;
+  --surface: #f8fbfd;
+  --surface-sunk: #dfe8ee;
+  --ink: #15201d;
+  --ink-soft: #4f5d58;
+  --ink-faint: #85908b;
+  --line: #d7e0e5;
+  --line-strong: #b8c6cd;
   --accent: #cf3618;
   --accent-hover: #ad2c12;
   --accent-ink: #fff8f0;
@@ -23,7 +27,7 @@
   --warn: #b45309;
   --danger: #b3261e;
   --focus: #cf3618;
-  --workspace-tint: #f6f1e5;
+  --workspace-tint: #eef3f7;
 }
 
 /* Shared workspace rules keep long filenames, code, and tables inside their
@@ -161,22 +165,21 @@
   pointer-events: none;
 }
 
-/* Blur-fade scroll reveals. The hidden state only applies once HomeMotion
- * adds .motion-ready to <html>, so content is never hidden without JS or
- * for reduced-motion visitors. */
+/* Fade-rise scroll reveals (THEME FIX: the old blur(6px) + 800ms made
+ * headings arrive blurred and only sharpen ~1s later — read as a glitch).
+ * The hidden state only applies once HomeMotion adds .motion-ready to
+ * <html>, so content is never hidden without JS or for reduced-motion
+ * visitors. */
 .motion-ready .reveal {
   opacity: 0;
-  transform: translateY(18px);
-  filter: blur(6px);
+  transform: translateY(12px);
   transition:
-    opacity 800ms cubic-bezier(0.22, 1, 0.36, 1),
-    transform 800ms cubic-bezier(0.22, 1, 0.36, 1),
-    filter 800ms cubic-bezier(0.22, 1, 0.36, 1);
+    opacity 400ms cubic-bezier(0.22, 1, 0.36, 1),
+    transform 400ms cubic-bezier(0.22, 1, 0.36, 1);
 }
 .motion-ready .reveal.is-visible {
   opacity: 1;
   transform: none;
-  filter: none;
 }
 
 .site-button,
@@ -472,10 +475,10 @@
 }
 .reveal-line > span {
   display: block;
-  animation: line-reveal 1000ms cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation: line-reveal 500ms cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 .reveal-line:nth-child(2) > span {
-  animation-delay: 130ms;
+  animation-delay: 70ms;
 }
 .hero-underline {
   font-style: normal;
@@ -1152,8 +1155,11 @@
   margin-top: 32px;
 }
 .category-section {
-  background: var(--workspace-tint);
-  border-block: 1px solid var(--line);
+  /* THEME FIX: was var(--workspace-tint) (#f6f1e5) with a border-block
+   * seam — now the same paper as every other section; the section is
+   * set apart by its cards, not by a near-identical beige band. */
+  background: var(--bg);
+  border-block: 0;
 }
 .category-grid {
   display: grid;
@@ -1426,11 +1432,11 @@
   color: white;
 }
 .upload-surface {
-  background: #f7f1e3;
-  border-color: #d9cdb0;
+  background: var(--surface-sunk);
+  border-color: var(--line-strong);
 }
 .upload-surface:hover {
-  background: #f3ecda;
+  background: var(--surface);
   border-color: var(--accent);
 }
 .choose-file-label {
@@ -2884,10 +2890,10 @@
 @media (prefers-reduced-motion: no-preference) {
   html.js-fx:not(.motion-ready) .reveal {
     opacity: 0;
-    transform: translateY(14px);
+    transform: translateY(12px);
     transition:
-      opacity 650ms cubic-bezier(0.22, 1, 0.36, 1),
-      transform 650ms cubic-bezier(0.22, 1, 0.36, 1);
+      opacity 400ms cubic-bezier(0.22, 1, 0.36, 1),
+      transform 400ms cubic-bezier(0.22, 1, 0.36, 1);
   }
   html.js-fx:not(.motion-ready) .reveal.in {
     opacity: 1;
@@ -3895,7 +3901,7 @@
   #popular-tools .tool-card-media {
     height: 124px;
     margin-bottom: 8px;
-    background: #faf6ef;
+    background: var(--bg);
   }
   #popular-tools .tool-card-media img {
     width: 100%;
@@ -4008,10 +4014,10 @@
 @media (prefers-reduced-motion: no-preference) {
   html.js-fx .scroll-reveal {
     opacity: 0;
-    transform: translateY(16px);
+    transform: translateY(12px);
     transition:
-      opacity 700ms cubic-bezier(0.22, 1, 0.36, 1),
-      transform 700ms cubic-bezier(0.22, 1, 0.36, 1);
+      opacity 400ms cubic-bezier(0.22, 1, 0.36, 1),
+      transform 400ms cubic-bezier(0.22, 1, 0.36, 1);
   }
   html.js-fx .scroll-reveal.in {
     opacity: 1;
@@ -4069,7 +4075,9 @@
 /* ---- Homepage cool wash: the concept's pale-blue hero tint fading
  *      into the page background (full-bleed, fixed height). ---- */
 .homepage {
-  background-image: linear-gradient(180deg, #eef3f7 0px, var(--bg) 640px);
+  /* THEME FIX: the wash now fades from a whisper-lighter cool tint
+   * into the same paper — no visible band edge below the hero. */
+  background-image: linear-gradient(180deg, #f2f6f9 0px, var(--bg) 640px);
   background-repeat: no-repeat;
 }
 
@@ -4573,45 +4581,6 @@
   color: #fff;
 }
 
-/* ---- System dark mode, scoped to the redesigned surfaces: the
- *      homepage subtree flips its tokens to the concept's dark values
- *      (the header, marquee, stats band and footer are dark in both
- *      modes already). Tool pages and other routes are untouched. ---- */
-@media (prefers-color-scheme: dark) {
-  .homepage {
-    --bg: #0e120f;
-    --surface: #171d18;
-    --surface-sunk: #131814;
-    --ink: #f2ede1;
-    --ink-soft: #b6ae9d;
-    --ink-faint: #8f887a;
-    --line: #2a332b;
-    --line-strong: #3a443c;
-    --accent-soft: #2a1a14;
-    background-color: #0e120f;
-    background-image: linear-gradient(180deg, #101a22 0px, #0e120f 640px);
-    color: #f2ede1;
-  }
-  .homepage .privacy-feature {
-    background: var(--deep);
-    color: #f3eee1;
-  }
-  .homepage .search-submit {
-    background: #faf6ef;
-    color: #16130f;
-  }
-  .homepage .search-submit:hover {
-    background: var(--accent);
-    color: #fff;
-  }
-  .spotlight {
-    box-shadow: 0 18px 40px -18px rgba(0, 0, 0, 0.7);
-  }
-  .search-field {
-    box-shadow: 0 14px 34px -18px rgba(0, 0, 0, 0.6);
-  }
-}
-
 /* ---- Reduced motion: still the spotlight swap and pulse. ---- */
 @media (prefers-reduced-motion: reduce) {
   .spotlight,
@@ -4624,5 +4593,166 @@
   .site-header .brand:hover .brand-mark-wrap,
   .site-header .brand:focus-visible .brand-mark-wrap {
     transform: none;
+  }
+}
+
+/* ==========================================================================
+ * THEME FIX (2026-11-12, appended)
+ * Muhammad: the theme is not proper in light or dark, the page has
+ * glitches, and the hero must cover the full screen professionally.
+ * Measured causes (desktop 1919x998, light mode):
+ *  1. Patchy light theme — three near-identical creams (#faf6ef page,
+ *     #f6f1e5 category band, #fffdf8 surfaces) plus a cool-grey hero
+ *     wash against warm cream below. Fixed by one cool paper token.
+ *  2. Dark mode was broken by construction — the only dark rule was a
+ *     prefers-color-scheme media query scoped to .homepage, so tool
+ *     pages never flipped and there was no toggle. Fixed by a real
+ *     [data-theme] system + navbar toggle + no-flash head script.
+ *  3. Spotlight advanced every ~2-3s (distracting) — now 5s.
+ *  4. Scroll reveals used blur(6px) + 800ms — headings arrived blurred
+ *     and sharpened ~1s late. Now a 400ms fade-rise, no blur, triggered
+ *     earlier (see ScrollFx/HomeMotion rootMargin).
+ *  5. Stats count-up showed wrong intermediate values (133 / 97%) —
+ *     replaced by a fade-in of the final server values.
+ *  6. Sticky navbar could clip a heading — scroll-margin-top added.
+ *  7. Hero was ~58% of the viewport — now full-screen on desktop.
+ * ========================================================================== */
+
+/* ---- Root theme plumbing ---- */
+html {
+  color-scheme: light;
+}
+html[data-theme="dark"] {
+  color-scheme: dark;
+}
+
+/* ---- Real dark mode, site-wide: every token-driven surface flips,
+ *      on every route (tool pages included). Category colours are
+ *      untouched; the deliberate dark bands (navbar, marquee, stats,
+ *      footer) already use --deep in both modes. ---- */
+html[data-theme="dark"] {
+  --bg: #0e120f;
+  --surface: #171d18;
+  --surface-sunk: #131814;
+  --ink: #f2ede1;
+  --ink-soft: #b6ae9d;
+  --ink-faint: #8f887a;
+  --line: #2a332b;
+  --line-strong: #3a443c;
+  --accent: #e8481f;
+  --accent-hover: #f26a45;
+  --accent-soft: #2a1a14;
+  --focus: #e8481f;
+  --shadow-card: 0 18px 40px -18px rgba(0, 0, 0, 0.55);
+}
+/* Dark-mode hero wash: same device as light, fading into the dark paper. */
+html[data-theme="dark"] .homepage {
+  background-image: linear-gradient(180deg, #101a22 0px, var(--bg) 640px);
+}
+/* The privacy panel's background is var(--ink) — light in dark mode —
+ * so pin it to the deep chrome there, as the old block did. */
+html[data-theme="dark"] .privacy-feature {
+  background: var(--deep);
+}
+/* In dark mode the search button is ink-on-paper (light button on the
+ * dark field), matching the old scoped override. */
+html[data-theme="dark"] .search-submit {
+  background: #faf6ef;
+  color: #16130f;
+}
+html[data-theme="dark"] .search-submit:hover {
+  background: var(--accent);
+  color: #fff;
+}
+
+/* ---- Theme toggle (components/layout/ThemeToggle) ----
+ * The navbar is dark chrome in BOTH modes, so the toggle is styled for
+ * dark chrome: cream icon, faint border, white on hover. The sun icon
+ * shows only in dark mode (tap it to go light); the moon shows in light
+ * mode. The no-flash script in app/layout.tsx sets data-theme before
+ * first paint, so the correct icon is visible from the first frame. */
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  padding: 0;
+  border: 1px solid rgba(250, 246, 239, 0.18);
+  border-radius: 999px;
+  background: transparent;
+  color: rgba(250, 246, 239, 0.85);
+  cursor: pointer;
+  transition:
+    color 180ms ease,
+    background-color 180ms ease,
+    border-color 180ms ease;
+}
+.theme-toggle:hover {
+  color: #fff;
+  background: rgba(250, 246, 239, 0.07);
+  border-color: rgba(250, 246, 239, 0.35);
+}
+.theme-toggle:focus-visible {
+  outline: 2px solid var(--verm-2, #e8481f);
+  outline-offset: 2px;
+}
+.theme-icon-sun {
+  display: none;
+}
+.theme-icon-moon {
+  display: block;
+}
+html[data-theme="dark"] .theme-icon-sun {
+  display: block;
+}
+html[data-theme="dark"] .theme-icon-moon {
+  display: none;
+}
+
+/* ---- Full-screen hero (desktop only) ----
+ * The sticky header occupies 76px at the top, so the hero takes
+ * 100svh minus the header and lands exactly on the viewport fold.
+ * Content is vertically centred. Mobile keeps its stacked compact
+ * hero — 100svh is NOT forced there.
+ * Accepted trade-off (requested by Muhammad): Popular tools now start
+ * below the fold; the hero's own search + chips + trust line keep
+ * tools reachable in the first screen. */
+@media (min-width: 1024px) {
+  .home-hero {
+    min-height: calc(100vh - 76px);
+    min-height: calc(100svh - 76px);
+    align-content: center;
+    padding-block: 40px 48px;
+  }
+}
+
+/* ---- Sticky navbar must never clip a heading on anchor jumps ---- */
+section,
+[id] {
+  scroll-margin-top: 96px;
+}
+
+/* ---- Theme toggle on small screens: the header is already tight at
+ *      phone widths (brand + Tools menu + CTA), so shrink the toggle
+ *      and the actions gap below 640px, and trim the header padding
+ *      below 400px. The toggle stays visible and tappable everywhere. */
+@media (max-width: 640px) {
+  .header-actions {
+    gap: 10px;
+  }
+  .theme-toggle {
+    width: 36px;
+    height: 36px;
+  }
+}
+@media (max-width: 400px) {
+  .header-inner {
+    padding-inline: 12px;
+  }
+  .theme-toggle {
+    width: 34px;
+    height: 34px;
   }
 }

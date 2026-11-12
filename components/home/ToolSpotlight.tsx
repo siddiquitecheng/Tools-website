@@ -14,12 +14,14 @@ import { getToolIcon } from "@/components/tool-cards/toolIcon";
 
 /**
  * Hero "Tool spotlight" card (Cool Design Concept, approved 2026-11-11).
- * Auto-rotates every 3 seconds through six real tools, each themed by its
+ * Auto-rotates every 5 seconds through six real tools, each themed by its
  * category colour (card top edge, icon tile, chip, active dot). Pauses on
  * hover/focus and while the tab is hidden; under prefers-reduced-motion it
  * never auto-rotates (the dots still switch manually, without animation).
  * Rotation state is visual only — no live region, so screen readers are
- * not spammed every 3 seconds; the dots are real buttons with labels.
+ * not spammed every 5 seconds; the dots are real buttons with labels.
+ * (THEME FIX: was 3s — the card visibly changed about every ~2s and
+ * read as flicker/distraction.)
  */
 const SPOTLIGHT_IDS = [
   "merge-pdf",
@@ -54,14 +56,14 @@ export function ToolSpotlight() {
     };
   }, []);
 
-  // Depending on `index` restarts the 3s timer after every change,
+  // Depending on `index` restarts the 5s timer after every change,
   // including dot clicks — matching the concept's restart-on-jump.
   useEffect(() => {
     if (paused || pageHidden || reducedMotion || spotlightTools.length < 2)
       return;
     const timer = window.setInterval(() => {
       setIndex((current) => (current + 1) % spotlightTools.length);
-    }, 3000);
+    }, 5000);
     return () => window.clearInterval(timer);
   }, [index, paused, pageHidden, reducedMotion]);
 
