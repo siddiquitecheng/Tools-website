@@ -6,9 +6,8 @@
  * accent kept from the approved concept. Display type is Bricolage
  * Grotesque (--font-display), body is Instrument Sans (--font-body);
  * both variables are set by next/font in app/layout.tsx.
- * Dark values live in the [data-theme="dark"] block appended at the
- * end of this file (THEME FIX) — never in a prefers-color-scheme
- * media query, so the manual toggle can override the system.
+ * Light theme only (2026-11-12): the dark-mode system was removed,
+ * so the light tokens below are the single theme for the whole site.
  */
 :root {
   --bg: #eef3f7;
@@ -4353,6 +4352,31 @@
     transform: none;
   }
 }
+/* Crossfade (THEME FIX 2): the swap content renders as two stacked
+ * layers inside .spot-swap-stack, so the outgoing tool fades out
+ * while the incoming one fades in — the card never reads empty
+ * mid-swap. The stack sizes to the taller layer, so the card height
+ * does not jump between tools. */
+.spot-swap-stack {
+  display: grid;
+}
+.spot-swap-stack > .spot-swap {
+  grid-area: 1 / 1;
+  min-width: 0;
+}
+.spot-swap-leaving {
+  animation: spot-out 0.5s ease both;
+  pointer-events: none;
+}
+@keyframes spot-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+}
 .spot-icon {
   display: flex;
   align-items: center;
@@ -4587,6 +4611,9 @@
   .spot-swap {
     animation: none;
   }
+  .spot-swap-leaving {
+    display: none;
+  }
   .spot-pulse::after {
     animation: none;
   }
@@ -4597,132 +4624,55 @@
 }
 
 /* ==========================================================================
- * THEME FIX (2026-11-12, appended)
- * Muhammad: the theme is not proper in light or dark, the page has
- * glitches, and the hero must cover the full screen professionally.
- * Measured causes (desktop 1919x998, light mode):
- *  1. Patchy light theme — three near-identical creams (#faf6ef page,
- *     #f6f1e5 category band, #fffdf8 surfaces) plus a cool-grey hero
- *     wash against warm cream below. Fixed by one cool paper token.
- *  2. Dark mode was broken by construction — the only dark rule was a
- *     prefers-color-scheme media query scoped to .homepage, so tool
- *     pages never flipped and there was no toggle. Fixed by a real
- *     [data-theme] system + navbar toggle + no-flash head script.
- *  3. Spotlight advanced every ~2-3s (distracting) — now 5s.
- *  4. Scroll reveals used blur(6px) + 800ms — headings arrived blurred
- *     and sharpened ~1s late. Now a 400ms fade-rise, no blur, triggered
- *     earlier (see ScrollFx/HomeMotion rootMargin).
- *  5. Stats count-up showed wrong intermediate values (133 / 97%) —
- *     replaced by a fade-in of the final server values.
- *  6. Sticky navbar could clip a heading — scroll-margin-top added.
- *  7. Hero was ~58% of the viewport — now full-screen on desktop.
+ * THEME FIX (2026-11-12, appended) — LIGHT ONLY since the
+ * follow-up the same day: Muhammad asked for light mode only, no
+ * dark mode, so the dark-mode system staged in round 1 was removed
+ * again (the removed rules are listed in the round-2 manifest).
+ * Round 1 fixed, and kept here: one cool paper token for the whole
+ * site (no cream/beige/pink seams); spotlight 5s; blur-free 400ms
+ * reveals triggered earlier; stats fade in at their final values;
+ * scroll-margin-top so the sticky navbar never clips a heading;
+ * full-screen hero on desktop (strengthened in the follow-up — see
+ * the hero rule below).
  * ========================================================================== */
 
-/* ---- Root theme plumbing ---- */
+/* ---- Light-only site: declare a light color scheme so form
+ *      controls and scrollbars render light. ---- */
 html {
   color-scheme: light;
 }
-html[data-theme="dark"] {
-  color-scheme: dark;
-}
 
-/* ---- Real dark mode, site-wide: every token-driven surface flips,
- *      on every route (tool pages included). Category colours are
- *      untouched; the deliberate dark bands (navbar, marquee, stats,
- *      footer) already use --deep in both modes. ---- */
-html[data-theme="dark"] {
-  --bg: #0e120f;
-  --surface: #171d18;
-  --surface-sunk: #131814;
-  --ink: #f2ede1;
-  --ink-soft: #b6ae9d;
-  --ink-faint: #8f887a;
-  --line: #2a332b;
-  --line-strong: #3a443c;
-  --accent: #e8481f;
-  --accent-hover: #f26a45;
-  --accent-soft: #2a1a14;
-  --focus: #e8481f;
-  --shadow-card: 0 18px 40px -18px rgba(0, 0, 0, 0.55);
-}
-/* Dark-mode hero wash: same device as light, fading into the dark paper. */
-html[data-theme="dark"] .homepage {
-  background-image: linear-gradient(180deg, #101a22 0px, var(--bg) 640px);
-}
-/* The privacy panel's background is var(--ink) — light in dark mode —
- * so pin it to the deep chrome there, as the old block did. */
-html[data-theme="dark"] .privacy-feature {
-  background: var(--deep);
-}
-/* In dark mode the search button is ink-on-paper (light button on the
- * dark field), matching the old scoped override. */
-html[data-theme="dark"] .search-submit {
-  background: #faf6ef;
-  color: #16130f;
-}
-html[data-theme="dark"] .search-submit:hover {
-  background: var(--accent);
-  color: #fff;
-}
+/* (The dark token overrides that used to sit here were removed in
+ * the light-only follow-up — the site renders the light theme for
+ * every visitor regardless of system preference.) */
 
-/* ---- Theme toggle (components/layout/ThemeToggle) ----
- * The navbar is dark chrome in BOTH modes, so the toggle is styled for
- * dark chrome: cream icon, faint border, white on hover. The sun icon
- * shows only in dark mode (tap it to go light); the moon shows in light
- * mode. The no-flash script in app/layout.tsx sets data-theme before
- * first paint, so the correct icon is visible from the first frame. */
-.theme-toggle {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 40px;
-  height: 40px;
-  flex-shrink: 0;
-  padding: 0;
-  border: 1px solid rgba(250, 246, 239, 0.18);
-  border-radius: 999px;
-  background: transparent;
-  color: rgba(250, 246, 239, 0.85);
-  cursor: pointer;
-  transition:
-    color 180ms ease,
-    background-color 180ms ease,
-    border-color 180ms ease;
-}
-.theme-toggle:hover {
-  color: #fff;
-  background: rgba(250, 246, 239, 0.07);
-  border-color: rgba(250, 246, 239, 0.35);
-}
-.theme-toggle:focus-visible {
-  outline: 2px solid var(--verm-2, #e8481f);
-  outline-offset: 2px;
-}
-.theme-icon-sun {
-  display: none;
-}
-.theme-icon-moon {
-  display: block;
-}
-html[data-theme="dark"] .theme-icon-sun {
-  display: block;
-}
-html[data-theme="dark"] .theme-icon-moon {
-  display: none;
-}
+/* (The navbar theme-toggle styles that used to sit here were removed
+ * with the toggle in the light-only follow-up.) */
 
 /* ---- Full-screen hero (desktop only) ----
  * The sticky header occupies 76px at the top, so the hero takes
- * 100svh minus the header and lands exactly on the viewport fold.
- * Content is vertically centred. Mobile keeps its stacked compact
- * hero — 100svh is NOT forced there.
+ * the viewport height minus the header and lands exactly on the
+ * viewport fold. Content is vertically centred. Mobile keeps its
+ * stacked compact hero — the viewport height is NOT forced there.
+ * Follow-up note: the round-1 rule (same value, plain class
+ * selector, svh units) was verified present in the live CSS, yet
+ * the live check measured the hero ~749px tall — exactly 825px
+ * minus the 76px header, i.e. exactly what the rule produces in
+ * an 825px-tall viewport (or, equivalently, a capture taken
+ * ~173px scrolled down). The rule itself was valid and correctly
+ * scoped, so this round strengthens it instead of rewriting it:
+ * higher-specificity selector (.homepage .home-hero) and the
+ * dynamic viewport unit (dvh, already used by the mega menu),
+ * with vh/svh fallbacks. Re-verify at scrollY=0 and record the
+ * true viewport height before measuring.
  * Accepted trade-off (requested by Muhammad): Popular tools now start
  * below the fold; the hero's own search + chips + trust line keep
  * tools reachable in the first screen. */
 @media (min-width: 1024px) {
-  .home-hero {
+  .homepage .home-hero {
     min-height: calc(100vh - 76px);
     min-height: calc(100svh - 76px);
+    min-height: calc(100dvh - 76px);
     align-content: center;
     padding-block: 40px 48px;
   }
@@ -4734,25 +4684,16 @@ section,
   scroll-margin-top: 96px;
 }
 
-/* ---- Theme toggle on small screens: the header is already tight at
- *      phone widths (brand + Tools menu + CTA), so shrink the toggle
- *      and the actions gap below 640px, and trim the header padding
- *      below 400px. The toggle stays visible and tappable everywhere. */
+/* ---- Tight header on small screens: the header is already tight at
+ *      phone widths (brand + Tools menu + CTA), so narrow the actions
+ *      gap below 640px and trim the header padding below 400px. ---- */
 @media (max-width: 640px) {
   .header-actions {
     gap: 10px;
-  }
-  .theme-toggle {
-    width: 36px;
-    height: 36px;
   }
 }
 @media (max-width: 400px) {
   .header-inner {
     padding-inline: 12px;
-  }
-  .theme-toggle {
-    width: 34px;
-    height: 34px;
   }
 }
