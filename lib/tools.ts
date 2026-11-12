@@ -134,9 +134,9 @@ export const tools: Tool[] = [
   t("edit-pdf", "Edit PDF", "pdf", "client", "Add text, marks, images, and edits to PDF pages.", ["edit", "pdf", "annotate"], { accepts: [".pdf"], new: true }),
   t("ocr-pdf", "OCR PDF", "pdf", "client", "Make scanned PDFs searchable with OCR.", ["ocr", "pdf", "scan"], { accepts: [".pdf"] }),
   t("sign-pdf", "Sign PDF", "pdf", "client", "Add a drawn, typed, or uploaded signature.", ["sign", "pdf", "signature"], { accepts: [".pdf"] }),
-  t("watermark-pdf", "Watermark PDF", "pdf", "client", "Stamp text or image watermarks onto PDFs.", ["watermark", "pdf", "stamp"], { accepts: [".pdf"] }),
+  t("watermark-pdf", "Watermark PDF", "pdf", "client", "Stamp text watermarks onto PDFs.", ["watermark", "pdf", "stamp"], { accepts: [".pdf"] }),
   t("delete-pdf-pages", "Delete PDF Pages", "pdf", "client", "Remove selected pages from a PDF.", ["delete", "pdf", "pages"], { accepts: [".pdf"] }),
-  t("rearrange-pdf-pages", "Rearrange PDF Pages", "pdf", "client", "Reorder pages visually and export a new PDF.", ["reorder", "pdf", "pages"], { accepts: [".pdf"] }),
+  t("rearrange-pdf-pages", "Rearrange PDF Pages", "pdf", "client", "Reorder pages by listing their numbers and export a new PDF.", ["reorder", "pdf", "pages"], { accepts: [".pdf"] }),
 
   t("image-compressor", "Image Compressor", "image", "client", "Compress JPG, PNG, and WebP images locally — shrink a photo toward 100 KB, 50 KB or 20 KB for an online form.", ["image", "compress", "optimize"], { accepts: [".jpg", ".jpeg", ".png", ".webp"], featured: true }),
   t("image-resizer", "Image Resizer", "image", "client", "Resize images by dimensions or percentage.", ["image", "resize", "scale"], { accepts: [".jpg", ".jpeg", ".png", ".webp"], featured: true }),

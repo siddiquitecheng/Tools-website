@@ -216,6 +216,8 @@ export const toolContent: Record<string, PdfToolContent> = {
       { question: "Will formatting change my data?", answer: "No. Formatting only adjusts whitespace — spaces, line breaks and indentation. The underlying data stays identical, so formatted JSON works exactly like the original in any application." },
       { question: "Can I format and validate JSON in one click?", answer: "Effectively, yes. Paste your JSON and run the formatter: valid JSON comes back beautified with proper indentation, and if there is a syntax error no output is produced and the message points at the problem spot — so a failed format is itself a quick validity check." },
       { question: "Is it safe to paste JSON that contains API keys or tokens?", answer: "Yes. The formatter runs entirely in your browser and never uploads your data, so API responses, configuration files and payloads containing keys or tokens stay on your device." },
+      { question: "Can I choose the indentation size?", answer: "Yes. Use the Indentation selector above the input to pick 2 spaces, 4 spaces, or tabs — the formatted output updates immediately with your choice." },
+      { question: "Can I format JSON that has comments or trailing commas?", answer: "No — JSON itself does not allow comments or trailing commas, so the formatter reports an error instead of output. Remove comments and trailing commas first (the error message points at the problem spot), then format again." },
     ],
   },
   "password-generator": {
