@@ -579,4 +579,256 @@ export const editorialPosts: BlogPost[] = [
       },
     ],
   },
+  {
+    slug: "healthy-breakfast-recipes",
+    toolName: "Healthy Breakfast Recipes",
+    category: "utilities",
+    kind: "editorial",
+    featuredToolIds: ["timer", "notepad-online", "todo-list-online"],
+    seoTitle: "Healthy Breakfast Recipes: 5 Quick Ideas for Busy Mornings",
+    seoDescription:
+      "Five healthy breakfast recipes for busy mornings — overnight oats, egg muffins, smoothie bowls and more. Most take 10 minutes or less, and three keep for days.",
+    intro: [
+      "A healthy breakfast pairs protein with fiber: eggs, Greek yogurt, or nut butter plus oats, whole grains, fruit, or vegetables. That combination keeps you full until lunch, which is the whole point — a breakfast that fades by 10am was not really breakfast.",
+      "The five recipes below are built for normal mornings. Three can be made ahead on Sunday and grabbed all week, and the other two take about ten minutes fresh. None needs a special shopping trip: oats, eggs, yogurt, fruit, and bread cover all of them.",
+    ],
+    steps: [],
+    benefits: [
+      "Protein plus fiber keeps you full until lunch, so the mid-morning snack stops being a rescue mission.",
+      "Three recipes keep 3 to 5 days in the fridge, so one short prep session covers the working week.",
+      "A kitchen timer and a short shopping list are the only tools you need — both free in this workshop.",
+    ],
+    privacyNote:
+      "The timer and list tools linked here run in your browser, so nothing you type leaves your device. No signup is needed for any of them.",
+    sections: [
+      {
+        heading: "Make ahead: overnight oats and chia pudding",
+        paragraphs: [
+          "Overnight oats are the fastest breakfast there is, because the work happens the night before. Stir half a cup of rolled oats with half a cup of milk, a tablespoon of chia seeds, and a drizzle of honey or maple syrup in a jar, add berries, and leave it in the fridge for at least six hours. By morning it is thick and creamy, with no cooking at all. Use rolled oats, not instant ones — instant oats turn mushy overnight, while rolled oats stay pleasantly chewy. One jar keeps in the fridge for up to four days, so making two or three at once covers most of the working week.",
+          "Chia pudding works the same way and keeps even longer, up to five days. Mix chia seeds with milk and a little vanilla, stir once after ten minutes so it does not clump, and chill for at least four hours. Top it in the morning with fruit or nuts. Both recipes are forgiving: the ratios matter more than exact measurements, and a kitchen timer set for the chilling time is the only reminder you need.",
+        ],
+      },
+      {
+        heading: "Fresh in ten minutes: egg muffins, parfait, and smoothie bowl",
+        paragraphs: [
+          "Veggie egg muffins are the grab-and-go option. Whisk eggs with chopped vegetables, pour into a muffin tin, and bake for about twenty minutes. Ten minutes of hands-on time gives you a batch that keeps four days in the fridge and reheats in a minute. They also use up whatever vegetables are sitting in the fridge, which is a quiet way to cut food waste.",
+          "A Greek yogurt parfait takes ten minutes and no cooking: layer plain Greek yogurt with fresh or thawed frozen fruit and top with granola, oats, or chopped nuts for crunch. A green smoothie bowl is faster still, about five minutes with frozen fruit ready — blend fruit, spinach, and yogurt, pour into a bowl, and add toppings so it eats like a meal instead of a drink. Avocado toast with an egg rounds out the set: toast the bread until golden, about two to three minutes, and top with mashed avocado and a fried or boiled egg.",
+        ],
+      },
+      {
+        heading: "The formula that makes it stick",
+        paragraphs: [
+          "Every recipe here follows the same pattern: protein, fiber-rich carbohydrate, and a little healthy fat. Eggs, yogurt, and nut butter supply the protein; oats, whole grains, and fruit supply the fiber; nuts, seeds, and avocado supply the fat. When a breakfast has all three, it holds you. When it has only one — plain toast, or juice alone — it does not, and no amount of willpower fixes that by 10am.",
+          "Prep one or two things ahead and the whole week gets easier. Wash and dry fruit, portion nuts into small containers, boil a batch of eggs, or freeze smoothie packs on Sunday. Store make-ahead breakfasts in airtight containers at 4 degrees C or colder. These recipes share general nutrition information, not medical advice — if you have a medical condition or a dietary restriction, check with a clinician or dietitian before changing how you eat.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        q: "What is the fastest healthy breakfast for a busy morning?",
+        a: "Overnight oats, because you make them the night before and they are ready the moment you open the fridge. A smoothie is a close second at about five minutes, and a pre-made egg muffin needs only a minute to reheat.",
+      },
+      {
+        q: "Can I prep breakfast for the whole week?",
+        a: "Mostly. Overnight oats keep up to four days, chia pudding up to five, and egg muffins up to four days in airtight containers in the fridge. Parfaits and avocado toast are best assembled fresh, since granola softens and toast goes soggy overnight.",
+      },
+      {
+        q: "What actually makes a breakfast healthy?",
+        a: "The combination: protein plus fiber-rich carbohydrate plus a little healthy fat. Eggs, Greek yogurt, and nut butter give protein; oats, whole grains, and fruit give fiber; nuts, seeds, and avocado give healthy fat. A breakfast with all three keeps you full until lunch.",
+      },
+      {
+        q: "Are overnight oats safe to store in the fridge?",
+        a: "Yes, for up to four days in a covered container at 4 degrees C or colder. Use rolled oats rather than instant oats so they hold their shape, and add fresh toppings in the morning rather than storing them mixed in.",
+      },
+    ],
+  },
+  {
+    slug: "healthy-dinner-recipes-under-5",
+    toolName: "Healthy Dinner Recipes Under $5",
+    category: "calculators",
+    kind: "editorial",
+    featuredToolIds: ["percentage-calculator", "bmi-calculator"],
+    seoTitle: "Healthy Dinner Recipes Under $5: 5 Cheap Easy Meals",
+    seoDescription:
+      "Five healthy dinner recipes under $5 a serving — lentil soup, bean bowls, egg fried rice and more. Cheap, filling, and ready in 30 minutes or less.",
+    intro: [
+      "Healthy food does not need to be expensive. The cheapest healthy ingredients are also the most useful ones: lentils, beans, eggs, oats, seasonal vegetables, and frozen fish or vegetables. Frozen produce is picked ripe and wastes less, and a bag of lentils costs less than a single takeaway coffee.",
+      "The five dinners below each cost under $5 a serving with ordinary supermarket prices, and each is ready in about 30 minutes or less. They are built around one pot or one pan, so the washing up stays small too. Costs are estimates for one serving and move with local prices — check your share of the food budget with the free percentage calculator linked here.",
+    ],
+    steps: [],
+    benefits: [
+      "Every recipe costs under $5 a serving, so healthy eating fits a tight food budget instead of fighting it.",
+      "One pot or one pan each, ready in 30 minutes or less, with ingredients from a normal supermarket.",
+      "Batch-friendly by design: cook a big pot twice a week and freeze portions for the nights you do not cook.",
+    ],
+    privacyNote:
+      "The calculators linked here run in your browser, so the numbers you enter stay on your device. No signup is needed for any of them.",
+    sections: [
+      {
+        heading: "The under-$5 pantry",
+        paragraphs: [
+          "Five ingredients carry almost every cheap healthy dinner: lentils, beans, eggs, rice, and frozen vegetables. Lentils cook in about twenty minutes with no soaking, beans stretch a small amount of meat or stand alone, eggs turn leftover rice into a meal, and frozen vegetables cost less than fresh out of season while wasting nothing. Add onions, garlic, canned tomatoes, and one or two spices, and the pantry is done.",
+          "The rule for keeping a meal under $5 is to build it around the cheap ingredient, not the expensive one. Meat becomes a flavouring rather than the main event — a little chicken in a bean stew, or one sausage sliced into a lentil soup — and the plate is filled with the lentils, beans, or rice instead. That is also how the meal stays filling: fiber and protein, not portion size, are what keep you full.",
+        ],
+      },
+      {
+        heading: "Five dinners that cost less",
+        paragraphs: [
+          "Lentil soup: simmer red lentils with onion, garlic, carrot, and canned tomatoes for twenty minutes, then blend half for thickness. About $1.50 a serving, and it freezes for a month. Bean and rice bowls: warm canned beans with cumin and paprika, serve over rice with frozen corn and a fried egg on top — about $2 a serving, and the egg is the protein that makes it a real dinner. Egg fried rice: day-old rice, two eggs, frozen peas and carrots, soy sauce, ten minutes in a hot pan, about $1.80 a serving.",
+          "Pasta with vegetables and chickpeas: boil pasta, toss with canned chickpeas, frozen spinach, garlic, and olive oil — about $2.20 a serving, ready in fifteen minutes. Baked potatoes with beans: bake potatoes until soft, split, and fill with warmed baked beans and a little grated cheese — about $2.50 a serving, and the most forgiving dinner on this list. Every one of these scales: double the pot and tomorrow's dinner is already made.",
+        ],
+      },
+      {
+        heading: "Cook twice, eat all week",
+        paragraphs: [
+          "The habit that makes cheap dinners stick is cooking a big pot twice a week. Soup, stew, dal, and chili all freeze well in portions, so a Sunday cook covers Tuesday and Thursday without a second thought. Label each container with the date; most cooked meals keep three to four days in the fridge and up to three months in the freezer.",
+          "Shop with a list built from the week's meals, and check the food budget first — the percentage calculator linked here shows what share of your income the food shop takes, which is the number that tells you whether the budget is working. These recipes share general nutrition information, not medical advice — if you have a medical condition or a dietary restriction, check with a clinician or dietitian before changing how you eat.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        q: "Are these dinners really under $5 a serving?",
+        a: "Yes, at ordinary supermarket prices in the US and Europe. Lentil soup runs about $1.50 a serving, bean bowls about $2, and the most expensive here — baked potatoes with beans and cheese — about $2.50. Exact costs move with local prices, so treat the figures as a guide.",
+      },
+      {
+        q: "Is frozen veg as healthy as fresh?",
+        a: "Yes. Frozen vegetables are picked and frozen ripe, so they keep most of their nutrients, and they waste nothing — no softening bag at the back of the fridge. They are usually cheaper than fresh out of season, which is why they belong in a budget pantry.",
+      },
+      {
+        q: "How do I keep dinner costs down without eating the same thing every night?",
+        a: "Rotate the cheap base, not the whole meal: lentils one night, beans the next, eggs after that, pasta to finish the week. Same pantry, five different dinners. Changing the spice — cumin, paprika, garlic, chili — changes the meal more than changing the ingredients does.",
+      },
+      {
+        q: "How long do batch-cooked dinners keep?",
+        a: "Three to four days in the fridge in airtight containers, and up to three months in the freezer. Cool food before freezing, label each container with the date, and reheat until steaming hot throughout.",
+      },
+    ],
+  },
+  {
+    slug: "how-to-save-money-on-groceries",
+    toolName: "How to Save Money on Groceries",
+    category: "calculators",
+    kind: "editorial",
+    featuredToolIds: ["percentage-calculator", "emi-calculator", "loan-calculator"],
+    seoTitle: "How to Save Money on Groceries: 10 Proven Tips (2026)",
+    seoDescription:
+      "How to save money on groceries in 2026: meal planning, store brands, unit prices and freezer habits that cut 15–25% off the bill — about $150–$300 a month.",
+    intro: [
+      "Grocery prices are still a concern for households across the US and Europe. Slower inflation does not mean prices have returned to where they were a few years ago, and the food shop is the one bill you cannot skip. The good news is that most households can cut their grocery bill by 15 to 25 percent without eating worse — the USDA's moderate-cost food plan puts a family of four at $1,000 to $1,200 a month, and 15 to 25 percent of that is roughly $150 to $300 back every month.",
+      "You do not need to overhaul your whole routine or visit four stores. A few changes to how you plan, shop, and store food make a noticeable difference over a year: saving $10 a week is about $520 a year, and saving $20 a week is more than $1,000. Start with the habits that are easiest to maintain.",
+    ],
+    steps: [],
+    benefits: [
+      "A realistic 15–25% cut on the grocery bill — roughly $150 to $300 a month for a family of four — without eating worse.",
+      "Less food waste: the average American household discards about $1,500 of food a year, much of it forgotten in the fridge.",
+      "Free calculators linked here show your food budget as a share of income, so you can see whether the changes are working.",
+    ],
+    privacyNote:
+      "The calculators linked here run in your browser, so the numbers you enter stay on your device. No signup is needed for any of them.",
+    sections: [
+      {
+        heading: "Before you shop: audit, plan, list",
+        paragraphs: [
+          "Before writing a list, take ninety seconds to scan the fridge, freezer, and pantry and note what needs using soon. The USDA Economic Research Service estimates the average American household discards roughly $1,500 of food a year, much of it forgotten at the back of the fridge — the audit alone can pay for the week's savings.",
+          "Then build a list around a weekly meal plan. Map five to seven dinners, plus breakfasts and lunches, and write one list that covers all of them. Four or five dinners in mind is usually enough to keep a trip under control. Set a tight budget per trip and take the list — shopping without one is how impulse buys happen, and never shop hungry if you can avoid it.",
+        ],
+      },
+      {
+        heading: "In the store: brands, unit prices, and loyalty",
+        paragraphs: [
+          "Buy store brands by default. Generic and store-label products are typically 20 to 30 percent cheaper than name brands and are often produced in the same facilities — pasta, rice, flour, sugar, canned vegetables, frozen fruit, and cleaning products are good places to start. Try a discount grocer for staples: chains like ALDI and Lidl carry a tighter assortment at noticeably lower prices.",
+          "Compare unit prices, not package prices. The largest package is not always the best deal — a smaller box can have a lower price per 100 grams. Join store loyalty programs and use their digital coupons for things you already buy, and watch for manager markdowns: fresh food near its sell-by date is often marked down by up to 70 percent, and it is fine to cook or freeze the same day.",
+        ],
+      },
+      {
+        heading: "At home: freezer, leftovers, and the cheap-meal rotation",
+        paragraphs: [
+          "A freezer saves money twice: it lets you take advantage of sales and stops food going to waste. Cook double portions so a second meal goes straight into the freezer, and keep frozen fruit and vegetables on hand — they typically cost less than fresh and never spoil in the drawer. Treat leftovers as another meal, not as a problem: a roast chicken becomes sandwiches, then soup.",
+          "Keep a few cheap meals in rotation for the weeks when the budget is tight — pasta, chili, soup, eggs and toast, rice and beans, stir-fry, baked potatoes, and homemade pizza can all adapt to whatever is available. Track the grocery spend against a monthly target with the percentage calculator linked here, and review it for ten minutes once a month. Small, steady habits beat a dramatic one-week diet for the budget.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        q: "How much can I realistically save on groceries?",
+        a: "Most households that adopt five to ten of these habits report saving 15 to 25 percent within two to three months. For a family of four near the USDA moderate food plan of $1,000 to $1,200 a month, that is roughly $150 to $300 back per month.",
+      },
+      {
+        q: "Are store brands really as good as name brands?",
+        a: "For basics, usually yes. Store-brand pasta, rice, flour, sugar, canned vegetables, frozen fruit, and cleaning products are typically 20 to 30 percent cheaper and often made in the same facilities as the name brands. Try one or two items first and judge for yourself.",
+      },
+      {
+        q: "Does meal planning actually save money?",
+        a: "Yes, because it removes the two most expensive habits: impulse buying and throwing food away. A plan for five to seven dinners produces one list, one trip, and far less waste — the average household discards about $1,500 of food a year.",
+      },
+      {
+        q: "What is the single easiest grocery saving to start with?",
+        a: "Audit the fridge and pantry before every shop and build the list from what you already have. It takes ninety seconds, costs nothing, and stops you buying duplicates of food you already own.",
+      },
+    ],
+  },
+  {
+    slug: "walking-for-weight-loss",
+    toolName: "Walking for Weight Loss",
+    category: "calculators",
+    kind: "editorial",
+    featuredToolIds: ["bmi-calculator", "percentage-calculator"],
+    seoTitle: "Walking for Weight Loss: 10,000 Steps Plan That Works",
+    seoDescription:
+      "Walking for weight loss: how many steps you need, how many calories 10,000 steps burns, and a 4-week plan — with honest numbers and no magic target.",
+    intro: [
+      "You have probably heard the advice: walk 10,000 steps a day and the weight will melt off. It is one of the most repeated fitness guidelines in history — and it did not come from a doctor or a study. It came from a 1965 Japanese marketing campaign for a pedometer called Manpo-kei, which translates to 10,000 steps meter. The number stuck because it is round and memorable, not because the body cares about round numbers.",
+      "That does not mean walking fails. It means the target that matters is not 10,000 — it is how many steps you add above your current average, paired with a small food deficit. This guide gives the honest numbers, then a four-week plan that builds to them.",
+    ],
+    steps: [],
+    benefits: [
+      "Walking is low-injury, needs no gym, and fits around work — a 30-minute walk covers about 3,000 steps and burns 100 to 200 calories.",
+      "Honest numbers only: no magic step count, with the research behind each figure explained in plain words.",
+      "A four-week plan that starts from your current step count and builds gradually, so the habit survives week five.",
+    ],
+    privacyNote:
+      "The BMI and percentage calculators linked here run in your browser, so the numbers you enter stay on your device. No signup is needed for any of them.",
+    sections: [
+      {
+        heading: "The honest numbers",
+        paragraphs: [
+          "Ten thousand steps burns roughly 300 to 500 calories for most adults, depending on weight and pace — a 150-pound person burns about 30 to 40 calories per 1,000 steps, so 10,000 steps is roughly 300 to 400 calories, the equivalent of a three-mile jog without the joint stress. At a moderate pace of about 100 steps a minute, 10,000 steps takes around 90 to 100 minutes and covers about 7 to 8 kilometres. Only the steps you add above your current average count toward a deficit, since your usual steps are already inside your maintenance calories.",
+          "The research is honest about the pace of results. A meta-analysis of pedometer programs found an average loss of about 1.27 kg over a median of 16 weeks from walking alone — roughly 0.1 lb a week. A 2022 meta-analysis of 15 cohorts with 47,471 adults (Paluch, Lancet Public Health) found the health benefit of more steps levels off at about 8,000 to 10,000 steps a day for adults under 60. Realistic weight loss from walking with food intake unchanged is about 0.25 to 1 lb a week. Add a 300-calorie food deficit and the same walking works about two and a half times faster.",
+        ],
+      },
+      {
+        heading: "A four-week plan",
+        paragraphs: [
+          "Week one, build the habit at 5,000 steps a day: two 15-minute walks, one in the morning and one after dinner. Week two, add volume to 7,000 steps a day. Week three, introduce intensity at 8,000 to 9,000 steps — make one daily walk a brisk power walk at about 3.5 to 4 mph, and add two-minute speed intervals every five minutes. Week four, optimize at 10,000 or more steps a day, mixing in walking variations to keep the body challenged.",
+          "Start by tracking your current steps for one week without changing anything — most sedentary people average 3,000 to 5,000 a day — then add 1,000 to 2,000 steps a week until you reach your target. Pair each week with one small food change: week one, swap sugary drinks for water; week two, halve high-fat portions; week three, add a lean protein to every meal. The Mayo Clinic's rule of thumb is that cutting about 500 calories a day from your usual diet may lead to about half to one pound of loss a week. Weigh yourself once a week, at the same time of day.",
+        ],
+      },
+      {
+        heading: "Making it stick: brisk beats long",
+        paragraphs: [
+          "Intensity matters as much as volume. Moderate-to-vigorous walking — slightly breathless, able to talk but not sing — has a significantly greater impact on fat loss than leisurely walking, and 5,000 brisk steps can outperform 10,000 slow ones. A 2022 study in JAMA Neurology found that walking intensity, not just volume, was associated with substantially lower disease risk.",
+          "The practical tricks are small: walk after meals, take the stairs, get off the bus one stop early, and walk in daylight when you can. Track your BMI alongside the steps with the free BMI calculator linked here, and judge the trend over weeks, not days — bodies adjust as they lose weight, so the scale slows even when the habit is working. This guide shares general fitness information, not medical advice — if you have a heart condition, joint problems, or another medical issue, check with a clinician before starting a new exercise plan.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        q: "Is 10,000 steps a day a magic number for weight loss?",
+        a: "No. It came from a 1965 Japanese pedometer marketing campaign, not a medical study. Research shows health benefits level off around 8,000 to 10,000 steps for adults under 60, and what matters most for weight loss is how many steps you add above your current average.",
+      },
+      {
+        q: "How many calories does 10,000 steps burn?",
+        a: "Roughly 300 to 500 calories for most adults, depending on weight and pace. A 150-pound person burns about 30 to 40 calories per 1,000 steps. Only added steps count toward a deficit — your usual daily steps are already inside your maintenance calories.",
+      },
+      {
+        q: "How fast will I lose weight by walking?",
+        a: "Walking alone, with food intake unchanged, realistic loss is about 0.25 to 1 lb a week. Add a 300-calorie daily food deficit and the same walking works about two and a half times faster. Weigh yourself once a week at the same time of day and judge the trend over weeks.",
+      },
+      {
+        q: "Do I need to change my diet as well?",
+        a: "For noticeable weight loss, yes — walking alone works slowly. A trial of 120 women walking up to 15,000 steps a day for 24 weeks still gained weight on average, because food intake rose to match. Pair the steps with one small food change a week and the deficit actually happens.",
+      },
+    ],
+  },
 ];
