@@ -32,6 +32,7 @@ import {
   getPublicNewTools,
   getPublicTools,
 } from "@/lib/public-tools";
+import { getEditorialBlogPosts } from "@/lib/blog-posts";
 
 export const dynamic = "force-dynamic";
 
@@ -118,6 +119,7 @@ export default async function HomePage() {
   const webSiteLd = generateWebSiteJsonLd();
   const organizationLd = generateOrganizationJsonLd();
   const faqLd = generateFaqJsonLd(homeFaqs);
+  const latestEditorial = getEditorialBlogPosts().slice(-4).reverse();
   return (
     <div className="homepage">
       <HomeMotion />
@@ -383,6 +385,45 @@ export default async function HomePage() {
           <div className="recent-grid reveal">
             {recent.map((tool) => (
               <ToolCard key={tool.id} tool={tool} />
+            ))}
+          </div>
+        </section>
+      )}
+
+      {latestEditorial.length > 0 && (
+        <section className="home-section page-container">
+          <div className="section-heading reveal">
+            <div>
+              <p className="section-eyebrow">
+                <span className="section-index">05</span> From the blog
+              </p>
+              <h2>Fresh from the blog.</h2>
+              <p>Guides, recipes and money tips — new posts, free to read.</p>
+            </div>
+            <Link href="/blog" className="text-link">
+              View all guides <ArrowRight size={17} />
+            </Link>
+          </div>
+          <div className="mt-6 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+            {latestEditorial.map((post) => (
+              <Link
+                key={post.slug}
+                href={`/blog/${post.slug}`}
+                className="group block rounded-xl border border-[var(--line)] bg-[var(--surface)] p-5 transition-all duration-200 hover:-translate-y-0.5 hover:border-[var(--accent)]/40 hover:shadow-lg"
+              >
+                <span className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--accent)]">
+                  Editorial guide
+                </span>
+                <h3 className="mt-2 font-semibold text-[var(--ink)] group-hover:text-[var(--accent)]">
+                  {post.toolName}
+                </h3>
+                <p className="mt-1.5 text-sm leading-6 text-[var(--ink-soft)]">
+                  {post.seoDescription}
+                </p>
+                <span className="mt-4 block text-sm font-medium text-[var(--accent)]">
+                  Read guide →
+                </span>
+              </Link>
             ))}
           </div>
         </section>
