@@ -110,6 +110,7 @@ export function Header() {
           <Link href="/tools/edit-pdf">Edit</Link>
           <Link href="/category/image">Image</Link>
           <Link href="/category/ai">AI tools</Link>
+          <Link href="/blog">Blog</Link>
         </nav>
         <div className="header-actions">
           <Link href="/blog" className="header-guide">
